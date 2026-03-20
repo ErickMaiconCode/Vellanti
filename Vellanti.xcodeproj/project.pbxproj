@@ -6,6 +6,31 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EC0E6ECB2F6C399D007FEC71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC0E6EC52F6C399D007FEC71 /* Assets.xcassets */; };
+		EC0E6ED42F6C3A4C007FEC71 /* PlayerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0E6ED32F6C3A47007FEC71 /* PlayerUIView.swift */; };
+		EC0E6ED62F6C3E50007FEC71 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0E6ED52F6C3E4C007FEC71 /* OnboardingCoordinator.swift */; };
+		EC0E6ED92F6C4028007FEC71 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0E6ED82F6C4025007FEC71 /* OnboardingView.swift */; };
+		EC0E6EDB2F6C44E2007FEC71 /* Onboarding_2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EC0E6EDA2F6C44E2007FEC71 /* Onboarding_2.mp4 */; };
+		EC0E6EE62F6C5B03007FEC71 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0E6EE52F6C5AFB007FEC71 /* DependencyContainer.swift */; };
+		EC0E6EEA2F6C5D99007FEC71 /* SplashProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0E6EE92F6C5D90007FEC71 /* SplashProtocol.swift */; };
+		EC0E6EEC2F6C5E62007FEC71 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0E6EEB2F6C5E5B007FEC71 /* SplashCoordinator.swift */; };
+		EC0E6EF12F6C63A5007FEC71 /* PermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5442312F6C2AE700F4A871 /* PermissionService.swift */; };
+		EC445B162F6CACDC0012A1DA /* Vellanti_Icon.icon in Resources */ = {isa = PBXBuildFile; fileRef = EC445B152F6CACDC0012A1DA /* Vellanti_Icon.icon */; };
+		EC445B232F6CBD4D0012A1DA /* Onboarding_3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EC445B222F6CBD4D0012A1DA /* Onboarding_3.mp4 */; };
+		EC54422E2F6C1EB000F4A871 /* OnboardingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC54422D2F6C1EAB00F4A871 /* OnboardingProtocol.swift */; };
+		EC5442302F6C1FF100F4A871 /* OnboardingPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC54422F2F6C1FEC00F4A871 /* OnboardingPageModel.swift */; };
+		EC5442342F6C2D2500F4A871 /* OnboardingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5442332F6C2D1C00F4A871 /* OnboardingRepository.swift */; };
+		EC5442382F6C2E2A00F4A871 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5442372F6C2E2400F4A871 /* OnboardingViewModel.swift */; };
+		EC54423D2F6C371500F4A871 /* Onboarding_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EC54423C2F6C371500F4A871 /* Onboarding_1.mp4 */; };
+		EC5442412F6C398400F4A871 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5442402F6C397A00F4A871 /* VideoPlayerView.swift */; };
+		EC92275E2F6D766A005AE80C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC92275D2F6D7666005AE80C /* LoginView.swift */; };
+		ECAC48FB2F6881EF00A886BC /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC48FA2F6881EC00A886BC /* SplashViewModel.swift */; };
+		ECB6C1CF2F68486C007B594E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = ECB6C1CE2F68486C007B594E /* Lottie */; };
+		ECB6C1E62F684EBB007B594E /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB6C1E52F684EB7007B594E /* SplashView.swift */; };
+		ECC857472F6B1A6000A61F22 /* Vellanti_Light.json in Resources */ = {isa = PBXBuildFile; fileRef = ECC857462F6B1A6000A61F22 /* Vellanti_Light.json */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		ECB6C1B12F6838FC007B594E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,15 +49,50 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC06DDFA2F688AC5001C571D /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		EC0E6EC52F6C399D007FEC71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC0E6ED32F6C3A47007FEC71 /* PlayerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerUIView.swift; sourceTree = "<group>"; };
+		EC0E6ED52F6C3E4C007FEC71 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		EC0E6ED82F6C4025007FEC71 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		EC0E6EDA2F6C44E2007FEC71 /* Onboarding_2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Onboarding_2.mp4; sourceTree = "<group>"; };
+		EC0E6EE52F6C5AFB007FEC71 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		EC0E6EE92F6C5D90007FEC71 /* SplashProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashProtocol.swift; sourceTree = "<group>"; };
+		EC0E6EEB2F6C5E5B007FEC71 /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
+		EC445B152F6CACDC0012A1DA /* Vellanti_Icon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Vellanti_Icon.icon; sourceTree = "<group>"; };
+		EC445B222F6CBD4D0012A1DA /* Onboarding_3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Onboarding_3.mp4; sourceTree = "<group>"; };
+		EC54422D2F6C1EAB00F4A871 /* OnboardingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProtocol.swift; sourceTree = "<group>"; };
+		EC54422F2F6C1FEC00F4A871 /* OnboardingPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageModel.swift; sourceTree = "<group>"; };
+		EC5442312F6C2AE700F4A871 /* PermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionService.swift; sourceTree = "<group>"; };
+		EC5442332F6C2D1C00F4A871 /* OnboardingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRepository.swift; sourceTree = "<group>"; };
+		EC5442372F6C2E2400F4A871 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		EC54423C2F6C371500F4A871 /* Onboarding_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Onboarding_1.mp4; sourceTree = "<group>"; };
+		EC5442402F6C397A00F4A871 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		EC92275D2F6D7666005AE80C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		ECAC48FA2F6881EC00A886BC /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		ECB6C1A32F6838F7007B594E /* Vellanti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vellanti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB6C1B02F6838FC007B594E /* VellantiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VellantiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB6C1BA2F6838FC007B594E /* VellantiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VellantiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECB6C1E52F684EB7007B594E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		ECC857462F6B1A6000A61F22 /* Vellanti_Light.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Vellanti_Light.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		EC54422B2F6C177800F4A871 /* Exceptions for "App" folder in "Vellanti" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = ECB6C1A22F6838F7007B594E /* Vellanti */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		ECB6C1A52F6838F7007B594E /* Vellanti */ = {
+		ECB6C1A52F6838F7007B594E /* App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Vellanti;
+			exceptions = (
+				EC54422B2F6C177800F4A871 /* Exceptions for "App" folder in "Vellanti" target */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		ECB6C1B32F6838FC007B594E /* VellantiTests */ = {
@@ -52,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECB6C1CF2F68486C007B594E /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,10 +133,150 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC06DDFB2F688AC5001C571D /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				EC06DDFA2F688AC5001C571D /* LottieView.swift */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		EC0E6ED72F6C401F007FEC71 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC0E6ED82F6C4025007FEC71 /* OnboardingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC0E6EE42F6C5AF3007FEC71 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				EC0E6EE52F6C5AFB007FEC71 /* DependencyContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		EC0E6EE82F6C5D88007FEC71 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC0E6EE92F6C5D90007FEC71 /* SplashProtocol.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EC0E6EF22F6C6642007FEC71 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EC445B152F6CACDC0012A1DA /* Vellanti_Icon.icon */,
+				EC0E6EC52F6C399D007FEC71 /* Assets.xcassets */,
+				EC54423E2F6C395C00F4A871 /* Video */,
+				EC06DDFB2F688AC5001C571D /* Lottie */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EC5442242F6B67F000F4A871 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EC5442312F6C2AE700F4A871 /* PermissionService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EC54422C2F6C1EA200F4A871 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC54422F2F6C1FEC00F4A871 /* OnboardingPageModel.swift */,
+				EC54422D2F6C1EAB00F4A871 /* OnboardingProtocol.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EC5442322F6C2D1500F4A871 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				EC5442332F6C2D1C00F4A871 /* OnboardingRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		EC5442352F6C2E1400F4A871 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EC0E6ED52F6C3E4C007FEC71 /* OnboardingCoordinator.swift */,
+				EC5442372F6C2E2400F4A871 /* OnboardingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EC54423B2F6C370400F4A871 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				EC54423C2F6C371500F4A871 /* Onboarding_1.mp4 */,
+				EC0E6EDA2F6C44E2007FEC71 /* Onboarding_2.mp4 */,
+				EC445B222F6CBD4D0012A1DA /* Onboarding_3.mp4 */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		EC54423E2F6C395C00F4A871 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				EC0E6ED32F6C3A47007FEC71 /* PlayerUIView.swift */,
+				EC5442402F6C397A00F4A871 /* VideoPlayerView.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		EC92275B2F6D7628005AE80C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				EC92275F2F6D7752005AE80C /* Assets */,
+				EC92275C2F6D765F005AE80C /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EC92275C2F6D765F005AE80C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC92275D2F6D7666005AE80C /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC92275F2F6D7752005AE80C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		ECAC48F82F6881DB00A886BC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ECB6C1E52F684EB7007B594E /* SplashView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ECAC48F92F6881E400A886BC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EC0E6EEB2F6C5E5B007FEC71 /* SplashCoordinator.swift */,
+				ECAC48FA2F6881EC00A886BC /* SplashViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		ECB6C19A2F6838F7007B594E = {
 			isa = PBXGroup;
 			children = (
-				ECB6C1A52F6838F7007B594E /* Vellanti */,
+				ECB6C1A52F6838F7007B594E /* App */,
+				ECB6C1D22F6848D2007B594E /* Libs */,
+				EC0E6EF22F6C6642007FEC71 /* Components */,
+				EC5442242F6B67F000F4A871 /* Services */,
 				ECB6C1B32F6838FC007B594E /* VellantiTests */,
 				ECB6C1BD2F6838FC007B594E /* VellantiUITests */,
 				ECB6C1A42F6838F7007B594E /* Products */,
@@ -90,6 +291,48 @@
 				ECB6C1BA2F6838FC007B594E /* VellantiUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		ECB6C1D22F6848D2007B594E /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				EC92275B2F6D7628005AE80C /* Login */,
+				EC0E6EE42F6C5AF3007FEC71 /* DI */,
+				ECB6C1D42F6848FC007B594E /* Splash */,
+				ECB6C1D32F6848EC007B594E /* Onboarding */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		ECB6C1D32F6848EC007B594E /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				EC0E6ED72F6C401F007FEC71 /* View */,
+				EC54423B2F6C370400F4A871 /* Assets */,
+				EC5442352F6C2E1400F4A871 /* ViewModel */,
+				EC5442322F6C2D1500F4A871 /* Repository */,
+				EC54422C2F6C1EA200F4A871 /* Model */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		ECB6C1D42F6848FC007B594E /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				EC0E6EE82F6C5D88007FEC71 /* Model */,
+				ECB6C1E42F684EA4007B594E /* Assets */,
+				ECAC48F92F6881E400A886BC /* ViewModel */,
+				ECAC48F82F6881DB00A886BC /* View */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		ECB6C1E42F684EA4007B594E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				ECC857462F6B1A6000A61F22 /* Vellanti_Light.json */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,10 +351,11 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				ECB6C1A52F6838F7007B594E /* Vellanti */,
+				ECB6C1A52F6838F7007B594E /* App */,
 			);
 			name = Vellanti;
 			packageProductDependencies = (
+				ECB6C1CE2F68486C007B594E /* Lottie */,
 			);
 			productName = Vellanti;
 			productReference = ECB6C1A32F6838F7007B594E /* Vellanti.app */;
@@ -195,6 +439,9 @@
 			);
 			mainGroup = ECB6C19A2F6838F7007B594E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				ECB6C1CD2F68486C007B594E /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = ECB6C1A42F6838F7007B594E /* Products */;
 			projectDirPath = "";
@@ -212,6 +459,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC445B232F6CBD4D0012A1DA /* Onboarding_3.mp4 in Resources */,
+				EC0E6ECB2F6C399D007FEC71 /* Assets.xcassets in Resources */,
+				ECC857472F6B1A6000A61F22 /* Vellanti_Light.json in Resources */,
+				EC445B162F6CACDC0012A1DA /* Vellanti_Icon.icon in Resources */,
+				EC54423D2F6C371500F4A871 /* Onboarding_1.mp4 in Resources */,
+				EC0E6EDB2F6C44E2007FEC71 /* Onboarding_2.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +489,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC5442342F6C2D2500F4A871 /* OnboardingRepository.swift in Sources */,
+				EC0E6ED42F6C3A4C007FEC71 /* PlayerUIView.swift in Sources */,
+				ECB6C1E62F684EBB007B594E /* SplashView.swift in Sources */,
+				EC54422E2F6C1EB000F4A871 /* OnboardingProtocol.swift in Sources */,
+				EC92275E2F6D766A005AE80C /* LoginView.swift in Sources */,
+				EC5442382F6C2E2A00F4A871 /* OnboardingViewModel.swift in Sources */,
+				EC5442412F6C398400F4A871 /* VideoPlayerView.swift in Sources */,
+				EC0E6EEA2F6C5D99007FEC71 /* SplashProtocol.swift in Sources */,
+				EC0E6EE62F6C5B03007FEC71 /* DependencyContainer.swift in Sources */,
+				EC0E6EF12F6C63A5007FEC71 /* PermissionService.swift in Sources */,
+				ECAC48FB2F6881EF00A886BC /* SplashViewModel.swift in Sources */,
+				EC0E6EEC2F6C5E62007FEC71 /* SplashCoordinator.swift in Sources */,
+				EC0E6ED62F6C3E50007FEC71 /* OnboardingCoordinator.swift in Sources */,
+				EC0E6ED92F6C4028007FEC71 /* OnboardingView.swift in Sources */,
+				EC5442302F6C1FF100F4A871 /* OnboardingPageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,23 +659,30 @@
 		ECB6C1C52F6838FC007B594E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Vellanti_Icon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 232QGVJ9SM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Vellanti-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Precisamos da sua localização para mostrar resultados próximos";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Precisamos da sua localização para mostrar resultados próximos";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Usamos para personalizar sua experiência no app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.agibank.ShutdownAccountTest.Vellanti;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.Vellanti;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -422,23 +697,30 @@
 		ECB6C1C62F6838FC007B594E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Vellanti_Icon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 232QGVJ9SM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Vellanti-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Precisamos da sua localização para mostrar resultados próximos";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Precisamos da sua localização para mostrar resultados próximos";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Usamos para personalizar sua experiência no app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.agibank.ShutdownAccountTest.Vellanti;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.Vellanti;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -456,10 +738,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 232QGVJ9SM;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.agibank.ShutdownAccountTest.VellantiTests;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.VellantiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -477,10 +760,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 232QGVJ9SM;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.agibank.ShutdownAccountTest.VellantiTests;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.VellantiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -497,6 +781,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 232QGVJ9SM;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.agibank.ShutdownAccountTest.VellantiUITests;
@@ -516,6 +801,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 232QGVJ9SM;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.agibank.ShutdownAccountTest.VellantiUITests;
@@ -570,6 +856,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ECB6C1CD2F68486C007B594E /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ECB6C1CE2F68486C007B594E /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECB6C1CD2F68486C007B594E /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ECB6C19B2F6838F7007B594E /* Project object */;
 }
