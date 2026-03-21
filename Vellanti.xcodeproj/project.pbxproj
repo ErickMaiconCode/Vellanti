@@ -36,7 +36,15 @@
 		EC5BC6882F6DE03600A0659D /* AnimatedSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6872F6DE02D00A0659D /* AnimatedSecureField.swift */; };
 		EC5BC68A2F6DE3DF00A0659D /* PasswordValidatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6892F6DE3D100A0659D /* PasswordValidatorView.swift */; };
 		EC5BC68C2F6DEA6000A0659D /* RegisterStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC68B2F6DEA5D00A0659D /* RegisterStep.swift */; };
-		EC92275E2F6D766A005AE80C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC92275D2F6D7666005AE80C /* LoginView.swift */; };
+		EC5BC6902F6EE1A700A0659D /* WelcomeMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC68F2F6EE19900A0659D /* WelcomeMessage.swift */; };
+		EC5BC6952F6EE26700A0659D /* AuthGatewayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6942F6EE26200A0659D /* AuthGatewayProtocol.swift */; };
+		EC5BC6972F6EE3E700A0659D /* AuthGatewayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6962F6EE3AF00A0659D /* AuthGatewayViewModel.swift */; };
+		EC5BC6992F6EEE2100A0659D /* AuthGatewayCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6982F6EEE1B00A0659D /* AuthGatewayCoordinator.swift */; };
+		EC5BC69F2F6F22FF00A0659D /* WelcomeViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC69E2F6F22F800A0659D /* WelcomeViewModelProtocol.swift */; };
+		EC5BC6A12F6F237E00A0659D /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6A02F6F237A00A0659D /* WelcomeViewModel.swift */; };
+		EC5BC6A32F6F256000A0659D /* WelcomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6A22F6F255C00A0659D /* WelcomeCoordinator.swift */; };
+		EC5BC6A52F6F294400A0659D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6A42F6F294200A0659D /* WelcomeView.swift */; };
+		EC92275E2F6D766A005AE80C /* AuthGatewayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC92275D2F6D7666005AE80C /* AuthGatewayView.swift */; };
 		ECAC48FB2F6881EF00A886BC /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC48FA2F6881EC00A886BC /* SplashViewModel.swift */; };
 		ECB6C1CF2F68486C007B594E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = ECB6C1CE2F68486C007B594E /* Lottie */; };
 		ECB6C1E62F684EBB007B594E /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB6C1E52F684EB7007B594E /* SplashView.swift */; };
@@ -89,7 +97,15 @@
 		EC5BC6872F6DE02D00A0659D /* AnimatedSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedSecureField.swift; sourceTree = "<group>"; };
 		EC5BC6892F6DE3D100A0659D /* PasswordValidatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidatorView.swift; sourceTree = "<group>"; };
 		EC5BC68B2F6DEA5D00A0659D /* RegisterStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep.swift; sourceTree = "<group>"; };
-		EC92275D2F6D7666005AE80C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		EC5BC68F2F6EE19900A0659D /* WelcomeMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMessage.swift; sourceTree = "<group>"; };
+		EC5BC6942F6EE26200A0659D /* AuthGatewayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGatewayProtocol.swift; sourceTree = "<group>"; };
+		EC5BC6962F6EE3AF00A0659D /* AuthGatewayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGatewayViewModel.swift; sourceTree = "<group>"; };
+		EC5BC6982F6EEE1B00A0659D /* AuthGatewayCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGatewayCoordinator.swift; sourceTree = "<group>"; };
+		EC5BC69E2F6F22F800A0659D /* WelcomeViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModelProtocol.swift; sourceTree = "<group>"; };
+		EC5BC6A02F6F237A00A0659D /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		EC5BC6A22F6F255C00A0659D /* WelcomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCoordinator.swift; sourceTree = "<group>"; };
+		EC5BC6A42F6F294200A0659D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		EC92275D2F6D7666005AE80C /* AuthGatewayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGatewayView.swift; sourceTree = "<group>"; };
 		ECAC48FA2F6881EC00A886BC /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		ECB6C1A32F6838F7007B594E /* Vellanti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vellanti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB6C1B02F6838FC007B594E /* VellantiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VellantiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -272,7 +288,6 @@
 		EC5BC6752F6DD0CB00A0659D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EC92275D2F6D7666005AE80C /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -288,6 +303,7 @@
 		EC5BC6772F6DD11A00A0659D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EC5BC68F2F6EE19900A0659D /* WelcomeMessage.swift */,
 				EC5BC68B2F6DEA5D00A0659D /* RegisterStep.swift */,
 				EC5BC67E2F6DD44400A0659D /* UserRole.swift */,
 				EC5BC67C2F6DD2BD00A0659D /* RegisterData.swift */,
@@ -309,6 +325,76 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		EC5BC68E2F6EE18B00A0659D /* AuthGateway */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC6932F6EE25900A0659D /* ViewModel */,
+				EC5BC6922F6EE25300A0659D /* View */,
+				EC5BC6912F6EE24D00A0659D /* Model */,
+			);
+			path = AuthGateway;
+			sourceTree = "<group>";
+		};
+		EC5BC6912F6EE24D00A0659D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC6942F6EE26200A0659D /* AuthGatewayProtocol.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EC5BC6922F6EE25300A0659D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC92275D2F6D7666005AE80C /* AuthGatewayView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC5BC6932F6EE25900A0659D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC6982F6EEE1B00A0659D /* AuthGatewayCoordinator.swift */,
+				EC5BC6962F6EE3AF00A0659D /* AuthGatewayViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EC5BC69A2F6F22B600A0659D /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC69D2F6F22C800A0659D /* Model */,
+				EC5BC69C2F6F22C100A0659D /* ViewModel */,
+				EC5BC69B2F6F22BC00A0659D /* View */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		EC5BC69B2F6F22BC00A0659D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC6A42F6F294200A0659D /* WelcomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC5BC69C2F6F22C100A0659D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC6A22F6F255C00A0659D /* WelcomeCoordinator.swift */,
+				EC5BC6A02F6F237A00A0659D /* WelcomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EC5BC69D2F6F22C800A0659D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC69E2F6F22F800A0659D /* WelcomeViewModelProtocol.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		EC92275B2F6D7628005AE80C /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +408,7 @@
 		EC92275C2F6D765F005AE80C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EC5BC68E2F6EE18B00A0659D /* AuthGateway */,
 				EC5BC6742F6DD0C300A0659D /* Register */,
 				EC5BC6732F6DD0B700A0659D /* Login */,
 			);
@@ -378,6 +465,7 @@
 		ECB6C1D22F6848D2007B594E /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				EC5BC69A2F6F22B600A0659D /* Welcome */,
 				EC92275B2F6D7628005AE80C /* Authentication */,
 				EC0E6EE42F6C5AF3007FEC71 /* DI */,
 				ECB6C1D42F6848FC007B594E /* Splash */,
@@ -578,8 +666,10 @@
 				EC0E6ED42F6C3A4C007FEC71 /* PlayerUIView.swift in Sources */,
 				EC5BC6882F6DE03600A0659D /* AnimatedSecureField.swift in Sources */,
 				ECB6C1E62F684EBB007B594E /* SplashView.swift in Sources */,
+				EC5BC6902F6EE1A700A0659D /* WelcomeMessage.swift in Sources */,
+				EC5BC6A32F6F256000A0659D /* WelcomeCoordinator.swift in Sources */,
 				EC54422E2F6C1EB000F4A871 /* OnboardingProtocol.swift in Sources */,
-				EC92275E2F6D766A005AE80C /* LoginView.swift in Sources */,
+				EC92275E2F6D766A005AE80C /* AuthGatewayView.swift in Sources */,
 				EC5442382F6C2E2A00F4A871 /* OnboardingViewModel.swift in Sources */,
 				EC5BC6842F6DD57000A0659D /* CountryPickerView.swift in Sources */,
 				EC5442412F6C398400F4A871 /* VideoPlayerView.swift in Sources */,
@@ -587,15 +677,21 @@
 				EC5BC67D2F6DD2C000A0659D /* RegisterData.swift in Sources */,
 				EC0E6EE62F6C5B03007FEC71 /* DependencyContainer.swift in Sources */,
 				EC0E6EF12F6C63A5007FEC71 /* PermissionService.swift in Sources */,
+				EC5BC69F2F6F22FF00A0659D /* WelcomeViewModelProtocol.swift in Sources */,
 				EC5BC6862F6DD57B00A0659D /* PhoneFormatter.swift in Sources */,
 				ECAC48FB2F6881EF00A886BC /* SplashViewModel.swift in Sources */,
 				EC0E6EEC2F6C5E62007FEC71 /* SplashCoordinator.swift in Sources */,
+				EC5BC6A52F6F294400A0659D /* WelcomeView.swift in Sources */,
 				EC0E6ED62F6C3E50007FEC71 /* OnboardingCoordinator.swift in Sources */,
 				EC5BC6822F6DD56200A0659D /* GenderPickerView.swift in Sources */,
+				EC5BC6972F6EE3E700A0659D /* AuthGatewayViewModel.swift in Sources */,
 				EC5BC67F2F6DD44800A0659D /* UserRole.swift in Sources */,
 				EC5BC68C2F6DEA6000A0659D /* RegisterStep.swift in Sources */,
 				EC5BC68A2F6DE3DF00A0659D /* PasswordValidatorView.swift in Sources */,
+				EC5BC6952F6EE26700A0659D /* AuthGatewayProtocol.swift in Sources */,
+				EC5BC6992F6EEE2100A0659D /* AuthGatewayCoordinator.swift in Sources */,
 				EC5BC6792F6DD13800A0659D /* User.swift in Sources */,
+				EC5BC6A12F6F237E00A0659D /* WelcomeViewModel.swift in Sources */,
 				EC0E6ED92F6C4028007FEC71 /* OnboardingView.swift in Sources */,
 				EC5BC67B2F6DD1EF00A0659D /* Gender.swift in Sources */,
 				EC5442302F6C1FF100F4A871 /* OnboardingPageModel.swift in Sources */,
