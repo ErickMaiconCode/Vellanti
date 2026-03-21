@@ -8,7 +8,7 @@ final class OnboardingViewModel: OnboardingViewModelProtocol {
     
     var pages: [OnboardingPageModel]
     
-    private weak var coordinator: OnboardingCoordinatorProtocol?
+    private var coordinator: OnboardingCoordinatorProtocol?
     private let permissionService: PermissionServiceProtocol
     private let repository: OnboardingRepositoryProtocol
     

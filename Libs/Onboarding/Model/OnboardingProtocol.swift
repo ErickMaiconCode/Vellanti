@@ -24,6 +24,8 @@ protocol PermissionServiceProtocol {
 protocol OnboardingRepositoryProtocol {
     func makeOnboardingAsCompleted()
     func hasCompletedOnboarding() -> Bool
+    func markWelcomeAsSeen()
+    func hasSeenWelcome() -> Bool
 }
 
 

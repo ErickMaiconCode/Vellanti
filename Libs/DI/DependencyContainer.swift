@@ -31,4 +31,21 @@ final class DependencyContainer {
             onComplete: onComplete
         )
     }
+    
+    func makeAuthGatewayCoordinator(
+        showContinueWithoutLogin: Bool = true,
+        onLoginTapped: @escaping () -> Void,
+        onRegisterTapped: @escaping () -> Void,
+        onContinueWithoutLogin: @escaping () -> Void
+    ) -> AuthGatewayCoordinator {
+        let coordinator = AuthGatewayCoordinator(showContinueWithoutLogin: showContinueWithoutLogin)
+        coordinator.onLoginTapped = onLoginTapped
+        coordinator.onRegisterTapped = onRegisterTapped
+        coordinator.onContinueWithoutLogin = onContinueWithoutLogin
+        return coordinator
+    }
+    
+    func makeWelcomeCoordinator() -> WelcomeCoordinator {
+        WelcomeCoordinator()
+    }
 }

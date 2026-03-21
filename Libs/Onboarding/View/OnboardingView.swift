@@ -39,11 +39,11 @@ struct OnboardingView<ViewModel: OnboardingViewModelProtocol>: View {
     
     private var descriptionView: some View {
         Text(viewModel.pages[viewModel.currentPage].description)
-            .font(.system(size: 20, weight: .light)) // Fonte mais elegante
+            .font(.system(size: 20, weight: .light))
             .foregroundColor(.white)
             .multilineTextAlignment(.center)
             .lineSpacing(6)
-            .frame(minHeight: 80) // Evita jumps entre páginas
+            .frame(minHeight: 80)
             .transition(.opacity.combined(with: .move(edge: .bottom)))
             .animation(.easeInOut(duration: 0.4), value: viewModel.currentPage)
     }
