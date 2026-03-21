@@ -24,6 +24,18 @@
 		EC5442382F6C2E2A00F4A871 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5442372F6C2E2400F4A871 /* OnboardingViewModel.swift */; };
 		EC54423D2F6C371500F4A871 /* Onboarding_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EC54423C2F6C371500F4A871 /* Onboarding_1.mp4 */; };
 		EC5442412F6C398400F4A871 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5442402F6C397A00F4A871 /* VideoPlayerView.swift */; };
+		EC5BC66C2F6DCE1400A0659D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EC5BC66B2F6DCE1400A0659D /* FirebaseAnalytics */; };
+		EC5BC66E2F6DCE1400A0659D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EC5BC66D2F6DCE1400A0659D /* FirebaseFirestore */; };
+		EC5BC6792F6DD13800A0659D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6782F6DD13600A0659D /* User.swift */; };
+		EC5BC67B2F6DD1EF00A0659D /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC67A2F6DD1EE00A0659D /* Gender.swift */; };
+		EC5BC67D2F6DD2C000A0659D /* RegisterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC67C2F6DD2BD00A0659D /* RegisterData.swift */; };
+		EC5BC67F2F6DD44800A0659D /* UserRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC67E2F6DD44400A0659D /* UserRole.swift */; };
+		EC5BC6822F6DD56200A0659D /* GenderPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6812F6DD55D00A0659D /* GenderPickerView.swift */; };
+		EC5BC6842F6DD57000A0659D /* CountryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6832F6DD56600A0659D /* CountryPickerView.swift */; };
+		EC5BC6862F6DD57B00A0659D /* PhoneFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6852F6DD57500A0659D /* PhoneFormatter.swift */; };
+		EC5BC6882F6DE03600A0659D /* AnimatedSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6872F6DE02D00A0659D /* AnimatedSecureField.swift */; };
+		EC5BC68A2F6DE3DF00A0659D /* PasswordValidatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6892F6DE3D100A0659D /* PasswordValidatorView.swift */; };
+		EC5BC68C2F6DEA6000A0659D /* RegisterStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC68B2F6DEA5D00A0659D /* RegisterStep.swift */; };
 		EC92275E2F6D766A005AE80C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC92275D2F6D7666005AE80C /* LoginView.swift */; };
 		ECAC48FB2F6881EF00A886BC /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC48FA2F6881EC00A886BC /* SplashViewModel.swift */; };
 		ECB6C1CF2F68486C007B594E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = ECB6C1CE2F68486C007B594E /* Lottie */; };
@@ -67,6 +79,16 @@
 		EC5442372F6C2E2400F4A871 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		EC54423C2F6C371500F4A871 /* Onboarding_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Onboarding_1.mp4; sourceTree = "<group>"; };
 		EC5442402F6C397A00F4A871 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		EC5BC6782F6DD13600A0659D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EC5BC67A2F6DD1EE00A0659D /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		EC5BC67C2F6DD2BD00A0659D /* RegisterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterData.swift; sourceTree = "<group>"; };
+		EC5BC67E2F6DD44400A0659D /* UserRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRole.swift; sourceTree = "<group>"; };
+		EC5BC6812F6DD55D00A0659D /* GenderPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPickerView.swift; sourceTree = "<group>"; };
+		EC5BC6832F6DD56600A0659D /* CountryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerView.swift; sourceTree = "<group>"; };
+		EC5BC6852F6DD57500A0659D /* PhoneFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneFormatter.swift; sourceTree = "<group>"; };
+		EC5BC6872F6DE02D00A0659D /* AnimatedSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedSecureField.swift; sourceTree = "<group>"; };
+		EC5BC6892F6DE3D100A0659D /* PasswordValidatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidatorView.swift; sourceTree = "<group>"; };
+		EC5BC68B2F6DEA5D00A0659D /* RegisterStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep.swift; sourceTree = "<group>"; };
 		EC92275D2F6D7666005AE80C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		ECAC48FA2F6881EC00A886BC /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		ECB6C1A32F6838F7007B594E /* Vellanti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vellanti.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +134,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC5BC66C2F6DCE1400A0659D /* FirebaseAnalytics in Frameworks */,
 				ECB6C1CF2F68486C007B594E /* Lottie in Frameworks */,
+				EC5BC66E2F6DCE1400A0659D /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,21 +253,79 @@
 			path = Video;
 			sourceTree = "<group>";
 		};
-		EC92275B2F6D7628005AE80C /* Login */ = {
+		EC5BC6732F6DD0B700A0659D /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				EC92275F2F6D7752005AE80C /* Assets */,
-				EC92275C2F6D765F005AE80C /* View */,
+				EC5BC6752F6DD0CB00A0659D /* View */,
 			);
 			path = Login;
 			sourceTree = "<group>";
 		};
-		EC92275C2F6D765F005AE80C /* View */ = {
+		EC5BC6742F6DD0C300A0659D /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC6802F6DD55400A0659D /* Components */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		EC5BC6752F6DD0CB00A0659D /* View */ = {
 			isa = PBXGroup;
 			children = (
 				EC92275D2F6D7666005AE80C /* LoginView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		EC5BC6762F6DD0DF00A0659D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC6772F6DD11A00A0659D /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		EC5BC6772F6DD11A00A0659D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC68B2F6DEA5D00A0659D /* RegisterStep.swift */,
+				EC5BC67E2F6DD44400A0659D /* UserRole.swift */,
+				EC5BC67C2F6DD2BD00A0659D /* RegisterData.swift */,
+				EC5BC67A2F6DD1EE00A0659D /* Gender.swift */,
+				EC5BC6782F6DD13600A0659D /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EC5BC6802F6DD55400A0659D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC6892F6DE3D100A0659D /* PasswordValidatorView.swift */,
+				EC5BC6872F6DE02D00A0659D /* AnimatedSecureField.swift */,
+				EC5BC6852F6DD57500A0659D /* PhoneFormatter.swift */,
+				EC5BC6832F6DD56600A0659D /* CountryPickerView.swift */,
+				EC5BC6812F6DD55D00A0659D /* GenderPickerView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EC92275B2F6D7628005AE80C /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC6762F6DD0DF00A0659D /* Domain */,
+				EC92275F2F6D7752005AE80C /* Assets */,
+				EC92275C2F6D765F005AE80C /* Presentation */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		EC92275C2F6D765F005AE80C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC6742F6DD0C300A0659D /* Register */,
+				EC5BC6732F6DD0B700A0659D /* Login */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		EC92275F2F6D7752005AE80C /* Assets */ = {
@@ -296,7 +378,7 @@
 		ECB6C1D22F6848D2007B594E /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				EC92275B2F6D7628005AE80C /* Login */,
+				EC92275B2F6D7628005AE80C /* Authentication */,
 				EC0E6EE42F6C5AF3007FEC71 /* DI */,
 				ECB6C1D42F6848FC007B594E /* Splash */,
 				ECB6C1D32F6848EC007B594E /* Onboarding */,
@@ -356,6 +438,8 @@
 			name = Vellanti;
 			packageProductDependencies = (
 				ECB6C1CE2F68486C007B594E /* Lottie */,
+				EC5BC66B2F6DCE1400A0659D /* FirebaseAnalytics */,
+				EC5BC66D2F6DCE1400A0659D /* FirebaseFirestore */,
 			);
 			productName = Vellanti;
 			productReference = ECB6C1A32F6838F7007B594E /* Vellanti.app */;
@@ -441,6 +525,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				ECB6C1CD2F68486C007B594E /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				EC5BC66A2F6DCE1400A0659D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = ECB6C1A42F6838F7007B594E /* Products */;
@@ -491,18 +576,28 @@
 			files = (
 				EC5442342F6C2D2500F4A871 /* OnboardingRepository.swift in Sources */,
 				EC0E6ED42F6C3A4C007FEC71 /* PlayerUIView.swift in Sources */,
+				EC5BC6882F6DE03600A0659D /* AnimatedSecureField.swift in Sources */,
 				ECB6C1E62F684EBB007B594E /* SplashView.swift in Sources */,
 				EC54422E2F6C1EB000F4A871 /* OnboardingProtocol.swift in Sources */,
 				EC92275E2F6D766A005AE80C /* LoginView.swift in Sources */,
 				EC5442382F6C2E2A00F4A871 /* OnboardingViewModel.swift in Sources */,
+				EC5BC6842F6DD57000A0659D /* CountryPickerView.swift in Sources */,
 				EC5442412F6C398400F4A871 /* VideoPlayerView.swift in Sources */,
 				EC0E6EEA2F6C5D99007FEC71 /* SplashProtocol.swift in Sources */,
+				EC5BC67D2F6DD2C000A0659D /* RegisterData.swift in Sources */,
 				EC0E6EE62F6C5B03007FEC71 /* DependencyContainer.swift in Sources */,
 				EC0E6EF12F6C63A5007FEC71 /* PermissionService.swift in Sources */,
+				EC5BC6862F6DD57B00A0659D /* PhoneFormatter.swift in Sources */,
 				ECAC48FB2F6881EF00A886BC /* SplashViewModel.swift in Sources */,
 				EC0E6EEC2F6C5E62007FEC71 /* SplashCoordinator.swift in Sources */,
 				EC0E6ED62F6C3E50007FEC71 /* OnboardingCoordinator.swift in Sources */,
+				EC5BC6822F6DD56200A0659D /* GenderPickerView.swift in Sources */,
+				EC5BC67F2F6DD44800A0659D /* UserRole.swift in Sources */,
+				EC5BC68C2F6DEA6000A0659D /* RegisterStep.swift in Sources */,
+				EC5BC68A2F6DE3DF00A0659D /* PasswordValidatorView.swift in Sources */,
+				EC5BC6792F6DD13800A0659D /* User.swift in Sources */,
 				EC0E6ED92F6C4028007FEC71 /* OnboardingView.swift in Sources */,
+				EC5BC67B2F6DD1EF00A0659D /* Gender.swift in Sources */,
 				EC5442302F6C1FF100F4A871 /* OnboardingPageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -858,6 +953,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		EC5BC66A2F6DCE1400A0659D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.11.0;
+			};
+		};
 		ECB6C1CD2F68486C007B594E /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-spm";
@@ -869,6 +972,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		EC5BC66B2F6DCE1400A0659D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC5BC66A2F6DCE1400A0659D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		EC5BC66D2F6DCE1400A0659D /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC5BC66A2F6DCE1400A0659D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
 		ECB6C1CE2F68486C007B594E /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ECB6C1CD2F68486C007B594E /* XCRemoteSwiftPackageReference "lottie-spm" */;

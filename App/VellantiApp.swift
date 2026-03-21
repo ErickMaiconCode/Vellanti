@@ -4,6 +4,8 @@ import SwiftUI
 @main
 struct VellantiApp: App {
     
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     @State private var currentScreen: Screen = .loading
     private let container = DependencyContainer.shared
     
