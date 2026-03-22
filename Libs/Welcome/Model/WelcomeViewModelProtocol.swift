@@ -1,9 +1,7 @@
 import Foundation
 
 protocol WelcomeViewModelProtocol: ObservableObject {
-    var userName: String { get }
-    var greeting: String { get }
-    var isAuthenticated: Bool { get }
+    var title: String { get }
     
     func completeWelcome()
 }

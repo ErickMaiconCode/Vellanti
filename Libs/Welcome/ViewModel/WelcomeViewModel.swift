@@ -1,42 +1,38 @@
 import Foundation
-import SwiftUI
 import Combine
 
-@MainActor
 final class WelcomeViewModel: ObservableObject, WelcomeViewModelProtocol {
     
-    @Published private(set) var userName: String = ""
-    @Published private(set) var greeting: String = ""
-    @Published private(set) var isAuthenticated: Bool = false
+    // MARK: - Published Properties (Protocol Conformance)
+    @Published private(set) var title: String = ""
     
+    // MARK: - Private Properties
     var onComplete: (() -> Void)?
-    
     private let authState: AuthState
     private let onboardingRepository: OnboardingRepositoryProtocol
-    
+
+    // MARK: - Init
     init(
-        authState: AuthState = .shared,
+        authState: AuthState,
         onboardingRepository: OnboardingRepositoryProtocol
     ) {
         self.authState = authState
         self.onboardingRepository = onboardingRepository
         
-        setupUserData()
+        setupContent()
     }
     
-    private func setupUserData() {
-        isAuthenticated = authState.isAuthenticated
-        
-        if let user = authState.currentUser {
-            userName = user.formalGreeting
-            greeting = "Sua jornada de luxo começa agora"
+    // MARK: - Logic
+    private func setupContent() {
+        if authState.isAuthenticated {
+            // Lógica para Usuário Logado
+            title = "Sua coleção particular o aguarda, \(authState.formalGreeting)"
         } else {
-            userName = "Visitante"
-            greeting = "Explore nosso universo de elegância"
+            // Lógica para Visitante
+            title = "O verdadeiro luxo vive na sutileza.\nBem-vindo ao universo Vellanti."
         }
     }
-    
-    // MARK: - Actions
+
     func completeWelcome() {
         onboardingRepository.markWelcomeAsSeen()
         onComplete?()

@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 
+@MainActor
 final class WelcomeCoordinator {
     
     var onComplete: (() -> Void)?

@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Vellanti-2.svg",
+      "filename" : "Vellanti-4.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Vellanti-4 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Vellanti-4 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }

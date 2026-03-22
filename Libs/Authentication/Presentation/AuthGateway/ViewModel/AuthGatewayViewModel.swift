@@ -62,7 +62,7 @@ final class AuthGatewayViewModel : ObservableObject, AuthGatewayProtocol {
     
     func continueWithoutLogin() {
         stopAutoRotation()
-        onRegisterTapped?()
+        onContinueWithoutLogin?()
     }
     
     deinit {
