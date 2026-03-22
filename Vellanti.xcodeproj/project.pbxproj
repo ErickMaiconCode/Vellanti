@@ -44,6 +44,11 @@
 		EC5BC6A12F6F237E00A0659D /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6A02F6F237A00A0659D /* WelcomeViewModel.swift */; };
 		EC5BC6A32F6F256000A0659D /* WelcomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6A22F6F255C00A0659D /* WelcomeCoordinator.swift */; };
 		EC5BC6A52F6F294400A0659D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6A42F6F294200A0659D /* WelcomeView.swift */; };
+		EC5BC6A72F6F357400A0659D /* Loading_White.json in Resources */ = {isa = PBXBuildFile; fileRef = EC5BC6A62F6F357400A0659D /* Loading_White.json */; };
+		EC5BC6A92F6F35CD00A0659D /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6A82F6F35CA00A0659D /* AuthState.swift */; };
+		EC5BC6AE2F6F70AC00A0659D /* Loading_Black.json in Resources */ = {isa = PBXBuildFile; fileRef = EC5BC6AD2F6F70AC00A0659D /* Loading_Black.json */; };
+		EC5BC6B32F6F70F600A0659D /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6B22F6F70F100A0659D /* Loading.swift */; };
+		EC5BC6B62F6F71AB00A0659D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6B52F6F71A600A0659D /* LoadingView.swift */; };
 		EC92275E2F6D766A005AE80C /* AuthGatewayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC92275D2F6D7666005AE80C /* AuthGatewayView.swift */; };
 		ECAC48FB2F6881EF00A886BC /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC48FA2F6881EC00A886BC /* SplashViewModel.swift */; };
 		ECB6C1CF2F68486C007B594E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = ECB6C1CE2F68486C007B594E /* Lottie */; };
@@ -105,6 +110,11 @@
 		EC5BC6A02F6F237A00A0659D /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		EC5BC6A22F6F255C00A0659D /* WelcomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCoordinator.swift; sourceTree = "<group>"; };
 		EC5BC6A42F6F294200A0659D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		EC5BC6A62F6F357400A0659D /* Loading_White.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Loading_White.json; sourceTree = "<group>"; };
+		EC5BC6A82F6F35CA00A0659D /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
+		EC5BC6AD2F6F70AC00A0659D /* Loading_Black.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Loading_Black.json; sourceTree = "<group>"; };
+		EC5BC6B22F6F70F100A0659D /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
+		EC5BC6B52F6F71A600A0659D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		EC92275D2F6D7666005AE80C /* AuthGatewayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGatewayView.swift; sourceTree = "<group>"; };
 		ECAC48FA2F6881EC00A886BC /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		ECB6C1A32F6838F7007B594E /* Vellanti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vellanti.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +218,7 @@
 		EC0E6EF22F6C6642007FEC71 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				EC5BC6AF2F6F70D400A0659D /* Loading */,
 				EC445B152F6CACDC0012A1DA /* Vellanti_Icon.icon */,
 				EC0E6EC52F6C399D007FEC71 /* Assets.xcassets */,
 				EC54423E2F6C395C00F4A871 /* Video */,
@@ -395,9 +406,53 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		EC5BC6AA2F6F35D700A0659D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC6A82F6F35CA00A0659D /* AuthState.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		EC5BC6AF2F6F70D400A0659D /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC6B42F6F71A000A0659D /* View */,
+				EC5BC6B12F6F70ED00A0659D /* Models */,
+				EC5BC6B02F6F70DB00A0659D /* Assets */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		EC5BC6B02F6F70DB00A0659D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC6A62F6F357400A0659D /* Loading_White.json */,
+				EC5BC6AD2F6F70AC00A0659D /* Loading_Black.json */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		EC5BC6B12F6F70ED00A0659D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC6B22F6F70F100A0659D /* Loading.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EC5BC6B42F6F71A000A0659D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC6B52F6F71A600A0659D /* LoadingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EC92275B2F6D7628005AE80C /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				EC5BC6AA2F6F35D700A0659D /* Data */,
 				EC5BC6762F6DD0DF00A0659D /* Domain */,
 				EC92275F2F6D7752005AE80C /* Assets */,
 				EC92275C2F6D765F005AE80C /* Presentation */,
@@ -632,10 +687,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC5BC6A72F6F357400A0659D /* Loading_White.json in Resources */,
 				EC445B232F6CBD4D0012A1DA /* Onboarding_3.mp4 in Resources */,
 				EC0E6ECB2F6C399D007FEC71 /* Assets.xcassets in Resources */,
 				ECC857472F6B1A6000A61F22 /* Vellanti_Light.json in Resources */,
 				EC445B162F6CACDC0012A1DA /* Vellanti_Icon.icon in Resources */,
+				EC5BC6AE2F6F70AC00A0659D /* Loading_Black.json in Resources */,
 				EC54423D2F6C371500F4A871 /* Onboarding_1.mp4 in Resources */,
 				EC0E6EDB2F6C44E2007FEC71 /* Onboarding_2.mp4 in Resources */,
 			);
@@ -663,6 +720,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC5442342F6C2D2500F4A871 /* OnboardingRepository.swift in Sources */,
+				EC5BC6A92F6F35CD00A0659D /* AuthState.swift in Sources */,
 				EC0E6ED42F6C3A4C007FEC71 /* PlayerUIView.swift in Sources */,
 				EC5BC6882F6DE03600A0659D /* AnimatedSecureField.swift in Sources */,
 				ECB6C1E62F684EBB007B594E /* SplashView.swift in Sources */,
@@ -671,6 +729,7 @@
 				EC54422E2F6C1EB000F4A871 /* OnboardingProtocol.swift in Sources */,
 				EC92275E2F6D766A005AE80C /* AuthGatewayView.swift in Sources */,
 				EC5442382F6C2E2A00F4A871 /* OnboardingViewModel.swift in Sources */,
+				EC5BC6B62F6F71AB00A0659D /* LoadingView.swift in Sources */,
 				EC5BC6842F6DD57000A0659D /* CountryPickerView.swift in Sources */,
 				EC5442412F6C398400F4A871 /* VideoPlayerView.swift in Sources */,
 				EC0E6EEA2F6C5D99007FEC71 /* SplashProtocol.swift in Sources */,
@@ -680,6 +739,7 @@
 				EC5BC69F2F6F22FF00A0659D /* WelcomeViewModelProtocol.swift in Sources */,
 				EC5BC6862F6DD57B00A0659D /* PhoneFormatter.swift in Sources */,
 				ECAC48FB2F6881EF00A886BC /* SplashViewModel.swift in Sources */,
+				EC5BC6B32F6F70F600A0659D /* Loading.swift in Sources */,
 				EC0E6EEC2F6C5E62007FEC71 /* SplashCoordinator.swift in Sources */,
 				EC5BC6A52F6F294400A0659D /* WelcomeView.swift in Sources */,
 				EC0E6ED62F6C3E50007FEC71 /* OnboardingCoordinator.swift in Sources */,

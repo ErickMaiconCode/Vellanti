@@ -20,4 +20,11 @@ struct User : Identifiable, Codable {
     var fullName: String {
         "\(name) \(lastName)"
     }
+    
+    var formalGreeting: String {
+        if gender == .preferNotToSay || gender.title.isEmpty {
+            return fullName
+        }
+        return "\(gender.title) \(lastName)"
+    }
 }

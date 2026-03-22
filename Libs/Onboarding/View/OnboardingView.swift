@@ -1,4 +1,5 @@
 import SwiftUI
+import Lottie
 
 struct OnboardingView<ViewModel: OnboardingViewModelProtocol>: View {
     @StateObject var viewModel: ViewModel
@@ -69,22 +70,24 @@ struct OnboardingView<ViewModel: OnboardingViewModelProtocol>: View {
         Button(action: {
             viewModel.requestPermission()
         }) {
-            ZStack {
-                Text(viewModel.pages[viewModel.currentPage].buttonTitle)
-                    .font(.system(size: 17, weight: .semibold))
-                    .foregroundColor(.black)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 56)
-                    .background(Color.white)
-                    .cornerRadius(4)
-                    .opacity(viewModel.isLoading ? 0 : 1)
-                
-                if viewModel.isLoading {
-                    ProgressView()
-                        .tint(.black)
-                }
-            }
+            Text(viewModel.pages[viewModel.currentPage].buttonTitle)
+                .font(.system(size: 17, weight: .semibold))
+                .foregroundColor(.black)
+                .frame(maxWidth: .infinity)
+                .frame(height: 56)
+                .background(Color.white)
+                .cornerRadius(4)
         }
         .disabled(viewModel.isLoading)
+        .overlay {
+            if viewModel.isLoading {
+                Color.white // ✅ Fundo semi-transparente
+                    .cornerRadius(4)
+                
+                LottieView(animation: .named("Loading_Black"))
+                    .playing(loopMode: .loop)
+                    .frame(width: 50, height: 50)
+            }
+        }
     }
 }
