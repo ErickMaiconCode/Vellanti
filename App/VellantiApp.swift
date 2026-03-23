@@ -43,6 +43,9 @@ struct VellantiApp: App {
                          .onTapGesture {
                              appCoordinator.currentScreen = .loading
                         }
+                case .main:
+                    TabBarContainerView()
+                        .transition(.opacity)
                  }
              }
              .animation(.easeInOut(duration: 0.5), value: appCoordinator.currentScreen)

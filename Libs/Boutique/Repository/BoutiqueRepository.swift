@@ -1,0 +1,27 @@
+import Foundation
+
+final class BoutiqueRepository {
+    
+    static let shared = BoutiqueRepository()
+    private var cachedItems: [ClothingItem] = []
+    
+    func getClothingItems() async throws -> [ClothingItem] {
+        
+        if !cachedItems.isEmpty {
+            return cachedItems
+        }
+        
+        cachedItems = try await BoutiqueAPIService.shared.fetchClothingItems()
+        return cachedItems
+    }
+    
+    func getClothingItems(for category: Category) async throws -> [ClothingItem] {
+        let allItems = try await getClothingItems()
+        
+        let filtered = allItems.filter { item in
+            category.apiFilter.matches(item)
+        }
+        
+        return filtered
+    }
+}

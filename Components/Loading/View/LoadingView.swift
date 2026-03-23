@@ -51,8 +51,6 @@ struct LoadingView: View {
         }
     }
     
-    // MARK: - Full Screen
-    
     private var fullScreenLoading: some View {
         ZStack {
             backgroundColor
@@ -61,7 +59,7 @@ struct LoadingView: View {
             VStack(spacing: 24) {
                 LottieView(animation: .named(animationName))
                     .playing(loopMode: .loop)
-                    .frame(width: 200, height: 200)
+                    .frame(width: 100, height: 100)
                 
                 if let message = message {
                     Text(message)
@@ -71,8 +69,6 @@ struct LoadingView: View {
             }
         }
     }
-    
-    // MARK: - Overlay
     
     private var overlayLoading: some View {
         ZStack {
@@ -100,13 +96,11 @@ struct LoadingView: View {
             )
         }
     }
-    
-    // MARK: - Inline
-    
+
     private var inlineLoading: some View {
         Group {
             if message != nil {
-                // Com mensagem: usa HStack
+                
                 HStack(spacing: 12) {
                     LottieView(animation: .named(animationName))
                         .playing(loopMode: .loop)
@@ -117,16 +111,14 @@ struct LoadingView: View {
                         .foregroundColor(foregroundColor.opacity(0.8))
                 }
             } else {
-                // Sem mensagem: só o Lottie (para botões)
+
                 LottieView(animation: .named(animationName))
                     .playing(loopMode: .loop)
                     .frame(width: 50, height: 50)
             }
         }
-        .frame(minWidth: 50, minHeight: 50)  // ✅ Adicione isso
+        .frame(minWidth: 50, minHeight: 50)
     }
-    
-    // MARK: - Compact
     
     private var compactLoading: some View {
         LottieView(animation: .named(animationName))
@@ -134,8 +126,6 @@ struct LoadingView: View {
             .frame(width: 50, height: 50)
     }
 }
-
-// MARK: - View Modifier
 
 extension View {
     func loading(

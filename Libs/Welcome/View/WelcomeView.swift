@@ -5,22 +5,17 @@ import Combine
 struct WelcomeView<ViewModel: WelcomeViewModelProtocol>: View {
     
     @StateObject var viewModel: ViewModel
-    
-    // Estado para controlar a animação
     @State private var isVisible = false
-    
-    // Duração da leitura
+
     private let displayDuration: Double = 5
     
     var body: some View {
         ZStack {
-            // 1. BACKGROUND (Estático)
             Image("WelcomeTheVellanti")
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()
-            
-            // Gradiente para contraste
+
             LinearGradient(
                 colors: [
                     Color.black.opacity(0.2),
@@ -31,13 +26,11 @@ struct WelcomeView<ViewModel: WelcomeViewModelProtocol>: View {
                 endPoint: .bottom
             )
             .ignoresSafeArea()
-            
-            // 2. CONTEÚDO (Animado com Fade e Blur)
+
             VStack(spacing: 32) {
                 Spacer()
                 Spacer()
                 
-                // LOGO
                 Image("Vellanti_WhiteBackground")
                     .resizable()
                     .scaledToFit()
@@ -47,7 +40,6 @@ struct WelcomeView<ViewModel: WelcomeViewModelProtocol>: View {
                     .scaleEffect(isVisible ? 1 : 0.95)
                     .blur(radius: isVisible ? 0 : 5)
                 
-                // TEXTO
                 Text(viewModel.title)
                     .font(.system(size: 20, weight: .light))
                     .foregroundColor(.white.opacity(0.95))
@@ -94,9 +86,7 @@ struct WelcomeView<ViewModel: WelcomeViewModelProtocol>: View {
     }
 }
 
-// MARK: - Preview Support
 
-// 1. Criamos um Mock (Simulação) do ViewModel para não depender do AuthState real
 class MockWelcomeViewModel: WelcomeViewModelProtocol {
     var title: String
     
@@ -109,17 +99,14 @@ class MockWelcomeViewModel: WelcomeViewModelProtocol {
     }
 }
 
-// 2. Definimos o Preview Provider
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            // Cenário 1: Visitante (Texto Longo/Institucional)
             WelcomeView(viewModel: MockWelcomeViewModel(
                 title: "O verdadeiro luxo vive na sutileza.\nBem-vindo ao universo Vellanti."
             ))
             .previewDisplayName("Visitante (Texto Longo)")
             
-            // Cenário 2: Usuário Logado (Texto Curto/Pessoal)
             WelcomeView(viewModel: MockWelcomeViewModel(
                 title: "Sua coleção particular o aguarda, Sr. Ricardo."
             ))

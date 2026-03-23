@@ -12,20 +12,18 @@ class AppCoordinator: ObservableObject {
         case home
         case login
         case register
+        case main
     }
     
     @Published var currentScreen: Screen = .loading
     private let container = DependencyContainer.shared
     private var authCoordinator: AuthGatewayCoordinator?
+    private var welcomeCoordinator: WelcomeCoordinator?
     
     init() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.currentScreen = .splash
         }
-    }
-    
-    func showSplash() {
-        currentScreen = .splash
     }
     
     func didFinishSplash() {
@@ -47,10 +45,6 @@ class AppCoordinator: ObservableObject {
     
     func showRegister() {
         currentScreen = .register
-    }
-    
-    func showHome() {
-        currentScreen = .home
     }
     
     func showWelcome() {
@@ -84,8 +78,10 @@ class AppCoordinator: ObservableObject {
     
     func makeWelcomeView() -> some View {
         let coordinator = container.makeWelcomeCoordinator()
+        self.welcomeCoordinator = coordinator
+        
         coordinator.onComplete = { [weak self] in
-            self?.showHome()
+            self?.currentScreen = .main
         }
         return coordinator.makeWelcomeView()
     }

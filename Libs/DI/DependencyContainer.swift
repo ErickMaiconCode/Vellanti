@@ -8,6 +8,8 @@ final class DependencyContainer {
     
     // MARK: - Services
     
+    lazy var authState: AuthState = AuthState.shared
+    
     lazy var permissionService: PermissionServiceProtocol = {
         return PermissionService()
     }()
@@ -46,6 +48,6 @@ final class DependencyContainer {
     }
     
     func makeWelcomeCoordinator() -> WelcomeCoordinator {
-        WelcomeCoordinator()
+        return WelcomeCoordinator()
     }
 }

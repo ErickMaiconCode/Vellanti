@@ -3,15 +3,13 @@ import Combine
 
 final class WelcomeViewModel: ObservableObject, WelcomeViewModelProtocol {
     
-    // MARK: - Published Properties (Protocol Conformance)
     @Published private(set) var title: String = ""
-    
-    // MARK: - Private Properties
+    @Published var isAnimating = false
+
     var onComplete: (() -> Void)?
     private let authState: AuthState
     private let onboardingRepository: OnboardingRepositoryProtocol
 
-    // MARK: - Init
     init(
         authState: AuthState,
         onboardingRepository: OnboardingRepositoryProtocol
@@ -22,7 +20,6 @@ final class WelcomeViewModel: ObservableObject, WelcomeViewModelProtocol {
         setupContent()
     }
     
-    // MARK: - Logic
     private func setupContent() {
         if authState.isAuthenticated {
             // Lógica para Usuário Logado
@@ -32,7 +29,7 @@ final class WelcomeViewModel: ObservableObject, WelcomeViewModelProtocol {
             title = "O verdadeiro luxo vive na sutileza.\nBem-vindo ao universo Vellanti."
         }
     }
-
+    
     func completeWelcome() {
         onboardingRepository.markWelcomeAsSeen()
         onComplete?()
