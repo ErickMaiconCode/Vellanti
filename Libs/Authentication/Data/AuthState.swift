@@ -8,58 +8,105 @@ final class AuthState: ObservableObject {
     
     @Published private(set) var isAuthenticated: Bool = false
     @Published private(set) var currentUser: User?
-
-    private enum Keys {
-        static let currentUserId = "currentUserId"
-    }
+    @Published var isLoading: Bool = false
+    @Published var error: ErrorType?
     
-    private let userDefaults: UserDefaults
+    private let firebaseService = FirebaseAuthService.shared
+    private let coreDataService = CoreDataSyncService.shared
     
-    private init(userDefaults: UserDefaults = .standard) {
-        self.userDefaults = userDefaults
- 
+    private init() {
         restoreSession()
     }
-    
-    func login(user: User) {
-        self.currentUser = user
-        self.isAuthenticated = true
-        
-        userDefaults.set(user.id, forKey: Keys.currentUserId)
-    }
 
+    func login(email: String, password: String) async throws {
+        isLoading = true
+        error = nil
+        defer { isLoading = false }
+        
+        do {
+            let user = try await firebaseService.login(email: email, password: password)
+            self.currentUser = user
+            self.isAuthenticated = true
+            
+            await coreDataService.syncUserData(userId: user.id)
+            
+        } catch let authError as AuthError {
+            
+            let errorType = authError.toErrorType()
+            self.error = errorType
+            throw authError
+            
+        } catch {
+            
+            let errorType = ErrorType.authGeneric("Erro ao fazer login")
+            self.error = errorType
+            throw error
+        }
+    }
+    
+    func register(data: RegisterData) async throws {
+        isLoading = true
+        error = nil
+        defer { isLoading = false }
+        
+        do {
+            let user = try await firebaseService.register(data: data)
+            self.currentUser = user
+            self.isAuthenticated = true
+            
+            await coreDataService.syncUserData(userId: user.id)
+            
+        } catch let authError as AuthError {
+            
+            let errorType = authError.toErrorType()
+            self.error = errorType
+            throw authError
+            
+        } catch {
+            
+            let errorType = ErrorType.authGeneric("Erro ao criar conta")
+            self.error = errorType
+            throw error
+        }
+    }
+    
     func logout() {
-        self.currentUser = nil
-        self.isAuthenticated = false
-        userDefaults.removeObject(forKey: Keys.currentUserId)
+        do {
+            try firebaseService.logout()
+            coreDataService.clearLocalData()
+            
+            self.currentUser = nil
+            self.isAuthenticated = false
+            self.error = nil
+        } catch {
+            print("Logou error: \(error)")
+        }
     }
 
     func updateUser(_ user: User) {
-        guard isAuthenticated else {
-            return
-        }
-        
+        guard isAuthenticated else { return }
         self.currentUser = user
     }
 
     private func restoreSession() {
-        guard let userId = userDefaults.string(forKey: Keys.currentUserId) else {
-            return
+        guard let userId = firebaseService.currrentUserId else { return }
+        
+        isLoading = true
+        
+        Task {
+            do {
+                let user = try await firebaseService.fetchUser(userId: userId)
+                self.currentUser = user
+                self.isAuthenticated = true
+                
+                await coreDataService.syncUserData(userId: userId)
+                
+            } catch {
+                try? firebaseService.logout()
+            }
+            
+            isLoading = false
         }
-        
-        // TODO: Buscar usuário do Firebase/Firestore usando o userId
-        print("🔐 AuthState: Found saved userId: \(userId) - TODO: Restore from Firebase")
-        
-        // Quando implementar Firebase:
-        // Task {
-        //     do {
-        //         let user = try await firebaseService.fetchUser(userId: userId)
-        //         login(user: user)
-        //     } catch {
-        //         print("🔐 AuthState: Failed to restore session - \(error)")
-        //         userDefaults.removeObject(forKey: Keys.currentUserId)
-        //     }
-        // }
     }
     
     var currentUserId: String? {

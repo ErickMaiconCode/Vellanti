@@ -85,4 +85,12 @@ class AppCoordinator: ObservableObject {
         }
         return coordinator.makeWelcomeView()
     }
+    
+
+    func makeMainView() -> some View {
+        return TabBarContainerView()
+            .environmentObject(container.cartViewModel)
+            .environmentObject(container.orderViewModel)
+            .environmentObject(container.wishlistViewModel)
+    }
 }

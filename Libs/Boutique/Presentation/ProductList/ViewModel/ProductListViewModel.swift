@@ -30,13 +30,13 @@ final class ProductListViewModel: ObservableObject {
                 clothingItems = try await repository.getClothingItems(for: category)
                 
                 if clothingItems.isEmpty {
-                    errorType = .emptyData("Nenhum produto encontrado nesta categoria")
+                    errorType = .emptyData("Nossa curadoria para esta seção está sendo finalizada.")
                 }
                 
             } catch let error as NetworkError {
                 errorType = ErrorType(from: error)
             } catch {
-                errorType = .generic("Erro ao carregar produtos")
+                errorType = .generic("Algo inesperado ocorreu. Estamos trabalhando para restaurar sua experiência")
             }
             
             isLoading = false

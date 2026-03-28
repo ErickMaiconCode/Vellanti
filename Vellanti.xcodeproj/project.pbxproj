@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC0C513E2F71F84900D2796C /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0C513D2F71F84100D2796C /* ProductDetailView.swift */; };
 		EC0E6ECB2F6C399D007FEC71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC0E6EC52F6C399D007FEC71 /* Assets.xcassets */; };
 		EC0E6ED42F6C3A4C007FEC71 /* PlayerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0E6ED32F6C3A47007FEC71 /* PlayerUIView.swift */; };
 		EC0E6ED62F6C3E50007FEC71 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0E6ED52F6C3E4C007FEC71 /* OnboardingCoordinator.swift */; };
@@ -70,11 +71,79 @@
 		EC5BC6FE2F70A80400A0659D /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6FD2F70A7FF00A0659D /* CategoryViewModel.swift */; };
 		EC5BC7022F70D4D900A0659D /* ContactOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC7012F70D4D100A0659D /* ContactOption.swift */; };
 		EC5BC7042F70D4E100A0659D /* ContactSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC7032F70D4DE00A0659D /* ContactSheet.swift */; };
+		EC5BC7072F7163FD00A0659D /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC7062F7163F900A0659D /* CustomNavigationBar.swift */; };
+		EC5BC70A2F7182CF00A0659D /* Runway_Masc.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EC5BC7092F7182CF00A0659D /* Runway_Masc.mp4 */; };
+		EC5BC70C2F71852900A0659D /* Runway_Fem.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EC5BC70B2F71852900A0659D /* Runway_Fem.mp4 */; };
+		EC7462352F732C8C00E34EDB /* VellantiDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC7462332F732C8C00E34EDB /* VellantiDataModel.xcdatamodeld */; };
+		EC7462382F732D3700E34EDB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7462372F732D2F00E34EDB /* CoreDataManager.swift */; };
+		EC74623E2F732ECD00E34EDB /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74623D2F732EC900E34EDB /* CartViewModel.swift */; };
+		EC7462402F73319700E34EDB /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74623F2F73319500E34EDB /* CartView.swift */; };
+		EC7462482F73480500E34EDB /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7462472F7347F900E34EDB /* PaymentMethod.swift */; };
+		EC74624A2F73487C00E34EDB /* CheckoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7462492F73487700E34EDB /* CheckoutViewModel.swift */; };
+		EC74624C2F73496A00E34EDB /* CheckoutFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74624B2F73496300E34EDB /* CheckoutFormView.swift */; };
+		EC74624E2F734B3700E34EDB /* CheckoutReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74624D2F734B3000E34EDB /* CheckoutReviewView.swift */; };
+		EC7462502F7361EA00E34EDB /* SucessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74624F2F7361E600E34EDB /* SucessView.swift */; };
+		EC7462522F7364BB00E34EDB /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7462512F7364B700E34EDB /* OrderViewModel.swift */; };
+		EC7462542F7405A000E34EDB /* OrderEntity + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7462532F74059500E34EDB /* OrderEntity + Extensions.swift */; };
+		EC7462562F7407CF00E34EDB /* OrderCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7462552F7407C700E34EDB /* OrderCard.swift */; };
+		EC7462582F740F5300E34EDB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7462572F740F5000E34EDB /* Extensions.swift */; };
+		EC74625B2F7410AF00E34EDB /* DeliveryProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74625A2F7410AF00E34EDB /* DeliveryProgressBar.swift */; };
+		EC74625E2F74134C00E34EDB /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74625D2F74134800E34EDB /* ProfileCoordinator.swift */; };
+		EC7462612F741C5E00E34EDB /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7462602F741C5B00E34EDB /* OrderListView.swift */; };
+		EC7462632F74210700E34EDB /* OrderDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7462622F74210100E34EDB /* OrderDetailsView.swift */; };
+		EC7462662F7423F500E34EDB /* InfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7462652F7423F200E34EDB /* InfoRow.swift */; };
+		EC7462682F74241200E34EDB /* OrderItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7462672F74240600E34EDB /* OrderItemRow.swift */; };
+		EC74626B2F74494A00E34EDB /* WishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74626A2F74494200E34EDB /* WishlistViewModel.swift */; };
+		EC74626D2F744DA100E34EDB /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74626C2F744D9B00E34EDB /* WishlistView.swift */; };
+		EC74626F2F7460C400E34EDB /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74626E2F7460BD00E34EDB /* View+Extensions.swift */; };
+		EC7462722F74740600E34EDB /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7462712F74740100E34EDB /* Empty.swift */; };
+		EC7462742F74756B00E34EDB /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7462732F74756600E34EDB /* EmptyStateView.swift */; };
+		EC7462872F758EEA00E34EDB /* RunwayShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7462862F758EDD00E34EDB /* RunwayShow.swift */; };
+		EC7462892F758FBA00E34EDB /* RunwayMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7462882F758FAF00E34EDB /* RunwayMockData.swift */; };
+		EC74628B2F75924D00E34EDB /* RunwayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74628A2F75924700E34EDB /* RunwayDetailView.swift */; };
+		EC74628D2F75953300E34EDB /* TextSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74628C2F75952D00E34EDB /* TextSectionView.swift */; };
+		EC74628F2F7595D100E34EDB /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74628E2F7595CE00E34EDB /* ImageView.swift */; };
+		EC7462912F75964E00E34EDB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7462902F75964C00E34EDB /* HomeView.swift */; };
+		EC7462932F759CD500E34EDB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7462922F759CD200E34EDB /* HomeViewModel.swift */; };
+		EC74629A2F75B7E400E34EDB /* Dolce_&_Gabbana.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EC7462992F75B7E400E34EDB /* Dolce_&_Gabbana.mp4 */; };
+		EC74629C2F75B9CD00E34EDB /* Chanel_Haute_Couture.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EC74629B2F75B9CD00E34EDB /* Chanel_Haute_Couture.mp4 */; };
+		EC74629E2F75C23600E34EDB /* Gucci_Runway.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EC74629D2F75C23600E34EDB /* Gucci_Runway.mp4 */; };
+		EC7462A02F75C27200E34EDB /* Louis_Vuitton_Men.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EC74629F2F75C27200E34EDB /* Louis_Vuitton_Men.mp4 */; };
+		EC7462DC2F75D4CF00E34EDB /* Louis_Vuitton_Middle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC7462CB2F75D4CF00E34EDB /* Louis_Vuitton_Middle.jpg */; };
+		EC7462DE2F75D4CF00E34EDB /* Valentino_Footer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC7462DA2F75D4CF00E34EDB /* Valentino_Footer.jpg */; };
+		EC7462DF2F75D4CF00E34EDB /* Dolce_&_Gabanna_Home.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC7462D02F75D4CF00E34EDB /* Dolce_&_Gabanna_Home.jpg */; };
+		EC7462E12F75D4CF00E34EDB /* Louis_Vuitton_Footer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC7462D82F75D4CF00E34EDB /* Louis_Vuitton_Footer.jpg */; };
+		EC7462E22F75D4CF00E34EDB /* Valentino_Middle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC7462D32F75D4CF00E34EDB /* Valentino_Middle.jpg */; };
+		EC7462E32F75D4CF00E34EDB /* Gucci_Home.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC7462CC2F75D4CF00E34EDB /* Gucci_Home.jpg */; };
+		EC7462E42F75D4CF00E34EDB /* Gucci_Middle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC7462CF2F75D4CF00E34EDB /* Gucci_Middle.jpg */; };
+		EC7462E52F75D4CF00E34EDB /* Chanel_Home.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC7462D42F75D4CF00E34EDB /* Chanel_Home.jpg */; };
+		EC7462E72F75D4CF00E34EDB /* Valentino_Home.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC7462CE2F75D4CF00E34EDB /* Valentino_Home.jpg */; };
+		EC7462E82F75D4CF00E34EDB /* Gucci_Footer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC7462D92F75D4CF00E34EDB /* Gucci_Footer.jpg */; };
+		EC7462E92F75D4CF00E34EDB /* Chanel_Middle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC7462DB2F75D4CF00E34EDB /* Chanel_Middle.jpg */; };
+		EC7462EA2F75D4CF00E34EDB /* Doce_&_Gabanna_Middle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC7462CD2F75D4CF00E34EDB /* Doce_&_Gabanna_Middle.jpg */; };
+		EC7462EB2F75D4CF00E34EDB /* Louis_Vuitton_Home.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC7462D72F75D4CF00E34EDB /* Louis_Vuitton_Home.jpg */; };
+		EC7462EC2F75D4CF00E34EDB /* Chanel_Footer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC7462D52F75D4CF00E34EDB /* Chanel_Footer.jpg */; };
+		EC7462ED2F75D4CF00E34EDB /* Dolce_&_Gabanna_Footer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC7462D62F75D4CF00E34EDB /* Dolce_&_Gabanna_Footer.jpg */; };
+		EC7462EF2F762A0600E34EDB /* Valentino_Show.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EC7462EE2F762A0600E34EDB /* Valentino_Show.mp4 */; };
+		EC7462F22F76A7D800E34EDB /* BrandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7462F12F76A7D100E34EDB /* BrandView.swift */; };
 		EC92275E2F6D766A005AE80C /* AuthGatewayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC92275D2F6D7666005AE80C /* AuthGatewayView.swift */; };
 		ECAC48FB2F6881EF00A886BC /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC48FA2F6881EC00A886BC /* SplashViewModel.swift */; };
 		ECB6C1CF2F68486C007B594E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = ECB6C1CE2F68486C007B594E /* Lottie */; };
 		ECB6C1E62F684EBB007B594E /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB6C1E52F684EB7007B594E /* SplashView.swift */; };
+		ECC10B5D2F76AC5800EE38DA /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC10B5C2F76AC5500EE38DA /* Brand.swift */; };
+		ECC10B5F2F76B23A00EE38DA /* BrandMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC10B5E2F76B23600EE38DA /* BrandMockData.swift */; };
+		ECC10B632F76F97000EE38DA /* CategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC10B622F76F96A00EE38DA /* CategoryCard.swift */; };
+		ECC10B652F76FA3800EE38DA /* CategoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC10B642F76FA2A00EE38DA /* CategoryCardView.swift */; };
+		ECC10B682F77631600EE38DA /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC10B672F77631200EE38DA /* FirebaseAuthService.swift */; };
+		ECC10B6B2F77649A00EE38DA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ECC10B6A2F77649A00EE38DA /* FirebaseAuth */; };
+		ECC10B6D2F7764CC00EE38DA /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = ECC10B6C2F7764CC00EE38DA /* FirebaseFirestoreCombine-Community */; };
+		ECC10B702F77658900EE38DA /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC10B6F2F77658700EE38DA /* AuthError.swift */; };
+		ECC10B732F776FB300EE38DA /* CoreDataSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC10B722F776FAC00EE38DA /* CoreDataSyncService.swift */; };
 		ECC857472F6B1A6000A61F22 /* Vellanti_Light.json in Resources */ = {isa = PBXBuildFile; fileRef = ECC857462F6B1A6000A61F22 /* Vellanti_Light.json */; };
+		ECF6ADB22F72BD7B0071BBCE /* ProfileList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF6ADB12F72BD730071BBCE /* ProfileList.swift */; };
+		ECF6ADB62F72C2A70071BBCE /* ProfileListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF6ADB52F72C2A00071BBCE /* ProfileListView.swift */; };
+		ECF6ADB82F72D5830071BBCE /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF6ADB72F72D57E0071BBCE /* ColorHelper.swift */; };
+		ECF6ADBA2F72D9B60071BBCE /* ColorSwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF6ADB92F72D9B30071BBCE /* ColorSwatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +165,7 @@
 
 /* Begin PBXFileReference section */
 		EC06DDFA2F688AC5001C571D /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		EC0C513D2F71F84100D2796C /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		EC0E6EC52F6C399D007FEC71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC0E6ED32F6C3A47007FEC71 /* PlayerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerUIView.swift; sourceTree = "<group>"; };
 		EC0E6ED52F6C3E4C007FEC71 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
@@ -157,13 +227,79 @@
 		EC5BC6FD2F70A7FF00A0659D /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		EC5BC7012F70D4D100A0659D /* ContactOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOption.swift; sourceTree = "<group>"; };
 		EC5BC7032F70D4DE00A0659D /* ContactSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSheet.swift; sourceTree = "<group>"; };
+		EC5BC7062F7163F900A0659D /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		EC5BC7092F7182CF00A0659D /* Runway_Masc.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Runway_Masc.mp4; sourceTree = "<group>"; };
+		EC5BC70B2F71852900A0659D /* Runway_Fem.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Runway_Fem.mp4; sourceTree = "<group>"; };
+		EC7462342F732C8C00E34EDB /* VellantiDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VellantiDataModel.xcdatamodel; sourceTree = "<group>"; };
+		EC7462372F732D2F00E34EDB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		EC74623D2F732EC900E34EDB /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		EC74623F2F73319500E34EDB /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		EC7462472F7347F900E34EDB /* PaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
+		EC7462492F73487700E34EDB /* CheckoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewModel.swift; sourceTree = "<group>"; };
+		EC74624B2F73496300E34EDB /* CheckoutFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutFormView.swift; sourceTree = "<group>"; };
+		EC74624D2F734B3000E34EDB /* CheckoutReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutReviewView.swift; sourceTree = "<group>"; };
+		EC74624F2F7361E600E34EDB /* SucessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SucessView.swift; sourceTree = "<group>"; };
+		EC7462512F7364B700E34EDB /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		EC7462532F74059500E34EDB /* OrderEntity + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderEntity + Extensions.swift"; sourceTree = "<group>"; };
+		EC7462552F7407C700E34EDB /* OrderCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCard.swift; sourceTree = "<group>"; };
+		EC7462572F740F5000E34EDB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EC74625A2F7410AF00E34EDB /* DeliveryProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryProgressBar.swift; sourceTree = "<group>"; };
+		EC74625D2F74134800E34EDB /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		EC7462602F741C5B00E34EDB /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
+		EC7462622F74210100E34EDB /* OrderDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsView.swift; sourceTree = "<group>"; };
+		EC7462652F7423F200E34EDB /* InfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRow.swift; sourceTree = "<group>"; };
+		EC7462672F74240600E34EDB /* OrderItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemRow.swift; sourceTree = "<group>"; };
+		EC74626A2F74494200E34EDB /* WishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewModel.swift; sourceTree = "<group>"; };
+		EC74626C2F744D9B00E34EDB /* WishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
+		EC74626E2F7460BD00E34EDB /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		EC7462712F74740100E34EDB /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
+		EC7462732F74756600E34EDB /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		EC7462862F758EDD00E34EDB /* RunwayShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunwayShow.swift; sourceTree = "<group>"; };
+		EC7462882F758FAF00E34EDB /* RunwayMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunwayMockData.swift; sourceTree = "<group>"; };
+		EC74628A2F75924700E34EDB /* RunwayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunwayDetailView.swift; sourceTree = "<group>"; };
+		EC74628C2F75952D00E34EDB /* TextSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSectionView.swift; sourceTree = "<group>"; };
+		EC74628E2F7595CE00E34EDB /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		EC7462902F75964C00E34EDB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EC7462922F759CD200E34EDB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		EC7462992F75B7E400E34EDB /* Dolce_&_Gabbana.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dolce_&_Gabbana.mp4"; sourceTree = "<group>"; };
+		EC74629B2F75B9CD00E34EDB /* Chanel_Haute_Couture.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chanel_Haute_Couture.mp4; sourceTree = "<group>"; };
+		EC74629D2F75C23600E34EDB /* Gucci_Runway.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gucci_Runway.mp4; sourceTree = "<group>"; };
+		EC74629F2F75C27200E34EDB /* Louis_Vuitton_Men.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Louis_Vuitton_Men.mp4; sourceTree = "<group>"; };
+		EC7462CB2F75D4CF00E34EDB /* Louis_Vuitton_Middle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Louis_Vuitton_Middle.jpg; sourceTree = "<group>"; };
+		EC7462CC2F75D4CF00E34EDB /* Gucci_Home.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Gucci_Home.jpg; sourceTree = "<group>"; };
+		EC7462CD2F75D4CF00E34EDB /* Doce_&_Gabanna_Middle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Doce_&_Gabanna_Middle.jpg"; sourceTree = "<group>"; };
+		EC7462CE2F75D4CF00E34EDB /* Valentino_Home.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Valentino_Home.jpg; sourceTree = "<group>"; };
+		EC7462CF2F75D4CF00E34EDB /* Gucci_Middle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Gucci_Middle.jpg; sourceTree = "<group>"; };
+		EC7462D02F75D4CF00E34EDB /* Dolce_&_Gabanna_Home.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dolce_&_Gabanna_Home.jpg"; sourceTree = "<group>"; };
+		EC7462D32F75D4CF00E34EDB /* Valentino_Middle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Valentino_Middle.jpg; sourceTree = "<group>"; };
+		EC7462D42F75D4CF00E34EDB /* Chanel_Home.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Chanel_Home.jpg; sourceTree = "<group>"; };
+		EC7462D52F75D4CF00E34EDB /* Chanel_Footer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Chanel_Footer.jpg; sourceTree = "<group>"; };
+		EC7462D62F75D4CF00E34EDB /* Dolce_&_Gabanna_Footer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dolce_&_Gabanna_Footer.jpg"; sourceTree = "<group>"; };
+		EC7462D72F75D4CF00E34EDB /* Louis_Vuitton_Home.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Louis_Vuitton_Home.jpg; sourceTree = "<group>"; };
+		EC7462D82F75D4CF00E34EDB /* Louis_Vuitton_Footer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Louis_Vuitton_Footer.jpg; sourceTree = "<group>"; };
+		EC7462D92F75D4CF00E34EDB /* Gucci_Footer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Gucci_Footer.jpg; sourceTree = "<group>"; };
+		EC7462DA2F75D4CF00E34EDB /* Valentino_Footer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Valentino_Footer.jpg; sourceTree = "<group>"; };
+		EC7462DB2F75D4CF00E34EDB /* Chanel_Middle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Chanel_Middle.jpg; sourceTree = "<group>"; };
+		EC7462EE2F762A0600E34EDB /* Valentino_Show.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Valentino_Show.mp4; sourceTree = "<group>"; };
+		EC7462F12F76A7D100E34EDB /* BrandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandView.swift; sourceTree = "<group>"; };
 		EC92275D2F6D7666005AE80C /* AuthGatewayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGatewayView.swift; sourceTree = "<group>"; };
 		ECAC48FA2F6881EC00A886BC /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		ECB6C1A32F6838F7007B594E /* Vellanti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vellanti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB6C1B02F6838FC007B594E /* VellantiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VellantiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB6C1BA2F6838FC007B594E /* VellantiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VellantiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB6C1E52F684EB7007B594E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		ECC10B5C2F76AC5500EE38DA /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
+		ECC10B5E2F76B23600EE38DA /* BrandMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandMockData.swift; sourceTree = "<group>"; };
+		ECC10B622F76F96A00EE38DA /* CategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCard.swift; sourceTree = "<group>"; };
+		ECC10B642F76FA2A00EE38DA /* CategoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCardView.swift; sourceTree = "<group>"; };
+		ECC10B672F77631200EE38DA /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		ECC10B6F2F77658700EE38DA /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
+		ECC10B722F776FAC00EE38DA /* CoreDataSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSyncService.swift; sourceTree = "<group>"; };
 		ECC857462F6B1A6000A61F22 /* Vellanti_Light.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Vellanti_Light.json; sourceTree = "<group>"; };
+		ECF6ADB12F72BD730071BBCE /* ProfileList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileList.swift; sourceTree = "<group>"; };
+		ECF6ADB52F72C2A00071BBCE /* ProfileListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListView.swift; sourceTree = "<group>"; };
+		ECF6ADB72F72D57E0071BBCE /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
+		ECF6ADB92F72D9B30071BBCE /* ColorSwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSwatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -185,16 +321,6 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		ECB6C1B32F6838FC007B594E /* VellantiTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = VellantiTests;
-			sourceTree = "<group>";
-		};
-		ECB6C1BD2F6838FC007B594E /* VellantiUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = VellantiUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +331,8 @@
 				EC5BC66C2F6DCE1400A0659D /* FirebaseAnalytics in Frameworks */,
 				ECB6C1CF2F68486C007B594E /* Lottie in Frameworks */,
 				EC5BC66E2F6DCE1400A0659D /* FirebaseFirestore in Frameworks */,
+				ECC10B6D2F7764CC00EE38DA /* FirebaseFirestoreCombine-Community in Frameworks */,
+				ECC10B6B2F77649A00EE38DA /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +388,9 @@
 		EC0E6EF22F6C6642007FEC71 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				EC7462702F7473C900E34EDB /* Empty */,
+				EC7462592F7410A600E34EDB /* DeliveryProgressBar */,
+				EC5BC7052F7163E900A0659D /* CustomNavigationBar */,
 				EC5BC6DD2F70812100A0659D /* Error */,
 				EC5BC6AF2F6F70D400A0659D /* Loading */,
 				EC445B152F6CACDC0012A1DA /* Vellanti_Icon.icon */,
@@ -273,6 +404,8 @@
 		EC5442242F6B67F000F4A871 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				ECC10B662F77630A00EE38DA /* Firebase */,
+				EC7462362F732D2100E34EDB /* CoreData */,
 				EC5BC6CE2F70753C00A0659D /* Network */,
 				EC5442312F6C2AE700F4A871 /* PermissionService.swift */,
 			);
@@ -523,6 +656,7 @@
 		EC5BC6BA2F706C2F00A0659D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				EC74626E2F7460BD00E34EDB /* View+Extensions.swift */,
 				EC5BC6F92F70996000A0659D /* TabBarViewModel.swift */,
 			);
 			path = ViewModel;
@@ -531,6 +665,8 @@
 		EC5BC6BB2F706C3C00A0659D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				EC7462942F75A36C00E34EDB /* Assets */,
+				EC74627F2F7574F600E34EDB /* Components */,
 				EC5BC6BE2F706C4B00A0659D /* Model */,
 				EC5BC6BD2F706C4500A0659D /* ViewModel */,
 				EC5BC6BC2F706C4000A0659D /* View */,
@@ -541,6 +677,9 @@
 		EC5BC6BC2F706C4000A0659D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ECC10B642F76FA2A00EE38DA /* CategoryCardView.swift */,
+				EC7462902F75964C00E34EDB /* HomeView.swift */,
+				EC74628A2F75924700E34EDB /* RunwayDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -548,6 +687,7 @@
 		EC5BC6BD2F706C4500A0659D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				EC7462922F759CD200E34EDB /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -555,6 +695,9 @@
 		EC5BC6BE2F706C4B00A0659D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ECC10B622F76F96A00EE38DA /* CategoryCard.swift */,
+				EC7462882F758FAF00E34EDB /* RunwayMockData.swift */,
+				EC7462862F758EDD00E34EDB /* RunwayShow.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -591,6 +734,8 @@
 		EC5BC6C22F706C7900A0659D /* BrandStory */ = {
 			isa = PBXGroup;
 			children = (
+				ECC10B5B2F76AC4C00EE38DA /* Model */,
+				EC7462F02F76A7CB00E34EDB /* View */,
 			);
 			path = BrandStory;
 			sourceTree = "<group>";
@@ -598,6 +743,9 @@
 		EC5BC6C32F706C8200A0659D /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				EC74625C2F74133900E34EDB /* ViewModel */,
+				ECF6ADB32F72C05D0071BBCE /* View */,
+				ECF6ADB02F72BD5A0071BBCE /* Model */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -667,6 +815,7 @@
 		EC5BC6E42F70852800A0659D /* ProductList */ = {
 			isa = PBXGroup;
 			children = (
+				EC5BC7082F7182C400A0659D /* Assets */,
 				EC5BC6EC2F7087D100A0659D /* Components */,
 				EC5BC6E72F70853B00A0659D /* Model */,
 				EC5BC6E62F70853300A0659D /* ViewModel */,
@@ -678,6 +827,7 @@
 		EC5BC6E52F70852E00A0659D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EC0C513D2F71F84100D2796C /* ProductDetailView.swift */,
 				EC5BC6EA2F70863500A0659D /* ProductListView.swift */,
 			);
 			path = View;
@@ -694,6 +844,8 @@
 		EC5BC6E72F70853B00A0659D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ECF6ADB92F72D9B30071BBCE /* ColorSwatch.swift */,
+				ECF6ADB72F72D57E0071BBCE /* ColorHelper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -737,6 +889,252 @@
 				EC5BC7012F70D4D100A0659D /* ContactOption.swift */,
 			);
 			path = Contact;
+			sourceTree = "<group>";
+		};
+		EC5BC7052F7163E900A0659D /* CustomNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC7062F7163F900A0659D /* CustomNavigationBar.swift */,
+			);
+			path = CustomNavigationBar;
+			sourceTree = "<group>";
+		};
+		EC5BC7082F7182C400A0659D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BC7092F7182CF00A0659D /* Runway_Masc.mp4 */,
+				EC5BC70B2F71852900A0659D /* Runway_Fem.mp4 */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		EC7462362F732D2100E34EDB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				ECC10B722F776FAC00EE38DA /* CoreDataSyncService.swift */,
+				EC7462372F732D2F00E34EDB /* CoreDataManager.swift */,
+				EC7462332F732C8C00E34EDB /* VellantiDataModel.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		EC7462392F732EA500E34EDB /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				EC74623C2F732EBD00E34EDB /* View */,
+				EC74623B2F732EB200E34EDB /* ViewModel */,
+				EC74623A2F732EAD00E34EDB /* Model */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		EC74623A2F732EAD00E34EDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EC74623B2F732EB200E34EDB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EC74623D2F732EC900E34EDB /* CartViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EC74623C2F732EBD00E34EDB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC74623F2F73319500E34EDB /* CartView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC7462412F7346A000E34EDB /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				EC7462462F7347EF00E34EDB /* ViewModel */,
+				EC7462452F7347E900E34EDB /* Model */,
+				EC7462422F7346A700E34EDB /* View */,
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
+		EC7462422F7346A700E34EDB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC7462642F7423EE00E34EDB /* Components */,
+				EC7462622F74210100E34EDB /* OrderDetailsView.swift */,
+				EC7462602F741C5B00E34EDB /* OrderListView.swift */,
+				EC7462552F7407C700E34EDB /* OrderCard.swift */,
+				EC74624F2F7361E600E34EDB /* SucessView.swift */,
+				EC74624D2F734B3000E34EDB /* CheckoutReviewView.swift */,
+				EC74624B2F73496300E34EDB /* CheckoutFormView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC7462452F7347E900E34EDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC7462572F740F5000E34EDB /* Extensions.swift */,
+				EC7462472F7347F900E34EDB /* PaymentMethod.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EC7462462F7347EF00E34EDB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EC7462532F74059500E34EDB /* OrderEntity + Extensions.swift */,
+				EC7462512F7364B700E34EDB /* OrderViewModel.swift */,
+				EC7462492F73487700E34EDB /* CheckoutViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EC7462592F7410A600E34EDB /* DeliveryProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				EC74625A2F7410AF00E34EDB /* DeliveryProgressBar.swift */,
+			);
+			path = DeliveryProgressBar;
+			sourceTree = "<group>";
+		};
+		EC74625C2F74133900E34EDB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EC74625D2F74134800E34EDB /* ProfileCoordinator.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EC7462642F7423EE00E34EDB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EC7462672F74240600E34EDB /* OrderItemRow.swift */,
+				EC7462652F7423F200E34EDB /* InfoRow.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EC7462692F74484E00E34EDB /* Wishlist */ = {
+			isa = PBXGroup;
+			children = (
+				EC74626C2F744D9B00E34EDB /* WishlistView.swift */,
+				EC74626A2F74494200E34EDB /* WishlistViewModel.swift */,
+			);
+			path = Wishlist;
+			sourceTree = "<group>";
+		};
+		EC7462702F7473C900E34EDB /* Empty */ = {
+			isa = PBXGroup;
+			children = (
+				EC7462732F74756600E34EDB /* EmptyStateView.swift */,
+				EC7462712F74740100E34EDB /* Empty.swift */,
+			);
+			path = Empty;
+			sourceTree = "<group>";
+		};
+		EC74627F2F7574F600E34EDB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EC74628E2F7595CE00E34EDB /* ImageView.swift */,
+				EC74628C2F75952D00E34EDB /* TextSectionView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EC7462942F75A36C00E34EDB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				EC7462982F75B7A200E34EDB /* Video */,
+				EC7462972F75B79600E34EDB /* Image */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		EC7462972F75B79600E34EDB /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				EC7462B72F75C94800E34EDB /* Chanel */,
+				EC7462B62F75C93E00E34EDB /* Dolce&Gabanna */,
+				EC7462B52F75C90400E34EDB /* Louis Vuitton */,
+				EC7462A82F75C75A00E34EDB /* Gucci */,
+				EC7462A12F75C54D00E34EDB /* Valentino */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		EC7462982F75B7A200E34EDB /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				EC7462EE2F762A0600E34EDB /* Valentino_Show.mp4 */,
+				EC7462992F75B7E400E34EDB /* Dolce_&_Gabbana.mp4 */,
+				EC74629B2F75B9CD00E34EDB /* Chanel_Haute_Couture.mp4 */,
+				EC74629D2F75C23600E34EDB /* Gucci_Runway.mp4 */,
+				EC74629F2F75C27200E34EDB /* Louis_Vuitton_Men.mp4 */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		EC7462A12F75C54D00E34EDB /* Valentino */ = {
+			isa = PBXGroup;
+			children = (
+				EC7462DA2F75D4CF00E34EDB /* Valentino_Footer.jpg */,
+				EC7462D32F75D4CF00E34EDB /* Valentino_Middle.jpg */,
+				EC7462CE2F75D4CF00E34EDB /* Valentino_Home.jpg */,
+			);
+			path = Valentino;
+			sourceTree = "<group>";
+		};
+		EC7462A82F75C75A00E34EDB /* Gucci */ = {
+			isa = PBXGroup;
+			children = (
+				EC7462D92F75D4CF00E34EDB /* Gucci_Footer.jpg */,
+				EC7462CF2F75D4CF00E34EDB /* Gucci_Middle.jpg */,
+				EC7462CC2F75D4CF00E34EDB /* Gucci_Home.jpg */,
+			);
+			path = Gucci;
+			sourceTree = "<group>";
+		};
+		EC7462B52F75C90400E34EDB /* Louis Vuitton */ = {
+			isa = PBXGroup;
+			children = (
+				EC7462D82F75D4CF00E34EDB /* Louis_Vuitton_Footer.jpg */,
+				EC7462D72F75D4CF00E34EDB /* Louis_Vuitton_Home.jpg */,
+				EC7462CB2F75D4CF00E34EDB /* Louis_Vuitton_Middle.jpg */,
+			);
+			path = "Louis Vuitton";
+			sourceTree = "<group>";
+		};
+		EC7462B62F75C93E00E34EDB /* Dolce&Gabanna */ = {
+			isa = PBXGroup;
+			children = (
+				EC7462D62F75D4CF00E34EDB /* Dolce_&_Gabanna_Footer.jpg */,
+				EC7462D02F75D4CF00E34EDB /* Dolce_&_Gabanna_Home.jpg */,
+				EC7462CD2F75D4CF00E34EDB /* Doce_&_Gabanna_Middle.jpg */,
+			);
+			path = "Dolce&Gabanna";
+			sourceTree = "<group>";
+		};
+		EC7462B72F75C94800E34EDB /* Chanel */ = {
+			isa = PBXGroup;
+			children = (
+				EC7462D42F75D4CF00E34EDB /* Chanel_Home.jpg */,
+				EC7462D52F75D4CF00E34EDB /* Chanel_Footer.jpg */,
+				EC7462DB2F75D4CF00E34EDB /* Chanel_Middle.jpg */,
+			);
+			path = Chanel;
+			sourceTree = "<group>";
+		};
+		EC7462F02F76A7CB00E34EDB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC7462F12F76A7D100E34EDB /* BrandView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		EC92275B2F6D7628005AE80C /* Authentication */ = {
@@ -791,8 +1189,7 @@
 				ECB6C1D22F6848D2007B594E /* Libs */,
 				EC0E6EF22F6C6642007FEC71 /* Components */,
 				EC5442242F6B67F000F4A871 /* Services */,
-				ECB6C1B32F6838FC007B594E /* VellantiTests */,
-				ECB6C1BD2F6838FC007B594E /* VellantiUITests */,
+				ECC10B692F77649A00EE38DA /* Frameworks */,
 				ECB6C1A42F6838F7007B594E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -810,6 +1207,9 @@
 		ECB6C1D22F6848D2007B594E /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				EC7462692F74484E00E34EDB /* Wishlist */,
+				EC7462412F7346A000E34EDB /* Checkout */,
+				EC7462392F732EA500E34EDB /* Cart */,
 				EC5BC6C22F706C7900A0659D /* BrandStory */,
 				EC5BC6C32F706C8200A0659D /* Profile */,
 				EC5BC6BF2F706C5C00A0659D /* Boutique */,
@@ -855,6 +1255,55 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		ECC10B5B2F76AC4C00EE38DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ECC10B5E2F76B23600EE38DA /* BrandMockData.swift */,
+				ECC10B5C2F76AC5500EE38DA /* Brand.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ECC10B662F77630A00EE38DA /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				ECC10B6E2F77658200EE38DA /* Auth */,
+				ECC10B672F77631200EE38DA /* FirebaseAuthService.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		ECC10B692F77649A00EE38DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ECC10B6E2F77658200EE38DA /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				ECC10B6F2F77658700EE38DA /* AuthError.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		ECF6ADB02F72BD5A0071BBCE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ECF6ADB12F72BD730071BBCE /* ProfileList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ECF6ADB32F72C05D0071BBCE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ECF6ADB52F72C2A00071BBCE /* ProfileListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -878,6 +1327,8 @@
 				ECB6C1CE2F68486C007B594E /* Lottie */,
 				EC5BC66B2F6DCE1400A0659D /* FirebaseAnalytics */,
 				EC5BC66D2F6DCE1400A0659D /* FirebaseFirestore */,
+				ECC10B6A2F77649A00EE38DA /* FirebaseAuth */,
+				ECC10B6C2F7764CC00EE38DA /* FirebaseFirestoreCombine-Community */,
 			);
 			productName = Vellanti;
 			productReference = ECB6C1A32F6838F7007B594E /* Vellanti.app */;
@@ -895,9 +1346,6 @@
 			);
 			dependencies = (
 				ECB6C1B22F6838FC007B594E /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				ECB6C1B32F6838FC007B594E /* VellantiTests */,
 			);
 			name = VellantiTests;
 			packageProductDependencies = (
@@ -918,9 +1366,6 @@
 			);
 			dependencies = (
 				ECB6C1BC2F6838FC007B594E /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				ECB6C1BD2F6838FC007B594E /* VellantiUITests */,
 			);
 			name = VellantiUITests;
 			packageProductDependencies = (
@@ -983,12 +1428,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC5BC6A72F6F357400A0659D /* Loading_White.json in Resources */,
+				EC5BC70C2F71852900A0659D /* Runway_Fem.mp4 in Resources */,
+				EC5BC70A2F7182CF00A0659D /* Runway_Masc.mp4 in Resources */,
 				EC445B232F6CBD4D0012A1DA /* Onboarding_3.mp4 in Resources */,
 				EC0E6ECB2F6C399D007FEC71 /* Assets.xcassets in Resources */,
+				EC7462EF2F762A0600E34EDB /* Valentino_Show.mp4 in Resources */,
+				EC74629E2F75C23600E34EDB /* Gucci_Runway.mp4 in Resources */,
+				EC7462A02F75C27200E34EDB /* Louis_Vuitton_Men.mp4 in Resources */,
 				ECC857472F6B1A6000A61F22 /* Vellanti_Light.json in Resources */,
 				EC445B162F6CACDC0012A1DA /* Vellanti_Icon.icon in Resources */,
 				EC5BC6AE2F6F70AC00A0659D /* Loading_Black.json in Resources */,
+				EC74629A2F75B7E400E34EDB /* Dolce_&_Gabbana.mp4 in Resources */,
 				EC54423D2F6C371500F4A871 /* Onboarding_1.mp4 in Resources */,
+				EC74629C2F75B9CD00E34EDB /* Chanel_Haute_Couture.mp4 in Resources */,
+				EC7462DC2F75D4CF00E34EDB /* Louis_Vuitton_Middle.jpg in Resources */,
+				EC7462DE2F75D4CF00E34EDB /* Valentino_Footer.jpg in Resources */,
+				EC7462DF2F75D4CF00E34EDB /* Dolce_&_Gabanna_Home.jpg in Resources */,
+				EC7462E12F75D4CF00E34EDB /* Louis_Vuitton_Footer.jpg in Resources */,
+				EC7462E22F75D4CF00E34EDB /* Valentino_Middle.jpg in Resources */,
+				EC7462E32F75D4CF00E34EDB /* Gucci_Home.jpg in Resources */,
+				EC7462E42F75D4CF00E34EDB /* Gucci_Middle.jpg in Resources */,
+				EC7462E52F75D4CF00E34EDB /* Chanel_Home.jpg in Resources */,
+				EC7462E72F75D4CF00E34EDB /* Valentino_Home.jpg in Resources */,
+				EC7462E82F75D4CF00E34EDB /* Gucci_Footer.jpg in Resources */,
+				EC7462E92F75D4CF00E34EDB /* Chanel_Middle.jpg in Resources */,
+				EC7462EA2F75D4CF00E34EDB /* Doce_&_Gabanna_Middle.jpg in Resources */,
+				EC7462EB2F75D4CF00E34EDB /* Louis_Vuitton_Home.jpg in Resources */,
+				EC7462EC2F75D4CF00E34EDB /* Chanel_Footer.jpg in Resources */,
+				EC7462ED2F75D4CF00E34EDB /* Dolce_&_Gabanna_Footer.jpg in Resources */,
 				EC0E6EDB2F6C44E2007FEC71 /* Onboarding_2.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1014,61 +1481,106 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC74628B2F75924D00E34EDB /* RunwayDetailView.swift in Sources */,
 				EC5BC6F72F70974600A0659D /* TabContainerView.swift in Sources */,
 				EC5BC6E32F70841400A0659D /* ClothingSpecs.swift in Sources */,
+				EC7462662F7423F500E34EDB /* InfoRow.swift in Sources */,
 				EC5BC6EB2F70863900A0659D /* ProductListView.swift in Sources */,
 				EC5442342F6C2D2500F4A871 /* OnboardingRepository.swift in Sources */,
 				EC5BC6D32F70765A00A0659D /* BoutiqueAPIService.swift in Sources */,
 				EC5BC6A92F6F35CD00A0659D /* AuthState.swift in Sources */,
 				EC0E6ED42F6C3A4C007FEC71 /* PlayerUIView.swift in Sources */,
+				EC7462352F732C8C00E34EDB /* VellantiDataModel.xcdatamodeld in Sources */,
 				EC5BC6CD2F70746500A0659D /* NetworkError.swift in Sources */,
+				EC74623E2F732ECD00E34EDB /* CartViewModel.swift in Sources */,
+				EC7462872F758EEA00E34EDB /* RunwayShow.swift in Sources */,
 				EC5BC6882F6DE03600A0659D /* AnimatedSecureField.swift in Sources */,
+				ECF6ADB22F72BD7B0071BBCE /* ProfileList.swift in Sources */,
+				EC74624A2F73487C00E34EDB /* CheckoutViewModel.swift in Sources */,
 				ECB6C1E62F684EBB007B594E /* SplashView.swift in Sources */,
+				ECC10B632F76F97000EE38DA /* CategoryCard.swift in Sources */,
+				EC74628F2F7595D100E34EDB /* ImageView.swift in Sources */,
 				EC5BC6902F6EE1A700A0659D /* WelcomeMessage.swift in Sources */,
+				EC74625B2F7410AF00E34EDB /* DeliveryProgressBar.swift in Sources */,
 				EC5BC6A32F6F256000A0659D /* WelcomeCoordinator.swift in Sources */,
 				EC5BC6D92F7078D000A0659D /* ClothingItem.swift in Sources */,
 				EC54422E2F6C1EB000F4A871 /* OnboardingProtocol.swift in Sources */,
 				EC92275E2F6D766A005AE80C /* AuthGatewayView.swift in Sources */,
 				EC5442382F6C2E2A00F4A871 /* OnboardingViewModel.swift in Sources */,
+				EC7462722F74740600E34EDB /* Empty.swift in Sources */,
+				ECC10B5F2F76B23A00EE38DA /* BrandMockData.swift in Sources */,
 				EC5BC6B62F6F71AB00A0659D /* LoadingView.swift in Sources */,
 				EC5BC6FA2F70996400A0659D /* TabBarViewModel.swift in Sources */,
 				EC5BC6CB2F7071F000A0659D /* RunwayVideoHeader.swift in Sources */,
+				ECF6ADBA2F72D9B60071BBCE /* ColorSwatch.swift in Sources */,
 				EC5BC6842F6DD57000A0659D /* CountryPickerView.swift in Sources */,
+				EC7462682F74241200E34EDB /* OrderItemRow.swift in Sources */,
 				EC5BC6F12F70953500A0659D /* TabItem.swift in Sources */,
 				EC5442412F6C398400F4A871 /* VideoPlayerView.swift in Sources */,
 				EC5BC6D62F70788C00A0659D /* BoutiqueRepository.swift in Sources */,
 				EC0E6EEA2F6C5D99007FEC71 /* SplashProtocol.swift in Sources */,
+				EC7462932F759CD500E34EDB /* HomeViewModel.swift in Sources */,
 				EC5BC67D2F6DD2C000A0659D /* RegisterData.swift in Sources */,
 				EC0E6EE62F6C5B03007FEC71 /* DependencyContainer.swift in Sources */,
 				EC0E6EF12F6C63A5007FEC71 /* PermissionService.swift in Sources */,
+				EC74624E2F734B3700E34EDB /* CheckoutReviewView.swift in Sources */,
 				EC5BC69F2F6F22FF00A0659D /* WelcomeViewModelProtocol.swift in Sources */,
 				EC5BC6F52F7096DA00A0659D /* CustomTabView.swift in Sources */,
+				ECC10B732F776FB300EE38DA /* CoreDataSyncService.swift in Sources */,
+				ECC10B5D2F76AC5800EE38DA /* Brand.swift in Sources */,
+				EC7462912F75964E00E34EDB /* HomeView.swift in Sources */,
+				ECC10B652F76FA3800EE38DA /* CategoryCardView.swift in Sources */,
 				EC5BC6862F6DD57B00A0659D /* PhoneFormatter.swift in Sources */,
 				EC5BC6D02F70754D00A0659D /* NetworkService.swift in Sources */,
+				EC0C513E2F71F84900D2796C /* ProductDetailView.swift in Sources */,
+				EC7462382F732D3700E34EDB /* CoreDataManager.swift in Sources */,
+				EC74625E2F74134C00E34EDB /* ProfileCoordinator.swift in Sources */,
+				EC74626F2F7460C400E34EDB /* View+Extensions.swift in Sources */,
+				EC74626D2F744DA100E34EDB /* WishlistView.swift in Sources */,
 				ECAC48FB2F6881EF00A886BC /* SplashViewModel.swift in Sources */,
 				EC5BC6B32F6F70F600A0659D /* Loading.swift in Sources */,
 				EC0E6EEC2F6C5E62007FEC71 /* SplashCoordinator.swift in Sources */,
 				EC5BC6FE2F70A80400A0659D /* CategoryViewModel.swift in Sources */,
 				EC5BC6A52F6F294400A0659D /* WelcomeView.swift in Sources */,
+				EC7462522F7364BB00E34EDB /* OrderViewModel.swift in Sources */,
 				EC0E6ED62F6C3E50007FEC71 /* OnboardingCoordinator.swift in Sources */,
 				EC5BC7022F70D4D900A0659D /* ContactOption.swift in Sources */,
 				EC5BC6DF2F70812A00A0659D /* ErrorView.swift in Sources */,
 				EC5BC6822F6DD56200A0659D /* GenderPickerView.swift in Sources */,
 				EC5BC6972F6EE3E700A0659D /* AuthGatewayViewModel.swift in Sources */,
+				EC7462892F758FBA00E34EDB /* RunwayMockData.swift in Sources */,
+				EC7462502F7361EA00E34EDB /* SucessView.swift in Sources */,
+				EC7462402F73319700E34EDB /* CartView.swift in Sources */,
+				ECC10B682F77631600EE38DA /* FirebaseAuthService.swift in Sources */,
 				EC5BC7042F70D4E100A0659D /* ContactSheet.swift in Sources */,
 				EC5BC67F2F6DD44800A0659D /* UserRole.swift in Sources */,
+				EC7462F22F76A7D800E34EDB /* BrandView.swift in Sources */,
 				EC5BC68C2F6DEA6000A0659D /* RegisterStep.swift in Sources */,
 				EC5BC68A2F6DE3DF00A0659D /* PasswordValidatorView.swift in Sources */,
+				EC74628D2F75953300E34EDB /* TextSectionView.swift in Sources */,
 				EC5BC6C62F706CC200A0659D /* Category.swift in Sources */,
+				EC7462562F7407CF00E34EDB /* OrderCard.swift in Sources */,
 				EC5BC6DC2F707B1A00A0659D /* CategoryView.swift in Sources */,
 				EC5BC6EE2F7087E000A0659D /* ProductCardView.swift in Sources */,
 				EC5BC6952F6EE26700A0659D /* AuthGatewayProtocol.swift in Sources */,
 				EC5BC6992F6EEE2100A0659D /* AuthGatewayCoordinator.swift in Sources */,
+				EC7462742F74756B00E34EDB /* EmptyStateView.swift in Sources */,
+				ECC10B702F77658900EE38DA /* AuthError.swift in Sources */,
+				EC7462612F741C5E00E34EDB /* OrderListView.swift in Sources */,
+				EC7462582F740F5300E34EDB /* Extensions.swift in Sources */,
+				EC74626B2F74494A00E34EDB /* WishlistViewModel.swift in Sources */,
 				EC5BC6792F6DD13800A0659D /* User.swift in Sources */,
+				ECF6ADB62F72C2A70071BBCE /* ProfileListView.swift in Sources */,
+				EC7462632F74210700E34EDB /* OrderDetailsView.swift in Sources */,
+				EC74624C2F73496A00E34EDB /* CheckoutFormView.swift in Sources */,
 				EC5BC6A12F6F237E00A0659D /* WelcomeViewModel.swift in Sources */,
 				EC0E6ED92F6C4028007FEC71 /* OnboardingView.swift in Sources */,
+				EC5BC7072F7163FD00A0659D /* CustomNavigationBar.swift in Sources */,
 				EC5BC6E92F70854800A0659D /* ProductListViewModel.swift in Sources */,
+				ECF6ADB82F72D5830071BBCE /* ColorHelper.swift in Sources */,
+				EC7462542F7405A000E34EDB /* OrderEntity + Extensions.swift in Sources */,
 				EC5BC67B2F6DD1EF00A0659D /* Gender.swift in Sources */,
+				EC7462482F73480500E34EDB /* PaymentMethod.swift in Sources */,
 				EC5BC6E12F70816700A0659D /* Error.swift in Sources */,
 				EC5442302F6C1FF100F4A871 /* OnboardingPageModel.swift in Sources */,
 			);
@@ -1459,7 +1971,30 @@
 			package = ECB6C1CD2F68486C007B594E /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
 		};
+		ECC10B6A2F77649A00EE38DA /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC5BC66A2F6DCE1400A0659D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		ECC10B6C2F7764CC00EE38DA /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC5BC66A2F6DCE1400A0659D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		EC7462332F732C8C00E34EDB /* VellantiDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EC7462342F732C8C00E34EDB /* VellantiDataModel.xcdatamodel */,
+			);
+			currentVersion = EC7462342F732C8C00E34EDB /* VellantiDataModel.xcdatamodel */;
+			path = VellantiDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ECB6C19B2F6838F7007B594E /* Project object */;
 }

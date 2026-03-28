@@ -1,3 +1,5 @@
+import SwiftUI
+
 // MARK: - Dependency Container
 
 final class DependencyContainer {
@@ -8,7 +10,13 @@ final class DependencyContainer {
     
     // MARK: - Services
     
+    lazy var cartViewModel = CartViewModel()
+    
+    lazy var orderViewModel = OrderViewModel()
+    
     lazy var authState: AuthState = AuthState.shared
+    
+    lazy var wishlistViewModel: WishlistViewModel = WishlistViewModel()
     
     lazy var permissionService: PermissionServiceProtocol = {
         return PermissionService()
@@ -49,5 +57,13 @@ final class DependencyContainer {
     
     func makeWelcomeCoordinator() -> WelcomeCoordinator {
         return WelcomeCoordinator()
+    }
+    
+    func makeProfileCoordinator() -> ProfileCoordinator {
+        return ProfileCoordinator()
+    }
+    
+    func makeProfileView(coordinator: ProfileCoordinator) -> some View {
+        return ProfileListView(coordinator: coordinator)
     }
 }

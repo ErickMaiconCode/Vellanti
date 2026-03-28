@@ -32,5 +32,4 @@ struct LottieView: UIViewRepresentable {
     func updateUIView(_ uiView: UIView, context: Context) {}
 }
 
-// SplashView.swift
 

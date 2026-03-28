@@ -3,10 +3,16 @@ import Lottie
 
 struct OnboardingView<ViewModel: OnboardingViewModelProtocol>: View {
     @StateObject var viewModel: ViewModel
+    @State private var isMuted: Bool = true
+    @State private var isPlaying: Bool = true
     
     var body: some View {
         ZStack {
-            VideoPlayerView(videoName: viewModel.pages[viewModel.currentPage].videoName)
+            VideoPlayerView(
+                videoName: viewModel.pages[viewModel.currentPage].videoName,
+                isPlaying: .constant(true),
+                isMuted: .constant(true)
+            )
                 .id(viewModel.currentPage)
                 .ignoresSafeArea(.all)
             
@@ -76,12 +82,12 @@ struct OnboardingView<ViewModel: OnboardingViewModelProtocol>: View {
                 .frame(maxWidth: .infinity)
                 .frame(height: 56)
                 .background(Color.white)
-                .cornerRadius(4)
+                .cornerRadius(0)
         }
         .disabled(viewModel.isLoading)
         .overlay {
             if viewModel.isLoading {
-                Color.white // ✅ Fundo semi-transparente
+                Color.white
                     .cornerRadius(4)
                 
                 LottieView(animation: .named("Loading_Black"))

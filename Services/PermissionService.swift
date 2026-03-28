@@ -74,7 +74,6 @@ final class PermissionService : NSObject, PermissionServiceProtocol {
                 continuation.resume(returning: false)
                 
             case .notDetermined:
-                // Ainda aguardando resposta do usuário
                 return
                 
             @unknown default:

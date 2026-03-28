@@ -6,7 +6,7 @@ struct CategoryView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Image("Vellantie_Categories")
+                Image("Vellanti_Categories")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
@@ -32,8 +32,8 @@ struct CategoryView: View {
                     
                     ScrollView {
                         LazyVStack(spacing: 24) {
-                            ForEach(Category.all) { category in
-                                NavigationLink(destination: ProductListView(category: category)) {
+                            ForEach(Category.all, id: \.id) { category in
+                                NavigationLink(value: category) {
                                     CategoryRow(category: category)
                                 }
                             }
@@ -42,6 +42,7 @@ struct CategoryView: View {
                         .padding(.vertical, 40)
                         .padding(.bottom, 60)
                     }
+                    .scrollIndicators(.hidden)
                     .mask(
                         VStack(spacing: 0) {
                             LinearGradient(
@@ -70,7 +71,10 @@ struct CategoryView: View {
                     )
                 }
             }
-            .navigationBarHidden(true)
+            .showTabBar()
+            .navigationDestination(for: Category.self) { category in
+                ProductListView(category: category)
+            }
             .sheet(isPresented: $showingContactSheet) {
                 ContactSheet()
             }

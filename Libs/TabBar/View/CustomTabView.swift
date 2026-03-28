@@ -4,6 +4,11 @@ struct CustomTabBarView: View {
     @ObservedObject var viewModel: TabBarViewModel
     
     var body: some View {
+        
+        Rectangle()
+            .fill(separatorColor)
+            .frame(height: 1)
+        
         HStack(spacing: 0) {
             ForEach(TabItem.allCases, id: \.self) { tab in
                 TabBarButton(
@@ -15,15 +20,10 @@ struct CustomTabBarView: View {
                 }
             }
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 16)
+        .padding(.top, 16)
+        .padding(.bottom, 10)
         .background(tabBarBackground)
-        .overlay(
-            Rectangle()
-                .fill(separatorColor)
-                .frame(height: 0.5),
-            alignment: .top
-        )
+        .ignoresSafeArea(edges: .bottom)
     }
     
     @ViewBuilder
@@ -31,21 +31,19 @@ struct CustomTabBarView: View {
         switch viewModel.theme {
         case .dark:
             Color.black
-                .opacity(0.95)
-                .background(.ultraThinMaterial)
+                .ignoresSafeArea()
         case .light:
             Color.white
-                .opacity(0.95)
-                .background(.ultraThinMaterial)
+                .ignoresSafeArea()
         }
     }
     
     private var separatorColor: Color {
         switch viewModel.theme {
         case .dark:
-            return .white.opacity(0.1)
+            return .white.opacity(0.15)
         case .light:
-            return .black.opacity(0.1)
+            return .black.opacity(0.08)
         }
     }
 }
@@ -59,26 +57,29 @@ private struct TabBarButton: View {
     private var foregroundColor: Color {
         switch theme {
         case .dark:
-            return isSelected ? .white : .white.opacity(0.5)
+            return isSelected ? .white : .white.opacity(0.4)
         case .light:
-            return isSelected ? .black : .black.opacity(0.5)
+            return isSelected ? .black : .black.opacity(0.4)
         }
     }
     
     var body: some View {
         Button(action: action) {
-            VStack(spacing: 4) {
-                Text(tab.title)
-                    .font(.system(size: 13, weight: isSelected ? .semibold : .regular))
+            VStack(spacing: 8) {
+                Text(tab.title.uppercased())
+                    .font(.system(size: 13, weight: isSelected ? .semibold : .medium))
+                    .tracking(2)
                     .foregroundColor(foregroundColor)
+                    .lineLimit(1)
                 
-                // Indicador de seleção
                 Rectangle()
                     .fill(foregroundColor)
-                    .frame(height: 2)
+                    .frame(width: 20, height: 1.5)
                     .opacity(isSelected ? 1 : 0)
+                    .animation(.easeInOut(duration: 0.2), value: isSelected)
             }
             .frame(maxWidth: .infinity)
+            .frame(height: 50)
             .contentShape(Rectangle())
         }
         .buttonStyle(TabBarButtonStyle())
@@ -88,7 +89,8 @@ private struct TabBarButton: View {
 private struct TabBarButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
+            .opacity(configuration.isPressed ? 0.7 : 1.0)
+            .scaleEffect(configuration.isPressed ? 0.98 : 1.0)
             .animation(.spring(response: 0.3, dampingFraction: 0.6), value: configuration.isPressed)
     }
 }

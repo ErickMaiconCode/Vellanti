@@ -10,19 +10,19 @@ struct ContactOption: Identifiable {
 extension ContactOption {
     static let all: [ContactOption] = [
         ContactOption(
-            icon: "message.fill",
-            title: "WhatsApp",
-            subtitle: "Resposta rápida"
+            icon: "message",
+            title: "Concierge Digital",
+            subtitle: "Assistência imediata e curadoria via mensagem."
         ),
         ContactOption(
             icon: "phone.fill",
-            title: "Telefone",
-            subtitle: "Atendimento direto"
+            title: "Linha Privada",
+            subtitle: "Fale em tempo real com um especialista Vellanci"
         ),
         ContactOption(
             icon: "envelope.fill",
-            title: "E-mail",
-            subtitle: "Contato formal"
+            title: "Correspondência Privada",
+            subtitle: "Para solicitações formais e peças sob medida."
         )
     ]
 }

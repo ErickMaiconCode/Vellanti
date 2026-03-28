@@ -40,7 +40,6 @@ struct AuthGatewayView: View {
                 
                 Spacer()
                 
-                // Buttons
                 buttonsSection
                     .padding(.horizontal, 32)
                     .padding(.bottom, 30)

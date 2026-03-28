@@ -3,10 +3,12 @@ import SwiftUI
 struct ProductListView: View {
     @StateObject private var viewModel = ProductListViewModel()
     let category: Category
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        ZStack {
-            Color.white.ignoresSafeArea()
+        ZStack(alignment: .top) {
+            Color.white
+                .ignoresSafeArea()
             
             if viewModel.isLoading {
                 LoadingView(
@@ -20,25 +22,39 @@ struct ProductListView: View {
             } else {
                 contentView
             }
+            
+            CustomNavigationBar { dismiss() }
         }
-        .navigationTitle(category.name)
-        .navigationBarTitleDisplayMode(.large)
+        .hideTabBar()
+        .navigationBarHidden(true)
         .onAppear {
             viewModel.configure(with: category)
+        }
+        .navigationDestination(for: ClothingItem.self) { item in
+            ProductDetailView(item: item)
         }
     }
     
     private var contentView: some View {
         ScrollView {
             VStack(spacing: 0) {
-                if let videoName =  category.runwayVideo {
+                if let videoName = category.runwayVideo {
                     RunwayVideoHeader(videoName: videoName)
-                        .frame(height: 300)
+                        .frame(height: 400)
+                        .clipped()
+                        .padding(.bottom, 60)
+                } else {
+                    Color.clear
+                        .frame(height: 50)
                 }
+                
+                CategoryHeader(category: category)
                 
                 productGrid
             }
         }
+        .scrollIndicators(.hidden)
+        .ignoresSafeArea(edges: .top)
     }
     
     private var productGrid: some View {
@@ -50,13 +66,46 @@ struct ProductListView: View {
             spacing: 24
         ) {
             ForEach(viewModel.clothingItems) { item in
-                ProductCardView(item: item) {
-                    
+                NavigationLink(value: item) {
+                    ProductCardView(item: item)
                 }
+                .buttonStyle(.plain)
             }
+            }
+            .padding(.horizontal, 30)
+            .padding(.top, 20)
+            .padding(.bottom, 70)
         }
-        .padding(.horizontal, 20)
-        .padding(.top, 20)
-        .padding(.bottom, 100)
     }
-}
+    
+    private struct CategoryHeader: View {
+        let category: Category
+        
+        var body: some View {
+            VStack(alignment: .center, spacing: 12) {
+                Text(category.headline ?? "")
+                    .font(.system(size: 14, weight: .medium))
+                    .foregroundColor(.black)
+                    .tracking(1)
+                    .padding(.bottom, 15)
+                    .multilineTextAlignment(.center)
+                
+                Text(category.name)
+                    .font(.system(size: 25, weight: .medium))
+                    .foregroundColor(.black)
+                    .tracking(3)
+                    .padding(.bottom, 10)
+                    .textCase(.uppercase)
+                
+                Text(category.subheadline ?? "")
+                    .font(.system(size: 16, weight: .regular))
+                    .foregroundColor(.black)
+                    .lineSpacing(4)
+                    .padding(.bottom, 50)
+            }
+            .frame(maxWidth: .infinity, alignment: .center)
+            .padding(.horizontal, 20)
+            .padding(.vertical, 32)
+        }
+    }
+

@@ -97,53 +97,43 @@ struct LoadingView: View {
         }
     }
 
-    private var inlineLoading: some View {
-        Group {
-            if message != nil {
-                
-                HStack(spacing: 12) {
-                    LottieView(animation: .named(animationName))
-                        .playing(loopMode: .loop)
-                        .frame(width: 40, height: 40)
-                    
-                    Text(message!)
-                        .font(.system(size: 14, weight: .regular))
-                        .foregroundColor(foregroundColor.opacity(0.8))
-                }
-            } else {
-
-                LottieView(animation: .named(animationName))
-                    .playing(loopMode: .loop)
-                    .frame(width: 50, height: 50)
-            }
-        }
-        .frame(minWidth: 50, minHeight: 50)
-    }
-    
     private var compactLoading: some View {
         LottieView(animation: .named(animationName))
             .playing(loopMode: .loop)
-            .frame(width: 50, height: 50)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(height: 24)
+    }
+    
+    private var inlineLoading: some View {
+        HStack(spacing: 8) {
+            LottieView(animation: .named(animationName))
+                .playing(loopMode: .loop)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 24)
+            
+            if let message = message {
+                Text(message)
+                    .font(.system(size: 14, weight: .medium))
+                    .foregroundColor(foregroundColor)
+            }
+        }
     }
 }
 
 extension View {
-    func loading(
+    @ViewBuilder
+    func isLoading(
         _ isLoading: Bool,
-        style: LoadingStyle = .overlay,
-        theme: LoadingTheme = .dark,
-        message: String? = nil
+        style: LoadingStyle = .compact,
+        theme: LoadingTheme = .light
     ) -> some View {
-        ZStack {
+        if isLoading {
+            LoadingView(style: style, theme: theme)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        } else {
             self
-            
-            if isLoading {
-                LoadingView(
-                    style: style,
-                    theme: theme,
-                    message: message
-                )
-            }
         }
     }
 }

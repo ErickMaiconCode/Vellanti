@@ -6,31 +6,49 @@ struct TabBarContainerView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             TabContentView(selectedTab: viewModel.selectedTab)
+                .environmentObject(viewModel)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .id(viewModel.selectedTab.rawValue)
 
-            CustomTabBarView(viewModel: viewModel)
-                .ignoresSafeArea(.keyboard)
+            if viewModel.showTabBar {
+                CustomTabBarView(viewModel: viewModel)
+                    .transition(.move(edge: .bottom))
+                    .zIndex(1)
+            }
         }
         .ignoresSafeArea(.all, edges: .bottom)
+        .animation(.easeInOut(duration: 0.3), value: viewModel.showTabBar)
     }
 }
 
 private struct TabContentView: View {
     let selectedTab: TabItem
+    @StateObject private var profileCoordinator: ProfileCoordinator
+    
+    init(selectedTab: TabItem) {
+        self.selectedTab = selectedTab
+        self._profileCoordinator = StateObject(wrappedValue: DependencyContainer.shared.makeProfileCoordinator())
+    }
     
     var body: some View {
-        Group {
+        ZStack {
             switch selectedTab {
             case .home:
-               Text("Home")
+                NavigationStack {
+                    HomeView()
+                }
+                
             case .boutique:
-                CategoryView()
-                    .id("boutique")
+                NavigationStack {
+                    CategoryView()
+                }
+                
             case .brandStory:
-                Text("Home")
+                NavigationStack {
+                    BrandView()
+                }
+                
             case .profile:
-                Text("Home")
+                DependencyContainer.shared.makeProfileView(coordinator: profileCoordinator)
             }
         }
     }

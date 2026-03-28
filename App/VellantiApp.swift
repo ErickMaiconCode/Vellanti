@@ -44,7 +44,7 @@ struct VellantiApp: App {
                              appCoordinator.currentScreen = .loading
                         }
                 case .main:
-                    TabBarContainerView()
+                    appCoordinator.makeMainView()
                         .transition(.opacity)
                  }
              }

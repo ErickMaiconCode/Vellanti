@@ -24,20 +24,16 @@ final class SplashViewModel: SplashViewModelProtocol {
     
     func startAnimationSequence() {
         Task {
-            // 1. Lottie
             try? await Task.sleep(nanoseconds: UInt64(lottiePlayTime * 1_000_000_000))
-            
-            // 2. Zoom e Fade
+
             await MainActor.run {
                 withAnimation(.easeIn(duration: zoomDuration)) {
                     shouldZoom = true
                 }
             }
-            
-            // 3. Terminar Zoom
+
             try? await Task.sleep(nanoseconds: UInt64(zoomDuration * 1_000_000_000))
-            
-            // 4. Marca como completo e notifica coordinator
+
             await MainActor.run {
                 isTransitionComplete = true
                 coordinator?.splashDidFinish()

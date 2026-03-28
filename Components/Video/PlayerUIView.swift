@@ -29,6 +29,20 @@ class PlayerUIView: UIView {
         
     }
     
+    func updateState(isPlaying: Bool, isMuted: Bool) {
+        guard let player = queuePlayer else { return }
+        
+        if player.isMuted != isMuted {
+            player.isMuted = isMuted
+        }
+        
+        if isPlaying && player.rate == 0 {
+            player.play()
+        } else if !isPlaying && player.rate != 0 {
+            player.pause()
+        }
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         playerLayer?.frame = bounds

@@ -3,7 +3,9 @@ import SwiftUI
 struct Category: Identifiable, Hashable {
     let id: String
     let name: String
-    let runwayVideo: String? // ✅ Opcional
+    let headline: String?
+    let subheadline: String?
+    let runwayVideo: String?
     
     var apiFilter: CategoryFilter {
         switch id {
@@ -47,46 +49,62 @@ enum CategoryFilter {
 }
 
 extension Category {
-    static let all: [Category] = [
-        Category(
-            id: "feminino",
-            name: "Feminino",
-            runwayVideo: "Onboarding_3"
-        ),
-        Category(
-            id: "masculino",
-            name: "Masculino",
-            runwayVideo: "runway_men_fw24"
-        ),
-        Category(
-            id: "casacos",
-            name: "Casacos",
-            runwayVideo: nil
-        ),
-        Category(
-            id: "jaquetas",
-            name: "Jaquetas",
-            runwayVideo: nil
-        ),
-        Category(
-            id: "calcados",
-            name: "Calçados",
-            runwayVideo: nil
-        ),
-        Category(
-            id: "bolsas",
-            name: "Bolsas",
-            runwayVideo: "runway_bags_ss24"
-        ),
-        Category(
-            id: "camisas",
-            name: "Camisas",
-            runwayVideo: nil
-        ),
-        Category(
-            id: "malas",
-            name: "Malas",
-            runwayVideo: nil
-        )
-    ]
+  static let all: [Category] = [
+    Category(
+      id: "feminino",
+      name: "Feminino",
+      headline: "Coleção\nPrimavera-Verão 2026",
+      subheadline: "A fluidez da seda encontra a precisão da alfaiataria. Descubra a nova silhueta Vellanti.",
+      runwayVideo: "Runway_Fem"
+    ),
+    Category(
+      id: "masculino",
+      name: "Masculino",
+      headline: "O Novo Clássico",
+      subheadline: "Redefinindo o guarda-roupa contemporâneo com cortes estruturados e materiais nobres.",
+      runwayVideo: "Runway_Masc"
+    ),
+    Category(
+      id: "casacos",
+      name: "Casacos",
+      headline: "Estrutura e Presença",
+      subheadline: "Peças atemporais desenhadas para ser a sua armadura elegante contra o tempo.",
+      runwayVideo: nil
+    ),
+    Category(
+      id: "jaquetas",
+      name: "Jaquetas",
+      headline: "Atitude Silenciosa",
+      subheadline: "Do couro macio ao nylon técnico. A rebeldia traduzida no mais alto padrão de acabamento.",
+      runwayVideo: nil
+    ),
+    Category(
+      id: "calcados",
+      name: "Calçados",
+      headline: "A Arte do Passo",
+      subheadline: "Artesanato italiano e design arquitetônico. Onde a sua jornada começa.",
+      runwayVideo: nil
+    ),
+    Category(
+      id: "bolsas",
+      name: "Bolsas",
+      headline: "Herança Tangível",
+      subheadline: "Mais que acessórios, verdadeiros investimentos esculpidos à mão para a próxima geração.",
+      runwayVideo: "runway_bags_ss24"
+    ),
+    Category(
+      id: "camisas",
+      name: "Camisas",
+      headline: "A Segunda Pele",
+      subheadline: "O caimento perfeito em algodão egípcio e seda pura. O essencial, elevado à perfeição.",
+      runwayVideo: nil
+    ),
+    Category(
+      id: "malas",
+      name: "Malas",
+      headline: "Cidadão do Mundo",
+      subheadline: "Engenharia de viagem projetada exclusivamente para quem domina todos os fusos horários.",
+      runwayVideo: nil
+    )
+  ]
 }
