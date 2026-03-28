@@ -31,18 +31,13 @@ struct VellantiApp: App {
                         .transition(.opacity)
                     
                 case .login:
-                    Text("Login")
-                        .onTapGesture { appCoordinator.currentScreen = .authGateway }
+                    appCoordinator.makeLoginView()
+                        .transition(.opacity)
                     
                 case .register:
-                    Text("Register")
-                        .onTapGesture { appCoordinator.currentScreen = .authGateway }
+                    appCoordinator.makeRegisterView()
+                        .transition(.opacity)
                     
-                case .home:
-                     Text("Home")
-                         .onTapGesture {
-                             appCoordinator.currentScreen = .loading
-                        }
                 case .main:
                     appCoordinator.makeMainView()
                         .transition(.opacity)

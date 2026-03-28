@@ -4,14 +4,32 @@ import Combine
 
 class OrderViewModel: ObservableObject {
     @Published var orders: [OrderEntity] = []
+    
     private let context = CoreDataManager.shared.context
+    private let syncService = CoreDataSyncService.shared
+    private let authState = AuthState.shared
+    private var cancellables = Set<AnyCancellable>()
     
     init() {
         fetchOrders()
+        
+        authState.$isAuthenticated
+            .dropFirst()
+            .sink { [weak self] _ in
+                self?.fetchOrders()
+            }
+            .store(in: &cancellables)
     }
     
     func fetchOrders() {
         let request = NSFetchRequest<OrderEntity>(entityName: "OrderEntity")
+        
+        if let userId = syncService.getCurrentUserId() {
+            request.predicate = NSPredicate(format: "userId == %@", userId)
+        } else {
+            request.predicate = NSPredicate(format: "userId == nil")
+        }
+        
         request.sortDescriptors = [NSSortDescriptor(keyPath: \OrderEntity.date, ascending: false)]
         
         do {
@@ -31,6 +49,7 @@ class OrderViewModel: ObservableObject {
         
         newOrder.shippingAddress = address
         newOrder.payment = paymentMethod
+        newOrder.userId = syncService.getCurrentUserId()
         
         for cartItem in cartItems {
             let orderItem = OrderItemEntity(context: context)
@@ -40,7 +59,9 @@ class OrderViewModel: ObservableObject {
             orderItem.image = cartItem.image
             orderItem.size = cartItem.size
             orderItem.color = cartItem.color
-        
+            orderItem.quantity = cartItem.quantity
+            orderItem.userId = syncService.getCurrentUserId()
+            
             orderItem.originOrder = newOrder
         }
         

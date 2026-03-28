@@ -7,9 +7,19 @@ class CartViewModel: ObservableObject {
     @Published var isCartOpen: Bool = false
     
     private let context = CoreDataManager.shared.context
+    private let syncService = CoreDataSyncService.shared
+    private let authState = AuthState.shared
+    private var cancellables = Set<AnyCancellable>()
     
     init() {
         fetchCart()
+        
+        authState.$isAuthenticated
+            .dropFirst()
+            .sink{ [weak self] _ in
+                self?.fetchCart()
+            }
+            .store(in: &cancellables)
     }
     
     var total: Double {
@@ -26,6 +36,15 @@ class CartViewModel: ObservableObject {
     
     func fetchCart() {
         let request = NSFetchRequest<CartEntity>(entityName: "CartEntity")
+        
+        if let userId = syncService.getCurrentUserId() {
+             request.predicate = NSPredicate(format: "userId == %@", userId)
+         } else {
+             request.predicate = NSPredicate(format: "userId == nil")
+         }
+         
+         request.sortDescriptors = [NSSortDescriptor(key: "dateAdded", ascending: false)]
+        
         do {
             cartItems = try context.fetch(request)
         } catch {
@@ -35,9 +54,18 @@ class CartViewModel: ObservableObject {
     
     func addToCart(item: ClothingItem) {
         
-        if let existingItem = cartItems.first(where: { $0.id == item.id && $0.size == item.specs.size }) {
+        if let existingItem = cartItems.first(where: {
+            $0.id == item.id && $0.size == item.specs.size
+        }) {
             existingItem.quantity += 1
-        } else {
+            saveAndFetch()
+            
+            withAnimation {
+                isCartOpen = true
+            }
+            return
+        }
+        
             let newItem = CartEntity(context: context)
             newItem.id = item.id
             newItem.name = item.name
@@ -47,15 +75,16 @@ class CartViewModel: ObservableObject {
             newItem.size = item.specs.size
             newItem.color = item.specs.color
             newItem.quantity = 1
+            newItem.dateAdded = Date()
+            newItem.userId = syncService.getCurrentUserId()
             
-            CoreDataManager.shared.save()
-            fetchCart()
+            saveAndFetch()
             
             withAnimation {
                 isCartOpen = true
             }
+        
         }
-    }
         
         func removeItem(_ item: CartEntity) {
             context.delete(item)

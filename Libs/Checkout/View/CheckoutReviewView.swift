@@ -30,7 +30,7 @@ struct CheckoutReviewView: View {
                         }
                         
                         Divider()
-                            .foregroundStyle(Color.black.opacity(0.6))
+                            .background(Color.black.opacity(0.6))
                         
                         VStack(alignment: .leading, spacing: 10) {
                             SectionHeader(title: "MÉTODO DE PAGAMENTO")
@@ -45,7 +45,7 @@ struct CheckoutReviewView: View {
                         }
                         
                         Divider()
-                            .foregroundStyle(Color.black)
+                            .background(Color.black)
 
                         VStack(alignment: .leading, spacing: 16) {
                             SectionHeader(title: "RESUMO")
@@ -67,7 +67,7 @@ struct CheckoutReviewView: View {
                    simulatePurchase()
                 } label: {
                     if isProcessing {
-                        LottieView(animation: .named("Loading_Black"))
+                        LottieView(animation: .named("Loading_White"))
                             .playing(loopMode: .loop)
                             .frame(width: 50, height: 50)
                     } else {
@@ -93,11 +93,12 @@ struct CheckoutReviewView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
             isProcessing = false
 
-            orderViewModel.createOrder(from:
-                                        cartViewModel.cartItems,
-                                       total: cartViewModel.total,
-                                       address: checkoutViewModel.fullAddress,
-                                       paymentMethod: checkoutViewModel.paymentMethodDescription
+            orderViewModel.createOrder(
+                from:
+                    cartViewModel.cartItems,
+                   total: cartViewModel.total,
+                   address: checkoutViewModel.fullAddress,
+                   paymentMethod: checkoutViewModel.paymentMethodDescription
             )
 
             cartViewModel.clearCart()

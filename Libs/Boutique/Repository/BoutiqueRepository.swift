@@ -24,4 +24,14 @@ final class BoutiqueRepository {
         
         return filtered
     }
+    
+    
+    func clearCache() {
+        cachedItems = []
+    }
+
+    func forceReload() async throws -> [ClothingItem] {
+        clearCache()
+        return try await getClothingItems()
+    }
 }

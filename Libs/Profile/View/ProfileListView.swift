@@ -1,10 +1,31 @@
 import SwiftUI
 
 struct ProfileListView: View {
-    let items = ProfileList.all
     @ObservedObject var coordinator: ProfileCoordinator
+    @EnvironmentObject var authState: AuthState
+    
+    var items: [ProfileList] {
+        ProfileList.items(isAdmin: authState.isAdmin)
+    }
     
     var body: some View {
+        NavigationStack(path: $coordinator.path) {
+            ZStack {
+                if authState.isAuthenticated {
+                    // Visão para Usuário Logado
+                    authenticatedView
+                } else {
+                    // Visão para Visitante (AuthGateway sem continuar sem login)
+                    GuestProfileAuthView(coordinator: coordinator)
+                }
+            }
+            .navigationDestination(for: ProfileCoordinator.ProfileRoute.self) { route in
+                coordinator.build(route: route)
+            }
+        }
+    }
+    
+   private var authenticatedView: some View {
         NavigationStack(path: $coordinator.path) {
             ZStack(alignment: .top) {
                 
@@ -32,7 +53,7 @@ struct ProfileListView: View {
                         .background(Color.white)
                         
                         Button(action: {
-                            
+                            authState.logout()
                         }) {
                             HStack {
                                 Spacer()
@@ -49,12 +70,13 @@ struct ProfileListView: View {
                             }
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 30)
+                            .padding(.bottom, 40)
                         }
                     }
                 }
                 .scrollIndicators(.hidden)
                 
-                BlurryHeader()
+                BlurryHeader(userName: authState.displayName)
             }
             .showTabBar()
             .background(Color.white)
@@ -68,6 +90,8 @@ struct ProfileListView: View {
     }
     
     struct BlurryHeader: View {
+        let userName: String
+        
         var body: some View {
             VStack(alignment: .leading, spacing: 4) {
                 
@@ -80,7 +104,7 @@ struct ProfileListView: View {
                     .foregroundColor(.gray)
                     .padding(.horizontal, 24)
                 
-                Text("Bem-vindo, Erick")
+                Text("Bem-vindo, \(userName)")
                     .font(.system(size: 32, weight: .regular, design: .serif))
                     .foregroundColor(.black)
                     .lineLimit(2)
@@ -119,5 +143,23 @@ struct ProfileListView: View {
             .padding(.vertical, 20)
             .contentShape(Rectangle())
         }
+    }
+}
+
+struct GuestProfileAuthView: View {
+    @ObservedObject var coordinator: ProfileCoordinator
+    @StateObject private var viewModel = AuthGatewayViewModel(showContinueWithoutLogin: false)
+    
+    var body: some View {
+        AuthGatewayView(viewModel: viewModel)
+            .padding(.bottom, 16) 
+            .onAppear {
+                viewModel.onLoginTapped = {
+                    coordinator.path.append(ProfileCoordinator.ProfileRoute.login)
+                }
+                viewModel.onRegisterTapped = {
+                    coordinator.path.append(ProfileCoordinator.ProfileRoute.register)
+                }
+            }
     }
 }

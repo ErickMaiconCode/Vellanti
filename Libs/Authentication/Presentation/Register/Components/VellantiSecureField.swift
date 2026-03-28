@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct AnimatedSecureField: View {
+struct VellantiSecureField: View {
     @Binding var text: String
     let title: String
     var textContentType: UITextContentType?
@@ -8,21 +8,14 @@ struct AnimatedSecureField: View {
     @FocusState private var isFocused: Bool
     @State private var isSecure: Bool = true
     
-    private var shouldFloat: Bool {
-        isFocused || !text.isEmpty
-    }
-    
     var body: some View {
-        ZStack(alignment: .leading) {
-            
-            Text(title)
-                .font(.system(size: shouldFloat ? 12 : 16, weight: .light))
-                .foregroundStyle(isFocused ? .white : .white.opacity(0.6))
-                .offset(y: shouldFloat ? -24 : 0)
-                .animation(.spring(response: 0.3, dampingFraction: 0.7), value: shouldFloat)
+        VStack(alignment: .leading, spacing: 8) {
+            Text(title.uppercased())
+                .font(.system(size: 11, weight: .bold))
+                .tracking(1.5)
+                .foregroundStyle(.white.opacity(0.6))
             
             HStack {
-                
                 Group {
                     if isSecure {
                         SecureField("", text: $text)
@@ -30,11 +23,11 @@ struct AnimatedSecureField: View {
                         TextField("", text: $text)
                     }
                 }
-                .font(.system(size: 16, weight: .light))
+                .font(.system(size: 16, weight: .regular))
                 .foregroundStyle(.white)
+                .tint(.white)
                 .textContentType(textContentType)
                 .focused($isFocused)
-                .padding(.top, shouldFloat ? 8 : 0)
                 
                 if !text.isEmpty {
                     Button(action: { isSecure.toggle() }) {
@@ -44,17 +37,14 @@ struct AnimatedSecureField: View {
                     }
                 }
             }
-        }
-        .padding(.vertical, 16)
-        .padding(.horizontal, 0)
-        .background(
-            VStack {
-                Spacer()
+            .padding(.vertical, 8)
+            .overlay(
                 Rectangle()
                     .frame(height: 1)
-                    .foregroundStyle(isFocused ? .white : .white.opacity(0.3))
-            }
-        )
-        .animation(.spring(response: 0.3, dampingFraction: 0.7), value: isFocused)
+                    .foregroundStyle(isFocused || !text.isEmpty ? .white : .white.opacity(0.3)),
+                alignment: .bottom
+            )
+        }
+        .animation(.easeInOut(duration: 0.2), value: isFocused)
     }
 }

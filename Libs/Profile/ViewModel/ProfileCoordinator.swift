@@ -9,6 +9,9 @@ class ProfileCoordinator: ObservableObject {
         case cart
         case generic(String)
         case orderDetails(OrderEntity)
+        case adminPanel
+        case login
+        case register
         
         var id: String {
             switch self {
@@ -17,6 +20,9 @@ class ProfileCoordinator: ObservableObject {
             case .cart: return "cart"
             case .generic(let title): return title
             case .orderDetails(let order): return "order_\(order.id ?? UUID().uuidString)"
+            case .adminPanel: return "adminPanel"
+            case .login: return "login"
+            case .register: return "register"
             }
         }
     }
@@ -32,6 +38,8 @@ class ProfileCoordinator: ObservableObject {
             path.append(ProfileRoute.cart)
         case "Minha Lista de Desejos":
             path.append(ProfileRoute.wishList)
+        case "Criar Novo Produto":
+            path.append(ProfileRoute.adminPanel)
         default:
             path.append(ProfileRoute.generic(item.title))
         }
@@ -57,11 +65,34 @@ class ProfileCoordinator: ObservableObject {
         case .wishList:
             WishlistView()
                 .environmentObject(container.wishlistViewModel)
-        case .generic(let title):
+        case .generic:
             OrdersListView(coordinator: self)
                 .environmentObject(container.cartViewModel)
         case .orderDetails(let order):
             OrderDetailsView(order: order)
+        case .adminPanel:
+            CreateProductView()
+        case .login:
+            LoginView(
+                onSuccess: { [weak self] in
+                    self?.path.removeLast()
+                },
+                onBackToGateway: { [weak self] in
+                    self?.path.removeLast()
+                }
+            )
+            .navigationBarBackButtonHidden(true)
+            
+        case .register:
+            RegisterView(
+                onSuccess: { [weak self] in
+                    self?.path.removeLast()
+                },
+                onBackToGateway: { [weak self] in
+                    self?.path.removeLast()
+                }
+            )
+            .navigationBarBackButtonHidden(true)
         }
     }
 }

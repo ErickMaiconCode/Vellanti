@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		EC0C513E2F71F84900D2796C /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0C513D2F71F84100D2796C /* ProductDetailView.swift */; };
+		EC0E21932F7851120028F75F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0E21922F78510E0028F75F /* LoginViewModel.swift */; };
+		EC0E21952F7853E50028F75F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0E21942F7853E20028F75F /* LoginView.swift */; };
+		EC0E21982F78664C0028F75F /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0E21972F7866460028F75F /* RegisterViewModel.swift */; };
+		EC0E219B2F7868890028F75F /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0E219A2F7868870028F75F /* RegisterView.swift */; };
+		EC0E21A42F7882DF0028F75F /* AdminViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0E21A32F7882DA0028F75F /* AdminViewModel.swift */; };
+		EC0E21A62F7884540028F75F /* CreateProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0E21A52F7884510028F75F /* CreateProductView.swift */; };
+		EC0E21A82F7895E30028F75F /* Untitled.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0E21A72F7895E30028F75F /* Untitled.swift */; };
 		EC0E6ECB2F6C399D007FEC71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC0E6EC52F6C399D007FEC71 /* Assets.xcassets */; };
 		EC0E6ED42F6C3A4C007FEC71 /* PlayerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0E6ED32F6C3A47007FEC71 /* PlayerUIView.swift */; };
 		EC0E6ED62F6C3E50007FEC71 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0E6ED52F6C3E4C007FEC71 /* OnboardingCoordinator.swift */; };
@@ -31,11 +38,11 @@
 		EC5BC67B2F6DD1EF00A0659D /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC67A2F6DD1EE00A0659D /* Gender.swift */; };
 		EC5BC67D2F6DD2C000A0659D /* RegisterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC67C2F6DD2BD00A0659D /* RegisterData.swift */; };
 		EC5BC67F2F6DD44800A0659D /* UserRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC67E2F6DD44400A0659D /* UserRole.swift */; };
-		EC5BC6822F6DD56200A0659D /* GenderPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6812F6DD55D00A0659D /* GenderPickerView.swift */; };
-		EC5BC6842F6DD57000A0659D /* CountryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6832F6DD56600A0659D /* CountryPickerView.swift */; };
-		EC5BC6862F6DD57B00A0659D /* PhoneFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6852F6DD57500A0659D /* PhoneFormatter.swift */; };
-		EC5BC6882F6DE03600A0659D /* AnimatedSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6872F6DE02D00A0659D /* AnimatedSecureField.swift */; };
-		EC5BC68A2F6DE3DF00A0659D /* PasswordValidatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6892F6DE3D100A0659D /* PasswordValidatorView.swift */; };
+		EC5BC6822F6DD56200A0659D /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6812F6DD55D00A0659D /* PasswordValidator.swift */; };
+		EC5BC6842F6DD57000A0659D /* LuxuryField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6832F6DD56600A0659D /* LuxuryField.swift */; };
+		EC5BC6862F6DD57B00A0659D /* VellantiDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6852F6DD57500A0659D /* VellantiDropdown.swift */; };
+		EC5BC6882F6DE03600A0659D /* VellantiSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6872F6DE02D00A0659D /* VellantiSecureField.swift */; };
+		EC5BC68A2F6DE3DF00A0659D /* VellantiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6892F6DE3D100A0659D /* VellantiTextField.swift */; };
 		EC5BC68C2F6DEA6000A0659D /* RegisterStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC68B2F6DEA5D00A0659D /* RegisterStep.swift */; };
 		EC5BC6902F6EE1A700A0659D /* WelcomeMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC68F2F6EE19900A0659D /* WelcomeMessage.swift */; };
 		EC5BC6952F6EE26700A0659D /* AuthGatewayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BC6942F6EE26200A0659D /* AuthGatewayProtocol.swift */; };
@@ -166,6 +173,13 @@
 /* Begin PBXFileReference section */
 		EC06DDFA2F688AC5001C571D /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		EC0C513D2F71F84100D2796C /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		EC0E21922F78510E0028F75F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		EC0E21942F7853E20028F75F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		EC0E21972F7866460028F75F /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		EC0E219A2F7868870028F75F /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		EC0E21A32F7882DA0028F75F /* AdminViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewModel.swift; sourceTree = "<group>"; };
+		EC0E21A52F7884510028F75F /* CreateProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductView.swift; sourceTree = "<group>"; };
+		EC0E21A72F7895E30028F75F /* Untitled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Untitled.swift; sourceTree = "<group>"; };
 		EC0E6EC52F6C399D007FEC71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC0E6ED32F6C3A47007FEC71 /* PlayerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerUIView.swift; sourceTree = "<group>"; };
 		EC0E6ED52F6C3E4C007FEC71 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
@@ -187,11 +201,11 @@
 		EC5BC67A2F6DD1EE00A0659D /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		EC5BC67C2F6DD2BD00A0659D /* RegisterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterData.swift; sourceTree = "<group>"; };
 		EC5BC67E2F6DD44400A0659D /* UserRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRole.swift; sourceTree = "<group>"; };
-		EC5BC6812F6DD55D00A0659D /* GenderPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPickerView.swift; sourceTree = "<group>"; };
-		EC5BC6832F6DD56600A0659D /* CountryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerView.swift; sourceTree = "<group>"; };
-		EC5BC6852F6DD57500A0659D /* PhoneFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneFormatter.swift; sourceTree = "<group>"; };
-		EC5BC6872F6DE02D00A0659D /* AnimatedSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedSecureField.swift; sourceTree = "<group>"; };
-		EC5BC6892F6DE3D100A0659D /* PasswordValidatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidatorView.swift; sourceTree = "<group>"; };
+		EC5BC6812F6DD55D00A0659D /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
+		EC5BC6832F6DD56600A0659D /* LuxuryField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuxuryField.swift; sourceTree = "<group>"; };
+		EC5BC6852F6DD57500A0659D /* VellantiDropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VellantiDropdown.swift; sourceTree = "<group>"; };
+		EC5BC6872F6DE02D00A0659D /* VellantiSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VellantiSecureField.swift; sourceTree = "<group>"; };
+		EC5BC6892F6DE3D100A0659D /* VellantiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VellantiTextField.swift; sourceTree = "<group>"; };
 		EC5BC68B2F6DEA5D00A0659D /* RegisterStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep.swift; sourceTree = "<group>"; };
 		EC5BC68F2F6EE19900A0659D /* WelcomeMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMessage.swift; sourceTree = "<group>"; };
 		EC5BC6942F6EE26200A0659D /* AuthGatewayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGatewayProtocol.swift; sourceTree = "<group>"; };
@@ -361,6 +375,30 @@
 			path = Lottie;
 			sourceTree = "<group>";
 		};
+		EC0E21912F7851040028F75F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EC0E21922F78510E0028F75F /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EC0E21962F7866410028F75F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EC0E21972F7866460028F75F /* RegisterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EC0E21992F78687E0028F75F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC0E219A2F7868870028F75F /* RegisterView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EC0E6ED72F6C401F007FEC71 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,6 +498,7 @@
 		EC5BC6732F6DD0B700A0659D /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				EC0E21912F7851040028F75F /* ViewModel */,
 				EC5BC6752F6DD0CB00A0659D /* View */,
 			);
 			path = Login;
@@ -468,6 +507,8 @@
 		EC5BC6742F6DD0C300A0659D /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				EC0E21992F78687E0028F75F /* View */,
+				EC0E21962F7866410028F75F /* ViewModel */,
 				EC5BC6802F6DD55400A0659D /* Components */,
 			);
 			path = Register;
@@ -476,6 +517,7 @@
 		EC5BC6752F6DD0CB00A0659D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EC0E21942F7853E20028F75F /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -504,11 +546,12 @@
 		EC5BC6802F6DD55400A0659D /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				EC5BC6892F6DE3D100A0659D /* PasswordValidatorView.swift */,
-				EC5BC6872F6DE02D00A0659D /* AnimatedSecureField.swift */,
-				EC5BC6852F6DD57500A0659D /* PhoneFormatter.swift */,
-				EC5BC6832F6DD56600A0659D /* CountryPickerView.swift */,
-				EC5BC6812F6DD55D00A0659D /* GenderPickerView.swift */,
+				EC0E21A72F7895E30028F75F /* Untitled.swift */,
+				EC5BC6892F6DE3D100A0659D /* VellantiTextField.swift */,
+				EC5BC6872F6DE02D00A0659D /* VellantiSecureField.swift */,
+				EC5BC6852F6DD57500A0659D /* VellantiDropdown.swift */,
+				EC5BC6832F6DD56600A0659D /* LuxuryField.swift */,
+				EC5BC6812F6DD55D00A0659D /* PasswordValidator.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1005,6 +1048,7 @@
 		EC74625C2F74133900E34EDB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				EC0E21A32F7882DA0028F75F /* AdminViewModel.swift */,
 				EC74625D2F74134800E34EDB /* ProfileCoordinator.swift */,
 			);
 			path = ViewModel;
@@ -1299,6 +1343,7 @@
 		ECF6ADB32F72C05D0071BBCE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EC0E21A52F7884510028F75F /* CreateProductView.swift */,
 				ECF6ADB52F72C2A00071BBCE /* ProfileListView.swift */,
 			);
 			path = View;
@@ -1483,6 +1528,7 @@
 			files = (
 				EC74628B2F75924D00E34EDB /* RunwayDetailView.swift in Sources */,
 				EC5BC6F72F70974600A0659D /* TabContainerView.swift in Sources */,
+				EC0E21A82F7895E30028F75F /* Untitled.swift in Sources */,
 				EC5BC6E32F70841400A0659D /* ClothingSpecs.swift in Sources */,
 				EC7462662F7423F500E34EDB /* InfoRow.swift in Sources */,
 				EC5BC6EB2F70863900A0659D /* ProductListView.swift in Sources */,
@@ -1494,13 +1540,14 @@
 				EC5BC6CD2F70746500A0659D /* NetworkError.swift in Sources */,
 				EC74623E2F732ECD00E34EDB /* CartViewModel.swift in Sources */,
 				EC7462872F758EEA00E34EDB /* RunwayShow.swift in Sources */,
-				EC5BC6882F6DE03600A0659D /* AnimatedSecureField.swift in Sources */,
+				EC5BC6882F6DE03600A0659D /* VellantiSecureField.swift in Sources */,
 				ECF6ADB22F72BD7B0071BBCE /* ProfileList.swift in Sources */,
 				EC74624A2F73487C00E34EDB /* CheckoutViewModel.swift in Sources */,
 				ECB6C1E62F684EBB007B594E /* SplashView.swift in Sources */,
 				ECC10B632F76F97000EE38DA /* CategoryCard.swift in Sources */,
 				EC74628F2F7595D100E34EDB /* ImageView.swift in Sources */,
 				EC5BC6902F6EE1A700A0659D /* WelcomeMessage.swift in Sources */,
+				EC0E21952F7853E50028F75F /* LoginView.swift in Sources */,
 				EC74625B2F7410AF00E34EDB /* DeliveryProgressBar.swift in Sources */,
 				EC5BC6A32F6F256000A0659D /* WelcomeCoordinator.swift in Sources */,
 				EC5BC6D92F7078D000A0659D /* ClothingItem.swift in Sources */,
@@ -1513,7 +1560,7 @@
 				EC5BC6FA2F70996400A0659D /* TabBarViewModel.swift in Sources */,
 				EC5BC6CB2F7071F000A0659D /* RunwayVideoHeader.swift in Sources */,
 				ECF6ADBA2F72D9B60071BBCE /* ColorSwatch.swift in Sources */,
-				EC5BC6842F6DD57000A0659D /* CountryPickerView.swift in Sources */,
+				EC5BC6842F6DD57000A0659D /* LuxuryField.swift in Sources */,
 				EC7462682F74241200E34EDB /* OrderItemRow.swift in Sources */,
 				EC5BC6F12F70953500A0659D /* TabItem.swift in Sources */,
 				EC5442412F6C398400F4A871 /* VideoPlayerView.swift in Sources */,
@@ -1523,6 +1570,7 @@
 				EC5BC67D2F6DD2C000A0659D /* RegisterData.swift in Sources */,
 				EC0E6EE62F6C5B03007FEC71 /* DependencyContainer.swift in Sources */,
 				EC0E6EF12F6C63A5007FEC71 /* PermissionService.swift in Sources */,
+				EC0E21982F78664C0028F75F /* RegisterViewModel.swift in Sources */,
 				EC74624E2F734B3700E34EDB /* CheckoutReviewView.swift in Sources */,
 				EC5BC69F2F6F22FF00A0659D /* WelcomeViewModelProtocol.swift in Sources */,
 				EC5BC6F52F7096DA00A0659D /* CustomTabView.swift in Sources */,
@@ -1530,7 +1578,7 @@
 				ECC10B5D2F76AC5800EE38DA /* Brand.swift in Sources */,
 				EC7462912F75964E00E34EDB /* HomeView.swift in Sources */,
 				ECC10B652F76FA3800EE38DA /* CategoryCardView.swift in Sources */,
-				EC5BC6862F6DD57B00A0659D /* PhoneFormatter.swift in Sources */,
+				EC5BC6862F6DD57B00A0659D /* VellantiDropdown.swift in Sources */,
 				EC5BC6D02F70754D00A0659D /* NetworkService.swift in Sources */,
 				EC0C513E2F71F84900D2796C /* ProductDetailView.swift in Sources */,
 				EC7462382F732D3700E34EDB /* CoreDataManager.swift in Sources */,
@@ -1541,23 +1589,27 @@
 				EC5BC6B32F6F70F600A0659D /* Loading.swift in Sources */,
 				EC0E6EEC2F6C5E62007FEC71 /* SplashCoordinator.swift in Sources */,
 				EC5BC6FE2F70A80400A0659D /* CategoryViewModel.swift in Sources */,
+				EC0E21932F7851120028F75F /* LoginViewModel.swift in Sources */,
 				EC5BC6A52F6F294400A0659D /* WelcomeView.swift in Sources */,
 				EC7462522F7364BB00E34EDB /* OrderViewModel.swift in Sources */,
 				EC0E6ED62F6C3E50007FEC71 /* OnboardingCoordinator.swift in Sources */,
 				EC5BC7022F70D4D900A0659D /* ContactOption.swift in Sources */,
+				EC0E21A42F7882DF0028F75F /* AdminViewModel.swift in Sources */,
 				EC5BC6DF2F70812A00A0659D /* ErrorView.swift in Sources */,
-				EC5BC6822F6DD56200A0659D /* GenderPickerView.swift in Sources */,
+				EC5BC6822F6DD56200A0659D /* PasswordValidator.swift in Sources */,
 				EC5BC6972F6EE3E700A0659D /* AuthGatewayViewModel.swift in Sources */,
 				EC7462892F758FBA00E34EDB /* RunwayMockData.swift in Sources */,
 				EC7462502F7361EA00E34EDB /* SucessView.swift in Sources */,
 				EC7462402F73319700E34EDB /* CartView.swift in Sources */,
 				ECC10B682F77631600EE38DA /* FirebaseAuthService.swift in Sources */,
 				EC5BC7042F70D4E100A0659D /* ContactSheet.swift in Sources */,
+				EC0E21A62F7884540028F75F /* CreateProductView.swift in Sources */,
 				EC5BC67F2F6DD44800A0659D /* UserRole.swift in Sources */,
 				EC7462F22F76A7D800E34EDB /* BrandView.swift in Sources */,
 				EC5BC68C2F6DEA6000A0659D /* RegisterStep.swift in Sources */,
-				EC5BC68A2F6DE3DF00A0659D /* PasswordValidatorView.swift in Sources */,
+				EC5BC68A2F6DE3DF00A0659D /* VellantiTextField.swift in Sources */,
 				EC74628D2F75953300E34EDB /* TextSectionView.swift in Sources */,
+				EC0E219B2F7868890028F75F /* RegisterView.swift in Sources */,
 				EC5BC6C62F706CC200A0659D /* Category.swift in Sources */,
 				EC7462562F7407CF00E34EDB /* OrderCard.swift in Sources */,
 				EC5BC6DC2F707B1A00A0659D /* CategoryView.swift in Sources */,

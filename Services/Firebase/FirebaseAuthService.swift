@@ -104,7 +104,7 @@ final class FirebaseAuthService {
         let document = try await userRef.getDocument()
             
         guard let data = document.data() else {
-            throw AuthError.useNotFound
+            throw AuthError.userNotFound
         }
         
         let user = User(

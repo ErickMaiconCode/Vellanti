@@ -22,7 +22,7 @@ struct OrderDetailsView: View {
                             Spacer()
                             Text(order.formattedDate)
                                 .font(.system(size: 14))
-                                .foregroundStyle(Color.gray)
+                                .foregroundStyle(Color.black.opacity(0.6))
                         }
                         
                         if let status = order.status {
@@ -54,7 +54,7 @@ struct OrderDetailsView: View {
                                 }
                             }
                         }
-                        .background(Color.gray.opacity(0.02))
+                        .background(Color.black.opacity(0.02))
                     }
                     
                     Divider()
@@ -87,7 +87,7 @@ struct OrderDetailsView: View {
                         }
                     }
                     .padding(24)
-                    .background(Color.gray.opacity(0.02))
+                    .background(Color.black.opacity(0.02))
                 }
                 .padding(.vertical, 24)
             }

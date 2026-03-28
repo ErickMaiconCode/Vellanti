@@ -65,5 +65,6 @@ final class DependencyContainer {
     
     func makeProfileView(coordinator: ProfileCoordinator) -> some View {
         return ProfileListView(coordinator: coordinator)
+            .environmentObject(authState)
     }
 }

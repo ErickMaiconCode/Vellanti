@@ -5,7 +5,7 @@ enum AuthError: Error {
     case invalidEmail
     case weakPassword
     case emailAlreadyInUse
-    case useNotFound
+    case userNotFound
     case wrongPassword
     case networkError
     case unknown(String)
@@ -18,14 +18,14 @@ enum AuthError: Error {
             return .authWeakPassword
         case .emailAlreadyInUse:
             return .authEmailInUse
-        case .useNotFound:
+        case .userNotFound:
             return .authUserNotFound
         case .wrongPassword:
             return .authWrongPassword
         case .networkError:
             return .noConnection
         case .unknown(let message):
-            return .authGeneric(message)
+            return .authGeneric("Esta conta foi desativada. Entre em contato com o suporte.")
         }
     }
     
@@ -42,13 +42,13 @@ enum AuthError: Error {
         case .emailAlreadyInUse:
             return .emailAlreadyInUse
         case .userNotFound:
-            return .useNotFound
+            return .userNotFound
         case .wrongPassword:
             return .wrongPassword
         case .networkError:
             return .networkError
         default:
-            return .unknown(firebaseError.localizedDescription)
+            return .unknown("Erro ao autenticar. Tente novamente.")
         }
     }
 }
