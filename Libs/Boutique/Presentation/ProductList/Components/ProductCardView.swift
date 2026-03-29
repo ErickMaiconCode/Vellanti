@@ -51,6 +51,7 @@ struct ProductCardView: View {
                             EmptyView()
                         }
                     }
+                    .id(currentImageIndex)
                 )
                 .clipped()
                 .contentShape(Rectangle())
@@ -67,7 +68,7 @@ struct ProductCardView: View {
         }
         .onTapGesture {
             if item.imageCount > 1 {
-                withAnimation(.easeInOut(duration: 0.3)) {
+                withAnimation(.easeInOut(duration: 0.4)) {
                     currentImageIndex = (currentImageIndex + 1) % item.imageCount
                 }
             }

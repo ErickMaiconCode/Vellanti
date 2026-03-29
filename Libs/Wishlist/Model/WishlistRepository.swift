@@ -12,21 +12,43 @@ final class CoreDataWishlistRepository: WishlistRepositoryProtocol {
     }
     
     func add(item: ClothingItem, userId: String?) {
-        let newItem = WishlistEntity(context: context)
-        newItem.id = item.id
-        newItem.name = item.name
-        newItem.brand = item.brand
-        newItem.price = item.price
-        newItem.image = item.image
-        newItem.dateAdded = Date()
-        newItem.userId = userId
-        CoreDataManager.shared.save()
+  
+        context.performAndWait {
+            let newItem = WishlistEntity(context: context)
+            newItem.id = item.id
+            newItem.name = item.name
+            newItem.brand = item.brand
+            newItem.price = item.price
+            newItem.image = item.image
+            newItem.dateAdded = Date()
+            newItem.userId = userId
+            
+            CoreDataManager.shared.save()
+        }
+
+        if let loggedInUserId = userId {
+            CoreDataSyncService.shared.uploadWishlistItem(
+                id: item.id,
+                userId: loggedInUserId,
+                name: item.name,
+                brand: item.brand,
+                price: item.price,
+                image: item.image
+            )
+        }
     }
     
     func remove(item: WishlistEntity) {
+        let itemId = item.id
+        let itemUserId = item.userId
+        
         context.performAndWait {
             self.context.delete(item)
             CoreDataManager.shared.save()
+        }
+        
+        if let validItemId = itemId, let validUserId = itemUserId {
+            CoreDataSyncService.shared.removeWishlistItem(id: validItemId, userId: validUserId)
         }
     }
 }

@@ -23,17 +23,17 @@ final class BoutiqueAPIService {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let encoder = JSONEncoder()
-        encoder.keyEncodingStrategy = .convertToSnakeCase
+
         request.httpBody = try encoder.encode(product)
         
-        let (_, response) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await URLSession.shared.data(for: request)
         
         guard let httpResponse = response as? HTTPURLResponse else {
             throw NetworkError.serverError(0)
         }
         
         guard (200...299).contains(httpResponse.statusCode) else {
-            throw NetworkError.serverError(0)
+            throw NetworkError.serverError(httpResponse.statusCode)
         }
     }
 }

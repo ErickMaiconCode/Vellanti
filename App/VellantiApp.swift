@@ -10,40 +10,34 @@ struct VellantiApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ZStack {
-                switch appCoordinator.currentScreen {
-                case .loading:
-                    Color.clear
-                    
-                case .splash:
-                    appCoordinator.makeSplashView()
-                    
-                case .onboarding:
-                    appCoordinator.makeOnboardingView()
-                        .transition(.opacity)
-                    
-                case .authGateway:
-                    appCoordinator.makeAuthGatewayView()
-                        .transition(.opacity)
-                    
-                case .welcome:
-                    appCoordinator.makeWelcomeView()
-                        .transition(.opacity)
-                    
-                case .login:
-                    appCoordinator.makeLoginView()
-                        .transition(.opacity)
-                    
-                case .register:
-                    appCoordinator.makeRegisterView()
-                        .transition(.opacity)
-                    
-                case .main:
-                    appCoordinator.makeMainView()
-                        .transition(.opacity)
+             ZStack {
+                 Color.black.ignoresSafeArea()
+                 
+                 Group {
+                     switch appCoordinator.currentScreen {
+                     case .loading:
+                         Color.clear
+                     case .splash:
+                         appCoordinator.makeSplashView()
+                     case .onboarding:
+                         appCoordinator.makeOnboardingView()
+                     case .authGateway:
+                         appCoordinator.makeAuthGatewayView()
+                     case .welcome:
+                         appCoordinator.makeWelcomeView()
+                     case .login:
+                         appCoordinator.makeLoginView()
+                     case .register:
+                         appCoordinator.makeRegisterView()
+                     case .main:
+                         appCoordinator.makeMainView()
+                     }
                  }
-             }
-             .animation(.easeInOut(duration: 0.5), value: appCoordinator.currentScreen)
-         }
-     }
-}
+
+                 .transition(.opacity)
+                 .id(appCoordinator.currentScreen)
+              }
+             .animation(.easeInOut(duration: 0.4), value: appCoordinator.currentScreen)
+          }
+      }
+ }

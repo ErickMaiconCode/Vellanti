@@ -6,6 +6,7 @@ struct ProductDetailView: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var cartViewModel: CartViewModel
     @EnvironmentObject var wishlistViewModel: WishlistViewModel
+    @State private var contentAppeared = false
     
     @State private var selectedImageIndex = 0
     
@@ -49,39 +50,69 @@ struct ProductDetailView: View {
         }
         .hideTabBar()
         .navigationBarHidden(true)
+        .onAppear {
+            contentAppeared = true
+        }
         .sheet(isPresented: $cartViewModel.isCartOpen) {
             CartView()
         }
     }
     
     private var imageGallery: some View {
-        TabView(selection: $selectedImageIndex) {
-            ForEach(0..<item.imageCount, id: \.self) { index in
-                AsyncImage(url: item.imageURL(at: index)) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .clipped()
-                    case .failure, .empty:
-                        Rectangle()
-                            .fill(Color.gray.opacity(0.05))
-                            .overlay(
-                                LottieView(animation: .named("Loading_Black"))
-                                    .playing(loopMode: .loop)
-                                    .frame(width: 50, height: 50)
-                            )
-                    @unknown default:
-                        EmptyView()
+            ZStack(alignment: .bottom) {
+                TabView(selection: $selectedImageIndex) {
+                    ForEach(0..<item.imageCount, id: \.self) { index in
+                        AsyncImage(url: item.imageURL(at: index)) { phase in
+                            switch phase {
+                            case .success(let image):
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .clipped()
+                            case .failure, .empty:
+                                Rectangle()
+                                    .fill(Color.gray.opacity(0.05))
+                                    .overlay(
+                                        LottieView(animation: .named("Loading_Black"))
+                                            .playing(loopMode: .loop)
+                                            .frame(width: 50, height: 50)
+                                    )
+                            @unknown default:
+                                EmptyView()
+                            }
+                        }
+                        .tag(index)
                     }
                 }
-                .tag(index)
+                .frame(height: 600)
+                .tabViewStyle(.page(indexDisplayMode: .never))
+                
+                if item.imageCount > 1 {
+                    progressLine
+                        .padding(.bottom, 24)
+                }
             }
         }
-        .frame(height: 600)
-        .tabViewStyle(.page(indexDisplayMode: .always))
-    }
+
+    
+    private var progressLine: some View {
+            GeometryReader { geometry in
+                ZStack(alignment: .leading) {
+                    Rectangle()
+                        .fill(Color.white.opacity(0.3))
+
+                    Rectangle()
+                        .fill(Color.white)
+                        .frame(
+                            width: geometry.size.width * CGFloat(selectedImageIndex + 1) / CGFloat(item.imageCount),
+                            height: 2
+                        )
+                        .animation(.easeInOut(duration: 0.3), value: selectedImageIndex)
+                }
+            }
+            .frame(height: 2)
+            .padding(.horizontal, 20)
+        }
     
     private var productInfo: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -100,6 +131,9 @@ struct ProductDetailView: View {
                 .lineSpacing(4)
                 .padding(.top, 8)
         }
+        .opacity(contentAppeared ? 1: 0)
+        .offset(y: contentAppeared ? 0 : 16)
+        .animation(.easeOut(duration: 0.5).delay(0.1), value: contentAppeared)
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(20)
     }
@@ -158,6 +192,7 @@ struct ProductDetailView: View {
 
                 Button {
                     cartViewModel.addToCart(item: item)
+                    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                 } label: {
                     Text("Adicionar à Sacola")
                         .font(.system(size: 16, weight: .semibold))
@@ -168,6 +203,8 @@ struct ProductDetailView: View {
                         .cornerRadius(0)
                 }
             }
+            .offset(y: contentAppeared ? 0 : 60)
+            .animation(.spring(response: 0.5, dampingFraction: 0.8).delay(0.15), value: contentAppeared)
             .padding(.horizontal, 24)
             .padding(.top, 16)
             .padding(.bottom, 34)

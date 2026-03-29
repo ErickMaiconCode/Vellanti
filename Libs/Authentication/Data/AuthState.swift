@@ -26,9 +26,10 @@ final class AuthState: ObservableObject {
         do {
             let user = try await firebaseService.login(email: email, password: password)
             self.currentUser = user
-            self.isAuthenticated = true
-            
+
             await coreDataService.syncUserData(userId: user.id)
+
+            self.isAuthenticated = true
             
         } catch let authError as AuthError {
             

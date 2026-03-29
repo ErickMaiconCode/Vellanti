@@ -44,7 +44,11 @@ private struct TabContentView: View {
                         .navigationDestination(for: HomeCoordinator.HomeRoute.self) { route in
                             homeCoordinator.build(route: route)
                         }
+                        .navigationDestination(for: ClothingItem.self) { item in
+                            homeCoordinator.build(route: .productDetail(item))
+                        }
                 }
+                .transition(.opacity)
                 
             case .boutique:
                 NavigationStack(path: $boutiqueCoordinator.path) {
@@ -53,17 +57,24 @@ private struct TabContentView: View {
                         .navigationDestination(for: BoutiqueCoordinator.BoutiqueRoute.self) { route in
                             boutiqueCoordinator.build(route: route)
                         }
+                    
+                        .navigationDestination(for: ClothingItem.self) { item in
+                            boutiqueCoordinator.build(route: .productDetail(item))
+                        }
                 }
+                .transition(.opacity)
                 
             case .brandStory:
                 NavigationStack {
                     BrandView()
                 }
+                .transition(.opacity)
                 
             case .profile:
                 profileCoordinator.makeProfileView()
             }
         }
+        .animation(.easeInOut(duration: 0.4), value: selectedTab)
     }
 }
 

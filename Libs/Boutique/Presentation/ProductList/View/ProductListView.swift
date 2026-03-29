@@ -4,6 +4,7 @@ struct ProductListView: View {
     @StateObject private var viewModel = DependencyContainer.shared.makeProductListViewModel()
     let category: Category
     @Environment(\.dismiss) private var dismiss
+    @State private var appeared = false
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -49,6 +50,12 @@ struct ProductListView: View {
                 
                 productGrid
             }
+            .onAppear {
+                appeared = true
+            }
+            .onDisappear {
+                appeared = false
+            }
         }
         .scrollIndicators(.hidden)
         .ignoresSafeArea(edges: .top)
@@ -62,12 +69,15 @@ struct ProductListView: View {
             ],
             spacing: 24
         ) {
-            ForEach(viewModel.clothingItems) { item in
-                NavigationLink(value: BoutiqueCoordinator.BoutiqueRoute.productDetail(item)) {
+            ForEach(Array(viewModel.clothingItems.enumerated()), id: \.element.id) { index, item in
+                NavigationLink(value: item) {
                     ProductCardView(item: item)
                 }
                 .buttonStyle(.plain)
-            }
+                .opacity(appeared ? 1:0)
+                .offset(y: appeared ? 0: 24)
+                .animation(.easeOut(duration: 0.5).delay(Double(index)*0.07), value: appeared)
+                }
             }
             .padding(.horizontal, 30)
             .padding(.top, 20)

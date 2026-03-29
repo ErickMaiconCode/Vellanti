@@ -17,6 +17,7 @@ protocol ViewModelFactory {
     func makeOrderViewModel() -> OrderViewModel
     func makeWishlistViewModel() -> WishlistViewModel
     func makeProductListViewModel() -> ProductListViewModel
+    func makeAdminViewModel() -> AdminViewModel
 }
 
 protocol CoordinatorFactory {
@@ -52,6 +53,10 @@ final class DependencyContainer: ServiceFactory, RepositoryFactory, ViewModelFac
 
     func makeSplashCoordinator(onComplete: @escaping () -> Void) -> SplashCoordinator {
         return SplashCoordinator(repository: onboardingRepository, onComplete: onComplete)
+    }
+    
+    func makeAdminViewModel() -> AdminViewModel {
+        return AdminViewModel(repository: boutiqueRepository)
     }
     
     func makeOnboardingCoordinator(onComplete: @escaping () -> Void) -> OnboardingCoordinator {

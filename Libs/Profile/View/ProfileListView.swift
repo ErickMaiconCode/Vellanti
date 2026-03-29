@@ -3,6 +3,7 @@ import SwiftUI
 struct ProfileListView: View {
     @ObservedObject var coordinator: ProfileCoordinator
     @EnvironmentObject var authState: AuthState
+    @State private var listAppeared = false
     
     var items: [ProfileList] {
         ProfileList.items(isAdmin: authState.isAdmin)
@@ -14,11 +15,14 @@ struct ProfileListView: View {
                 if authState.isAuthenticated {
 
                     authenticatedView
+                        .transition(.asymmetric(insertion: .opacity, removal: .opacity))
                 } else {
 
                     GuestProfileAuthView(coordinator: coordinator)
+                        .transition(.asymmetric(insertion: .opacity, removal: .opacity))
                 }
             }
+            .animation(.easeInOut(duration: 0.6), value: authState.isAuthenticated)
             .navigationDestination(for: ProfileCoordinator.ProfileRoute.self) { route in
                 coordinator.build(route: route)
             }
@@ -33,13 +37,16 @@ struct ProfileListView: View {
                         Color.clear.frame(height: 180)
                         
                         VStack(spacing: 0) {
-                            ForEach(items) { item in
+                            ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
                                 
                                 Button {
                                     coordinator.navigate(to: item)
                                 } label: {
                                     ProfileRow(item: item)
                                 }
+                                .opacity(listAppeared ? 1 : 0)
+                                .offset(x: listAppeared ? 0 : -20)
+                                .animation(.easeOut(duration: 0.4).delay(Double(index) * 0.06), value: listAppeared)
                                 
                                 if item.id != items.last?.id {
                                     Divider()
@@ -81,6 +88,9 @@ struct ProfileListView: View {
             .background(Color.white)
             .ignoresSafeArea(edges: .top)
             .navigationBarHidden(true)
+            .onAppear {
+                listAppeared = true
+            }
     }
     
     struct BlurryHeader: View {
@@ -109,7 +119,16 @@ struct ProfileListView: View {
                     .opacity(0.5)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.black.opacity(0.05))
+            .background(
+                ZStack {
+                    Rectangle()
+                        .fill(.ultraThinMaterial)
+
+                    Color.white.opacity(0.85)
+                }
+                .ignoresSafeArea(edges: .top)
+            )
+            .shadow(color: Color.black.opacity(0.03), radius: 8, x: 0, y: 4)
         }
     }
     
@@ -150,6 +169,7 @@ struct GuestProfileAuthView: View {
             .onAppear {
                 viewModel.onLoginTapped = {
                     coordinator.path.append(ProfileCoordinator.ProfileRoute.login)
+                    
                 }
                 viewModel.onRegisterTapped = {
                     coordinator.path.append(ProfileCoordinator.ProfileRoute.register)

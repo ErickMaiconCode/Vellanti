@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CreateProductView: View {
-    @StateObject private var viewModel = AdminViewModel()
+    @StateObject private var viewModel = DependencyContainer.shared.makeAdminViewModel()
     @Environment(\.dismiss) var dismiss
     
     var body: some View {

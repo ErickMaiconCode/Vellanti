@@ -19,6 +19,12 @@ final class AdminViewModel: ObservableObject {
     @Published var material: String = ""
     @Published var gender: String = "Unissex"
     
+    private let repository: BoutiqueRepositoryProtocol
+
+        init(repository: BoutiqueRepositoryProtocol) {
+            self.repository = repository
+        }
+    
     var isFormValid: Bool {
         !name.isEmpty &&
         !brand.isEmpty &&
@@ -29,7 +35,7 @@ final class AdminViewModel: ObservableObject {
         !size.isEmpty &&
         !color.isEmpty &&
         !material.isEmpty &&
-        Double(price) != nil
+        parsedPrice != nil
     }
     
     func createProduct() async {
@@ -38,7 +44,7 @@ final class AdminViewModel: ObservableObject {
             return
         }
         
-        guard let priceValue = Double(price) else {
+        guard let priceValue = parsedPrice else {
             errorMessage = "Preço inválido."
             return
         }
@@ -65,20 +71,21 @@ final class AdminViewModel: ObservableObject {
         )
         
         do {
-            try await BoutiqueAPIService.shared.createProduct(product)
-            clearForm()
-            
-            BoutiqueRepository.shared.clearCache()
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self.successMessage = nil
-            }
-        } catch {
-            errorMessage = "Erro ao criar produto: \(error.localizedDescription)"
-        }
-        
-        isLoading = false
-    }
+             try await repository.createProduct(product)
+             repository.clearCache()
+             
+             successMessage = "Produto criado com sucesso!"
+             clearForm()
+             
+             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                 self.successMessage = nil
+             }
+         } catch {
+             errorMessage = "Erro ao criar produto: \(error.localizedDescription)"
+         }
+         
+         isLoading = false
+     }
     
     func clearForm() {
         name = ""
@@ -92,4 +99,10 @@ final class AdminViewModel: ObservableObject {
         material = ""
         gender = "Unissex"
     }
+    
+    private var parsedPrice: Double? {
+        let safePriceString = price.replacingOccurrences(of: ",", with: ".")
+        return Double(safePriceString)
+    }
+
 }

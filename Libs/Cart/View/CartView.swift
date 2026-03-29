@@ -73,8 +73,10 @@ struct CartView: View {
             } else {
                 ScrollView {
                     VStack(spacing: 0) {
-                        ForEach(cartViewModel.cartItems, id: \.self) { item in
+                        ForEach(Array(cartViewModel.cartItems.enumerated()), id: \.element) { index, item in
                             CartItemRow(item: item, viewModel: cartViewModel)
+                                .transition(.move(edge: .trailing).combined(with: .opacity))
+                                .animation(.easeOut(duration: 0.3).delay(Double(index)*0.05), value: cartViewModel.cartItems.count)
                             
                             if item != cartViewModel.cartItems.last {
                                 Divider().padding(.leading, 24)

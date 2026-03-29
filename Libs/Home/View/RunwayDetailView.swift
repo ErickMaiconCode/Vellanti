@@ -55,7 +55,7 @@ struct RunwayDetailView: View {
                         }
                     }
                     
-                    VStack(alignment: .leading, spacing: 30) {
+                    LazyVStack(alignment: .leading, spacing: 30) {
 
                         VStack(alignment: .leading, spacing: 8) {
                             Text(show.subtitle.uppercased())
@@ -73,18 +73,29 @@ struct RunwayDetailView: View {
                         Divider()
                             .padding(.horizontal, 24)
                         
-                        TextSectionView(section: show.introSection)
-                            .padding(.horizontal, 24)
+                        ScrollRevealView {
+                            TextSectionView(section: show.introSection)
+                                .padding(.horizontal, 24)
+                        }
                         
-                        ImageView(imageName: show.middleImage)
+                       
+                        ScrollRevealView {
+                            ImageView(imageName: show.middleImage)
+                        }
                         
-                        TextSectionView(section: show.conceptSection)
-                            .padding(.horizontal, 24)
+                        ScrollRevealView {
+                            TextSectionView(section: show.conceptSection)
+                                .padding(.horizontal, 24)
+                        }
                         
-                        ImageView(imageName: show.detailImage)
+                        ScrollRevealView {
+                            ImageView(imageName: show.detailImage)
+                        }
                         
-                        TextSectionView(section: show.footerSection)
-                            .padding(.horizontal, 24)
+                        ScrollRevealView {
+                            TextSectionView(section: show.footerSection)
+                                .padding(.horizontal, 24)
+                        }
                         
                         Divider()
                             .padding(.horizontal, 24)

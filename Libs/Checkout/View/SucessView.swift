@@ -16,6 +16,8 @@ struct SuccessView: View {
                     Circle()
                         .stroke(Color.black.opacity(0.6), lineWidth: 1)
                         .frame(width: 100, height: 100)
+                        .scaleEffect(isAnimating ? 1.0 : 0.3)
+                        .animation(.spring(response: 0.7, dampingFraction: 0.6).delay(0.1), value: isAnimating)
                     
                     Image(systemName: "checkmark")
                         .font(.system(size: 40, weight: .medium))
@@ -31,6 +33,7 @@ struct SuccessView: View {
                     .padding(.bottom, 16)
                     .opacity(isAnimating ? 1.0 : 0.0)
                     .offset(y: isAnimating ? 0 : 20)
+                    .animation(.easeOut(duration: 0.5).delay(0.4), value: isAnimating)
                 
                 Text("Obrigado pela sua compra.\nEnviamos os detalhes para o seu e-mail.")
                     .font(.system(size: 16, weight: .light))
@@ -40,6 +43,7 @@ struct SuccessView: View {
                     .padding(.horizontal, 40)
                     .opacity(isAnimating ? 1.0 : 0.0)
                     .offset(y: isAnimating ? 0 : 20)
+                    .animation(.easeOut(duration: 0.5).delay(0.4), value: isAnimating)
                 
                 Spacer()
                 
@@ -56,6 +60,7 @@ struct SuccessView: View {
                 }
                 .padding(24)
                 .opacity(isAnimating ? 1.0 : 0.0)
+                .animation(.easeOut(duration: 0.4).delay(0.9), value: isAnimating)
                 .padding(.bottom, 20)
             }
         }

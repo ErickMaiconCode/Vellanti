@@ -1,8 +1,7 @@
 import Foundation
 
 final class BoutiqueRepository: BoutiqueRepositoryProtocol {
-    
-    static let shared = BoutiqueRepository()
+
     private var cachedItems: [ClothingItem] = []
     
     func getClothingItems() async throws -> [ClothingItem] {
@@ -33,5 +32,10 @@ final class BoutiqueRepository: BoutiqueRepositoryProtocol {
     func forceReload() async throws -> [ClothingItem] {
         clearCache()
         return try await getClothingItems()
+    }
+    
+    func createProduct(_ product: ClothingItem) async throws {
+        try await BoutiqueAPIService.shared.createProduct(product)
+        clearCache()
     }
 }
