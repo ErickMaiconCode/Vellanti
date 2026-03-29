@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CheckoutFormView: View {
-    @StateObject private var checkoutViewModel = CheckoutViewModel()
+    @ObservedObject var checkoutViewModel: CheckoutViewModel
     @EnvironmentObject var cartViewModel: CartViewModel
     @Environment(\.dismiss) var dismiss
     
@@ -78,7 +78,7 @@ struct CheckoutFormView: View {
             VStack(spacing: 0) {
                 Divider()
                 
-                NavigationLink(destination: CheckoutReviewView(checkoutViewModel: checkoutViewModel)) {
+                NavigationLink(value: CheckoutCoordinator.CheckoutRoute.review) {
                     Text("Revisar Pedido")
                         .font(.system(size: 16, weight: .medium))
                         .foregroundColor(.white)

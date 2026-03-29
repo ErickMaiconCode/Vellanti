@@ -81,13 +81,15 @@ struct OrderDetailsView: View {
                         HStack {
                             Text("Total")
                                 .font(.system(size: 18, weight: .semibold))
+                                .foregroundStyle(Color.black.opacity(0.6))
                             Spacer()
-                            Text(order.formattedDate)
+                            Text(order.total.toCurrency)
                                 .font(.system(size: 20, weight: .bold, design: .serif))
+                                .foregroundStyle(Color.black.opacity(0.6))
                         }
                     }
                     .padding(24)
-                    .background(Color.black.opacity(0.02))
+                    .background(Color.gray.opacity(0.2))
                 }
                 .padding(.vertical, 24)
             }

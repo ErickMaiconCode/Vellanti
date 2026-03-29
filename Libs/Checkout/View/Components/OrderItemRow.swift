@@ -23,6 +23,7 @@ struct OrderItemRow: View {
                 
                 Text(item.name ?? "")
                     .font(.system(size: 14, weight: .medium))
+                    .foregroundStyle(Color.black)
                     .lineLimit(2)
                 
                 Text("Tam: \(item.size ?? "-") | Cor: \(item.color ?? "-")")

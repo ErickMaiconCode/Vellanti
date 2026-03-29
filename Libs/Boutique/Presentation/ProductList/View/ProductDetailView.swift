@@ -116,12 +116,9 @@ struct ProductDetailView: View {
                         .tracking(1)
                     
                     HStack(spacing: 12) {
-                        Circle()
-                            .fill(Color.black)
-                            .frame(width: 24, height: 24)
-                            .overlay(Circle().stroke(Color.gray.opacity(0.2), lineWidth: 1))
+                        ColorSwatch(colorName: item.specs.color)
                         
-                        Text(item.specs.color)
+                        Text(item.specs.color.capitalized)
                             .font(.system(size: 15, weight: .regular))
                             .foregroundStyle(Color.black)
                     }

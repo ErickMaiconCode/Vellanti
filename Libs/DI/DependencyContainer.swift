@@ -1,45 +1,61 @@
 import SwiftUI
 
-// MARK: - Dependency Container
+protocol ServiceFactory {
+    var permissionService: PermissionServiceProtocol { get }
+}
 
-final class DependencyContainer {
+protocol RepositoryFactory {
+    var onboardingRepository: OnboardingRepositoryProtocol { get }
+    var cartRepository: CartRepositoryProtocol { get }
+    var orderRepository: OrderRepositoryProtocol { get }
+    var wishlistRepository: WishlistRepositoryProtocol { get }
+    var boutiqueRepository: BoutiqueRepositoryProtocol { get }
+}
+
+protocol ViewModelFactory {
+    func makeCartViewModel() -> CartViewModel
+    func makeOrderViewModel() -> OrderViewModel
+    func makeWishlistViewModel() -> WishlistViewModel
+    func makeProductListViewModel() -> ProductListViewModel
+}
+
+protocol CoordinatorFactory {
+    func makeSplashCoordinator(onComplete: @escaping () -> Void) -> SplashCoordinator
+    func makeOnboardingCoordinator(onComplete: @escaping () -> Void) -> OnboardingCoordinator
+    func makeAuthGatewayCoordinator(showContinueWithoutLogin: Bool, onLoginTapped: @escaping () -> Void, onRegisterTapped: @escaping () -> Void, onContinueWithoutLogin: @escaping () -> Void) -> AuthGatewayCoordinator
+    func makeWelcomeCoordinator() -> WelcomeCoordinator
+    func makeProfileCoordinator() -> ProfileCoordinator
+}
+
+final class DependencyContainer: ServiceFactory, RepositoryFactory, ViewModelFactory, CoordinatorFactory {
     
     static let shared = DependencyContainer()
+
+    lazy var permissionService: PermissionServiceProtocol = PermissionService()
+    lazy var onboardingRepository: OnboardingRepositoryProtocol = OnboardingRepository()
+    lazy var cartRepository: CartRepositoryProtocol = CoreDataCartRepository()
+    lazy var orderRepository: OrderRepositoryProtocol = CoreDataOrderRepository()
+    lazy var wishlistRepository: WishlistRepositoryProtocol = CoreDataWishlistRepository()
+    lazy var boutiqueRepository: BoutiqueRepositoryProtocol = BoutiqueRepository()
+
+    func makeCartViewModel() -> CartViewModel {
+        return CartViewModel(repository: cartRepository)
+    }
     
-    private init() {}
+    func makeOrderViewModel() -> OrderViewModel {
+        return OrderViewModel(repository: orderRepository)
+    }
     
-    // MARK: - Services
-    
-    lazy var cartViewModel = CartViewModel()
-    
-    lazy var orderViewModel = OrderViewModel()
-    
-    lazy var authState: AuthState = AuthState.shared
-    
-    lazy var wishlistViewModel: WishlistViewModel = WishlistViewModel()
-    
-    lazy var permissionService: PermissionServiceProtocol = {
-        return PermissionService()
-    }()
-    
-    lazy var onboardingRepository: OnboardingRepositoryProtocol = {
-        return OnboardingRepository()
-    }()
-    
-    // MARK: - Coordinators
-    
+    func makeWishlistViewModel() -> WishlistViewModel {
+        return WishlistViewModel(repository: wishlistRepository)
+    }
+
     func makeSplashCoordinator(onComplete: @escaping () -> Void) -> SplashCoordinator {
-        return SplashCoordinator(
-            repository: onboardingRepository,
-            onComplete: onComplete)
+        return SplashCoordinator(repository: onboardingRepository, onComplete: onComplete)
     }
     
     func makeOnboardingCoordinator(onComplete: @escaping () -> Void) -> OnboardingCoordinator {
-        return OnboardingCoordinator(
-            permissionService: permissionService,
-            repository: onboardingRepository,
-            onComplete: onComplete
-        )
+        return OnboardingCoordinator(permissionService: permissionService, repository: onboardingRepository, onComplete: onComplete)
     }
     
     func makeAuthGatewayCoordinator(
@@ -63,8 +79,8 @@ final class DependencyContainer {
         return ProfileCoordinator()
     }
     
-    func makeProfileView(coordinator: ProfileCoordinator) -> some View {
-        return ProfileListView(coordinator: coordinator)
-            .environmentObject(authState)
+    func makeProductListViewModel() -> ProductListViewModel {
+        return ProductListViewModel(repository: boutiqueRepository)
     }
+
 }

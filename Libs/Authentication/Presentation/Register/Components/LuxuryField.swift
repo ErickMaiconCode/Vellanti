@@ -19,7 +19,7 @@ struct LuxuryTextField: View {
                 .disableAutocorrection(true)
                 .font(.system(size: 16, weight: .regular))
                 .foregroundColor(.white)
-                .accentColor(.white) // Cor do cursor
+                .accentColor(.white)
                 .padding(.vertical, 8)
                 .overlay(
                     Rectangle()

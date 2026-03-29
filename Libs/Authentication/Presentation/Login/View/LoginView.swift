@@ -11,13 +11,14 @@ struct LoginView: View {
     }
     
     var body: some View {
-        ZStack(alignment: .top) {
+        ZStack{
             backgroundView
             
             if viewModel.isLoading { LoadingView(style: .fullScreen, theme: .dark).zIndex(1) }
             
             VStack(spacing: 0) {
                 CustomNavigationBar(onBack: viewModel.backToGateway)
+                    .padding(.horizontal, 16)
                 
                 ScrollView {
                     VStack(alignment: .leading, spacing: 40) {
@@ -53,7 +54,7 @@ struct LoginView: View {
                         }
                         
                         if let error = viewModel.errorMessage {
-                            Text("⚠️ \(error)")
+                            Text("\(error)")
                                 .font(.system(size: 13, weight: .light))
                                 .foregroundColor(.red)
                         }
@@ -72,6 +73,8 @@ struct LoginView: View {
                         .padding(.top, 20)
                     }
                     .padding(.horizontal, 32)
+                    .padding(.top, 40) 
+                    .padding(.bottom, 40)
                 }
                 .scrollDismissesKeyboard(.interactively)
             }

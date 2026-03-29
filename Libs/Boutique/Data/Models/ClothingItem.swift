@@ -24,11 +24,7 @@ struct ClothingItem: Codable, Identifiable, Hashable {
     }
     
     var formattedPrice: String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencyCode = "BRL"
-        formatter.locale = Locale(identifier: "pt_BR")
-        return formatter.string(from: NSNumber(value: price)) ?? "R$ \(price)"
+        price.toCurrency
     }
     
     func imageURL(at index: Int) -> URL? {

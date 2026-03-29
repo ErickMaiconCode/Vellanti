@@ -14,18 +14,20 @@ final class NetworkService {
             guard (200...299).contains(httpResponse.statusCode) else {
                 throw NetworkError.serverError(httpResponse.statusCode)
             }
+
+            return try JSONDecoder().decode(T.self, from: data)
             
-            do {
-                return try JSONDecoder().decode(T.self, from: data)
-            } catch {
-                throw NetworkError.decodingError
-            }
-            
-            catch let error as NetworkError {
+            } catch let error as NetworkError {
+
                 throw error
+                
+            } catch is DecodingError {
+
+                throw NetworkError.decodingError
+                
             } catch {
+
                 throw NetworkError.noConnection
             }
         }
     }
-}

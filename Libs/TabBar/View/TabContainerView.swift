@@ -2,12 +2,15 @@ import SwiftUI
 
 struct TabBarContainerView: View {
     @StateObject private var viewModel = TabBarViewModel()
+    @StateObject private var profileCoordinator = DependencyContainer.shared.makeProfileCoordinator()
+    
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            TabContentView(selectedTab: viewModel.selectedTab)
-                .environmentObject(viewModel)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+            TabContentView(selectedTab: viewModel.selectedTab, profileCoordinator: profileCoordinator)
+                 .environmentObject(viewModel)
+                 .frame(maxWidth: .infinity, maxHeight: .infinity)
 
             if viewModel.showTabBar {
                 CustomTabBarView(viewModel: viewModel)
@@ -23,23 +26,33 @@ struct TabBarContainerView: View {
 private struct TabContentView: View {
     let selectedTab: TabItem
     @StateObject private var profileCoordinator: ProfileCoordinator
+    @StateObject private var homeCoordinator = HomeCoordinator()
+    @StateObject private var boutiqueCoordinator = BoutiqueCoordinator()
     
-    init(selectedTab: TabItem) {
+    init(selectedTab: TabItem, profileCoordinator: ProfileCoordinator) {
         self.selectedTab = selectedTab
-        self._profileCoordinator = StateObject(wrappedValue: DependencyContainer.shared.makeProfileCoordinator())
+        self._profileCoordinator = StateObject(wrappedValue: profileCoordinator)
     }
     
     var body: some View {
         ZStack {
             switch selectedTab {
             case .home:
-                NavigationStack {
+                NavigationStack(path: $homeCoordinator.path) {
                     HomeView()
+                        .environmentObject(homeCoordinator)
+                        .navigationDestination(for: HomeCoordinator.HomeRoute.self) { route in
+                            homeCoordinator.build(route: route)
+                        }
                 }
                 
             case .boutique:
-                NavigationStack {
+                NavigationStack(path: $boutiqueCoordinator.path) {
                     CategoryView()
+                        .environmentObject(boutiqueCoordinator)
+                        .navigationDestination(for: BoutiqueCoordinator.BoutiqueRoute.self) { route in
+                            boutiqueCoordinator.build(route: route)
+                        }
                 }
                 
             case .brandStory:
@@ -48,7 +61,7 @@ private struct TabContentView: View {
                 }
                 
             case .profile:
-                DependencyContainer.shared.makeProfileView(coordinator: profileCoordinator)
+                profileCoordinator.makeProfileView()
             }
         }
     }

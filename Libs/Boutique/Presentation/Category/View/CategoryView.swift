@@ -4,7 +4,6 @@ struct CategoryView: View {
     @State private var showingContactSheet = false
     
     var body: some View {
-        NavigationStack {
             ZStack {
                 Image("Vellanti_Categories")
                     .resizable()
@@ -33,7 +32,7 @@ struct CategoryView: View {
                     ScrollView {
                         LazyVStack(spacing: 24) {
                             ForEach(Category.all, id: \.id) { category in
-                                NavigationLink(value: category) {
+                                NavigationLink(value: BoutiqueCoordinator.BoutiqueRoute.productList(category)) {
                                     CategoryRow(category: category)
                                 }
                             }
@@ -72,15 +71,12 @@ struct CategoryView: View {
                 }
             }
             .showTabBar()
-            .navigationDestination(for: Category.self) { category in
-                ProductListView(category: category)
-            }
             .sheet(isPresented: $showingContactSheet) {
                 ContactSheet()
             }
         }
     }
-}
+
 
 private struct CategoryRow: View {
     let category: Category

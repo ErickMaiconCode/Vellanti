@@ -12,10 +12,10 @@ struct ProfileListView: View {
         NavigationStack(path: $coordinator.path) {
             ZStack {
                 if authState.isAuthenticated {
-                    // Visão para Usuário Logado
+
                     authenticatedView
                 } else {
-                    // Visão para Visitante (AuthGateway sem continuar sem login)
+
                     GuestProfileAuthView(coordinator: coordinator)
                 }
             }
@@ -26,7 +26,6 @@ struct ProfileListView: View {
     }
     
    private var authenticatedView: some View {
-        NavigationStack(path: $coordinator.path) {
             ZStack(alignment: .top) {
                 
                 ScrollView {
@@ -82,11 +81,6 @@ struct ProfileListView: View {
             .background(Color.white)
             .ignoresSafeArea(edges: .top)
             .navigationBarHidden(true)
-            .navigationDestination(for: ProfileCoordinator.ProfileRoute.self) { route in
-                coordinator.build(route: route)
-                    .navigationBarBackButtonHidden(true)
-            }
-        }
     }
     
     struct BlurryHeader: View {

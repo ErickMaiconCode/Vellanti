@@ -1,6 +1,6 @@
 import Foundation
 
-final class BoutiqueRepository {
+final class BoutiqueRepository: BoutiqueRepositoryProtocol {
     
     static let shared = BoutiqueRepository()
     private var cachedItems: [ClothingItem] = []

@@ -5,15 +5,12 @@ struct CheckoutReviewView: View {
     @ObservedObject var checkoutViewModel: CheckoutViewModel
     @EnvironmentObject var cartViewModel: CartViewModel
     @EnvironmentObject var orderViewModel: OrderViewModel
+    @EnvironmentObject var coordinator: CheckoutCoordinator
     @Environment(\.dismiss) var dismiss
     
     @State private var isProcessing = false
-    @State private var showSuccess = false
     
     var body: some View {
-        if showSuccess {
-            SuccessView()
-        } else {
             VStack(spacing: 0) {
                 CustomNavigationBar(title: "Revisão do Pedido", onBack: {
                     dismiss()
@@ -85,7 +82,7 @@ struct CheckoutReviewView: View {
             .navigationBarHidden(true)
             .background(Color.white)
         }
-    }
+    
     
     func simulatePurchase() {
         isProcessing = true
@@ -103,7 +100,7 @@ struct CheckoutReviewView: View {
 
             cartViewModel.clearCart()
 
-            showSuccess = true
+            coordinator.path.append(CheckoutCoordinator.CheckoutRoute.success)
         }
     }
 }

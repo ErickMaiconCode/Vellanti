@@ -85,12 +85,12 @@ extension Category {
       subheadline: "Artesanato italiano e design arquitetônico. Onde a sua jornada começa.",
       runwayVideo: nil
     ),
-    Category(
+    Category(   
       id: "bolsas",
       name: "Bolsas",
       headline: "Herança Tangível",
       subheadline: "Mais que acessórios, verdadeiros investimentos esculpidos à mão para a próxima geração.",
-      runwayVideo: "runway_bags_ss24"
+      runwayVideo: nil
     ),
     Category(
       id: "camisas",

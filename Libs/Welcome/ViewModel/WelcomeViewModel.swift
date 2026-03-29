@@ -22,10 +22,8 @@ final class WelcomeViewModel: ObservableObject, WelcomeViewModelProtocol {
     
     private func setupContent() {
         if authState.isAuthenticated {
-            // Lógica para Usuário Logado
             title = "Sua coleção particular o aguarda, \(authState.formalGreeting)"
         } else {
-            // Lógica para Visitante
             title = "O verdadeiro luxo vive na sutileza.\nBem-vindo ao universo Vellanti."
         }
     }

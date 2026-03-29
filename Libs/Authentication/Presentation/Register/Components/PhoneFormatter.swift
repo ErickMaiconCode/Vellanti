@@ -46,7 +46,6 @@ struct PhoneFormatter {
     }
 }
 
-// MARK: - Binding Extension para o TextField
 extension Binding where Value == String {
     func phoneFormatted(countryCode: String) -> Binding<String> {
         Binding<String>(

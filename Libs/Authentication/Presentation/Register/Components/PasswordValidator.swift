@@ -1,6 +1,5 @@
 import SwiftUI
 
-// MARK: - Password Validator
 struct PasswordValidatorView: View {
     let password: String
     
@@ -10,8 +9,6 @@ struct PasswordValidatorView: View {
             ValidationRow(text: "Letra maiúscula", isValid: password.contains(where: { $0.isUppercase }))
             ValidationRow(text: "Letra minúscula", isValid: password.contains(where: { $0.isLowercase }))
             ValidationRow(text: "Número", isValid: password.contains(where: { $0.isNumber }))
-            
-            // Esta é a linha do caractere especial
             ValidationRow(text: "Caractere especial (!@#$)", isValid: password.containsSpecialCharacter)
         }
     }
@@ -34,7 +31,6 @@ struct ValidationRow: View {
     }
 }
 
-// MARK: - Extensão de Validação (Obrigatória para funcionar)
 extension String {
     var containsSpecialCharacter: Bool {
         let specialCharacters = "!@#$%^&*()_+-=[]{}|;:,.<>?"

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
+    @EnvironmentObject var coordinator: HomeCoordinator
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -11,7 +12,7 @@ struct HomeView: View {
                     Color.clear.frame(height: 40)
                     
                     ForEach(viewModel.feedShows) { show in
-                        NavigationLink(destination: RunwayDetailView(show: show)) {
+                        NavigationLink(value: HomeCoordinator.HomeRoute.runwayDetail(show))  {
    
                             ZStack(alignment: .bottomLeading) {
                                 if let videoName = show.homeVideoName {
@@ -65,7 +66,7 @@ struct HomeView: View {
                                 spacing: 16
                             ) {
                                 ForEach(CategoryCard.featured) { card in
-                                    NavigationLink(destination: ProductListView(category: card.category)) {
+                                    NavigationLink(value: HomeCoordinator.HomeRoute.productList(card.category)){
                                         CategoryCardView(card: card)
                                     }
                                     .buttonStyle(.plain)

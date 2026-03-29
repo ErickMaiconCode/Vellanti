@@ -7,6 +7,7 @@ enum AuthError: Error {
     case emailAlreadyInUse
     case userNotFound
     case wrongPassword
+    case invalidCredential
     case networkError
     case unknown(String)
     
@@ -20,11 +21,11 @@ enum AuthError: Error {
             return .authEmailInUse
         case .userNotFound:
             return .authUserNotFound
-        case .wrongPassword:
+        case .wrongPassword, .invalidCredential:
             return .authWrongPassword
         case .networkError:
             return .noConnection
-        case .unknown(let message):
+        case .unknown(_):
             return .authGeneric("Esta conta foi desativada. Entre em contato com o suporte.")
         }
     }
@@ -45,6 +46,8 @@ enum AuthError: Error {
             return .userNotFound
         case .wrongPassword:
             return .wrongPassword
+        case .invalidCredential:
+            return .invalidCredential
         case .networkError:
             return .networkError
         default:

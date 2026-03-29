@@ -11,13 +11,14 @@ struct RegisterView: View {
     }
     
     var body: some View {
-        ZStack(alignment: .top) {
+        ZStack {
             backgroundView
             
             if viewModel.isLoading { LoadingView(style: .overlay, theme: .dark, message: "Criando conta...").zIndex(1) }
             
             VStack(spacing: 0) {
                 CustomNavigationBar(onBack: viewModel.previousStep)
+                    .padding(.horizontal, 12)
                 
                 ScrollView {
                     VStack(alignment: .leading, spacing: 40) {
@@ -51,7 +52,7 @@ struct RegisterView: View {
                         }
                         
                         if let error = viewModel.errorMessage {
-                            Text("⚠️ \(error)").font(.system(size: 13, weight: .light)).foregroundColor(.red)
+                            Text("\(error)").font(.system(size: 13, weight: .light)).foregroundColor(.red)
                         }
                         
                         Button(action: viewModel.nextStep) {
@@ -68,6 +69,7 @@ struct RegisterView: View {
                         .padding(.top, 20)
                     }
                     .padding(.horizontal, 32)
+                    .padding(.top, 40)
                     .padding(.bottom, 40)
                 }
                 .scrollDismissesKeyboard(.interactively)
@@ -76,9 +78,7 @@ struct RegisterView: View {
         .navigationBarHidden(true)
         .animation(.easeInOut, value: viewModel.currentStep)
     }
-    
-    // MARK: - Sections
-    
+
     private var authenticationFields: some View {
         VStack(spacing: 32) {
             VellantiTextField(text: $viewModel.registerData.email, title: "E-mail", keyboardType: .emailAddress, autocapitalization: .never)

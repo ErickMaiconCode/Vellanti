@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ProductListView: View {
-    @StateObject private var viewModel = ProductListViewModel()
+    @StateObject private var viewModel = DependencyContainer.shared.makeProductListViewModel()
     let category: Category
     @Environment(\.dismiss) private var dismiss
     
@@ -29,9 +29,6 @@ struct ProductListView: View {
         .navigationBarHidden(true)
         .onAppear {
             viewModel.configure(with: category)
-        }
-        .navigationDestination(for: ClothingItem.self) { item in
-            ProductDetailView(item: item)
         }
     }
     
@@ -66,7 +63,7 @@ struct ProductListView: View {
             spacing: 24
         ) {
             ForEach(viewModel.clothingItems) { item in
-                NavigationLink(value: item) {
+                NavigationLink(value: BoutiqueCoordinator.BoutiqueRoute.productDetail(item)) {
                     ProductCardView(item: item)
                 }
                 .buttonStyle(.plain)

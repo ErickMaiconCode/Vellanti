@@ -28,7 +28,6 @@ class ProfileCoordinator: ObservableObject {
     }
     
     @Published var path = NavigationPath()
-    private let container = DependencyContainer.shared
     
     func navigate(to item: ProfileList) {
         switch item.title {
@@ -53,25 +52,32 @@ class ProfileCoordinator: ObservableObject {
         path.removeLast()
     }
     
+    func makeProfileView() -> some View {
+        return ProfileListView(coordinator: self)
+            .environmentObject(AuthState.shared)
+    }
+    
     @ViewBuilder
     func build(route: ProfileRoute) -> some View {
         switch route {
         case .orders:
             OrdersListView(coordinator: self)
-                .environmentObject(container.orderViewModel)
+            
         case .cart:
             CartView(isPresentedAsModal: false)
-                .environmentObject(container.cartViewModel)
+
         case .wishList:
             WishlistView()
-                .environmentObject(container.wishlistViewModel)
+
         case .generic:
             OrdersListView(coordinator: self)
-                .environmentObject(container.cartViewModel)
+
         case .orderDetails(let order):
             OrderDetailsView(order: order)
+            
         case .adminPanel:
             CreateProductView()
+            
         case .login:
             LoginView(
                 onSuccess: { [weak self] in

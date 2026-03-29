@@ -27,7 +27,6 @@ final class CoreDataSyncService {
 
         await syncOrders(userId: userId)
         
-        await syncOrders(userId: userId)
     }
     
     private func syncCart(userId: String) async {
@@ -85,7 +84,6 @@ final class CoreDataSyncService {
             var updatedItems = 0
             
             for order in orders where order.userId == nil {
-                // Atualizar o pedido
                 order.userId = userId
                 updatedOrders += 1
                 

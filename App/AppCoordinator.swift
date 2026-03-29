@@ -15,12 +15,20 @@ class AppCoordinator: ObservableObject {
     }
     
     @Published var currentScreen: Screen = .loading
+    @Published var cartViewModel: CartViewModel
+    @Published var orderViewModel: OrderViewModel
+    @Published var wishlistViewModel: WishlistViewModel
+    
     private let container = DependencyContainer.shared
     private var authCoordinator: AuthGatewayCoordinator?
     private var welcomeCoordinator: WelcomeCoordinator?
     private let initialFlowCompletedKey = "hasCompletedInitialFlow"
     
     init() {
+        self.cartViewModel = DependencyContainer.shared.makeCartViewModel()
+        self.orderViewModel = DependencyContainer.shared.makeOrderViewModel()
+        self.wishlistViewModel = DependencyContainer.shared.makeWishlistViewModel()
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.currentScreen = .splash
         }
@@ -115,9 +123,11 @@ class AppCoordinator: ObservableObject {
     
 
     func makeMainView() -> some View {
+        
         return TabBarContainerView()
-            .environmentObject(container.cartViewModel)
-            .environmentObject(container.orderViewModel)
-            .environmentObject(container.wishlistViewModel)
+            .environmentObject(self.cartViewModel)
+            .environmentObject(self.orderViewModel)
+            .environmentObject(self.wishlistViewModel)
+            .environmentObject(AuthState.shared)
     }
 }

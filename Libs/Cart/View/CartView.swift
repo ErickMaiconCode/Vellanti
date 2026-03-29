@@ -3,13 +3,19 @@ import SwiftUI
 struct CartView: View {
     @EnvironmentObject var cartViewModel: CartViewModel
     @Environment(\.dismiss) var dismiss
-
+    @StateObject private var checkoutCoordinator = CheckoutCoordinator()
+    
     var isPresentedAsModal: Bool = true
     
     var body: some View {
         if isPresentedAsModal {
-            NavigationStack {
+            NavigationStack(path: $checkoutCoordinator.path) {
                 content
+                
+                    .navigationDestination(for: CheckoutCoordinator.CheckoutRoute.self) { route in
+                        checkoutCoordinator.build(route: route)
+                            .environmentObject(checkoutCoordinator)
+                    }
             }
             .ignoresSafeArea(edges: .bottom)
             .presentationDetents([.fraction(0.9)])
@@ -56,7 +62,7 @@ struct CartView: View {
             }
             
             Divider().opacity(0.5)
-
+            
             if cartViewModel.cartItems.isEmpty {
                 EmptyStateView(
                     type: .cart,
@@ -81,7 +87,7 @@ struct CartView: View {
                 .background(Color.white)
                 
                 Divider()
-
+                
                 VStack(spacing: 20) {
                     HStack {
                         Text("Total")
@@ -92,9 +98,7 @@ struct CartView: View {
                             .foregroundStyle(Color.black)
                     }
                     
-                    NavigationLink {
-                        CheckoutFormView()
-                    } label: {
+                    NavigationLink(value: CheckoutCoordinator.CheckoutRoute.form) {
                         Text("Finalizar Compra")
                             .font(.system(size: 15, weight: .medium))
                             .foregroundColor(.white)
@@ -111,8 +115,8 @@ struct CartView: View {
         }
         .background(Color.white)
     }
-}
-        
+    
+    
     struct CartItemRow: View {
         @ObservedObject var item: CartEntity
         let viewModel: CartViewModel
@@ -197,12 +201,4 @@ struct CartView: View {
             .background(Color.white)
         }
     }
-
-    func formatPrice(_ value: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencyCode = "BRL"
-        formatter.locale = Locale(identifier: "pt_BR")
-        return formatter.string(from: NSNumber(value: value)) ?? "R$ \(value)"
-    }
-
+}

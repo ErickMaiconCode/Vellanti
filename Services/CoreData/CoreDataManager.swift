@@ -1,7 +1,7 @@
 import CoreData
 import SwiftUI
 
-class CoreDataManager {
+final class CoreDataManager {
     static let shared = CoreDataManager()
     let container: NSPersistentContainer
     

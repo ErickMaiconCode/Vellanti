@@ -89,8 +89,7 @@ struct RunwayDetailView: View {
                         Divider()
                             .padding(.horizontal, 24)
                             .padding(.vertical, 10)
-                        
-                        // Action Buttons
+
                         VStack(spacing: 16) {
                             ForEach(show.actions) { action in
                                 Link(destination: URL(string: action.url)!) {

@@ -14,8 +14,7 @@ struct CreateProductView: View {
                 
                 ScrollView {
                     VStack(spacing: 40) {
-                        
-                        // Informações do Produto
+
                         VStack(alignment: .leading, spacing: 20) {
                             SectionHeader(title: "INFORMAÇÕES DO PRODUTO")
                             
@@ -29,7 +28,6 @@ struct CreateProductView: View {
                             CustomTextField(placeholder: "Preço (R$)", text: $viewModel.price)
                                 .keyboardType(.decimalPad)
                             
-                            // Descrição customizada para bater com o visual do CustomTextField
                             VStack(alignment: .leading, spacing: 8) {
                                 Text("DESCRIÇÃO")
                                     .font(.system(size: 11, weight: .bold))
@@ -40,8 +38,8 @@ struct CreateProductView: View {
                                     .frame(height: 80)
                                     .font(.system(size: 16))
                                     .foregroundStyle(.black)
-                                    .scrollContentBackground(.hidden) // Remove fundo cinza padrão do iOS 16+
-                                    .padding(.horizontal, -4) // Alinha o texto com os TextFields
+                                    .scrollContentBackground(.hidden)
+                                    .padding(.horizontal, -4)
                                     .overlay(
                                         Rectangle()
                                             .frame(height: 1)
@@ -50,8 +48,7 @@ struct CreateProductView: View {
                                     )
                             }
                         }
-                        
-                        // Especificações
+
                         VStack(alignment: .leading, spacing: 20) {
                             SectionHeader(title: "ESPECIFICAÇÕES")
                             
@@ -76,8 +73,7 @@ struct CreateProductView: View {
                                 .pickerStyle(.segmented)
                             }
                         }
-                        
-                        // Imagem
+
                         VStack(alignment: .leading, spacing: 20) {
                             SectionHeader(title: "IMAGEM DO PRODUTO")
                             
@@ -104,8 +100,7 @@ struct CreateProductView: View {
                                 }
                             }
                         }
-                        
-                        // Mensagens de Erro/Sucesso
+
                         VStack(spacing: 12) {
                             if let error = viewModel.errorMessage {
                                 InlineMessage(message: error, isError: true)
@@ -120,8 +115,7 @@ struct CreateProductView: View {
                     .padding(24)
                 }
                 .scrollIndicators(.hidden)
-                
-                // Botão Fixo na Base (Igual ao Checkout)
+
                 VStack(spacing: 0) {
                     Divider()
                     
@@ -147,16 +141,14 @@ struct CreateProductView: View {
             .onTapGesture {
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             }
-            
-            // Loading Overlay
+
             if viewModel.isLoading {
                 LoadingView(style: .overlay, theme: .light)
                     .zIndex(1)
             }
         }
     }
-    
-    // MARK: - Helpers
+
     private func imagePlaceholder(icon: String, color: Color) -> some View {
         VStack {
             Image(systemName: icon)
@@ -170,7 +162,6 @@ struct CreateProductView: View {
     }
 }
 
-// MARK: - Novo Componente de Mensagem Simplificado
 struct InlineMessage: View {
     let message: String
     let isError: Bool
