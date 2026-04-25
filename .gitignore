@@ -62,3 +62,5 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 Libs/Home/Assets/Video/*.mp4
 Libs/Home/Video/*.mp4
+GoogleService-Info.plist
+Vellanti-Info.plist
