@@ -28,6 +28,12 @@
 
 ---
 
+## 🎬 Assista à demonstração completa
+
+[![Ver demonstração](IMG_5705.jpg)](https://youtu.be/d8ukpQSTWOo)
+
+---
+
 ## ✦ Visão Geral
 
 A proposta do Vellanti vai além de um simples catálogo de produtos. Cada decisão de design — tanto visual quanto arquitetural — foi tomada com a mesma intenção que define uma peça de grife: **precisão, intenção e atemporalidade**.
