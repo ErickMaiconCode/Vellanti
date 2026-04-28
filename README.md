@@ -30,7 +30,7 @@
 
 ## 🎬 Assista à demonstração completa
 
-[![Ver demonstração](IMG_5705.jpg)](https://youtu.be/d8ukpQSTWOo)
+[![Ver demonstração](IMG_5705.jpeg)](https://youtu.be/d8ukpQSTWOo)
 
 ---
 
